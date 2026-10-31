@@ -1,88 +1,77 @@
-# YouTube Shorts Automated Production Engine (`yt-automation-wf`)
+# Autonomous YouTube Shorts Production Engine (`yt-automation-wf`)
 
-## 1. Project Overview & Mission
-This project automates the end-to-end production, review, and scheduling of high-retention 9:16 vertical YouTube Shorts (15–30 seconds) based on a structured content calendar (`data/calendar.json`).
+## 1. Mission & Operational Architecture
+This project runs an autonomous production engine powered by **Antigravity CLI (`agy`)**. It scheduled, generates, edits, reviews, and dispatches high-retention 9:16 vertical YouTube Shorts (15–30 seconds) based on a structured content calendar (`data/calendar.json`).
 
-Each short follows a scientific hypothetical / "what if" format structured into 3 progressive clips:
-1. **The Hook** (~8–10s): Immediate impossible premise, visual disruption.
-2. **The Escalation** (~8–10s): Technical or macro breakdown, tension buildup.
-3. **The Climax / Payoff** (~8–10s): Dramatic conclusion, loop teaser.
-
----
-
-## 2. System Architecture & Workflow Pipeline
+All autonomous executions reuse a single persistent conversation context (`--conversation fcdb013c-7946-4c00-8518-a92ebcf45cdd`) so the agent preserves complete memory, feedback, and execution history.
 
 ```mermaid
-flowchart LR
-    A["data/calendar.json\n(Staggered 08:00, 13:00, 18:00)"] --> B["src/workflow.ts\n(Timed Dispatcher)"]
-    B --> C["Google Flow MCP\n(AI Video/Image Assets)"]
-    C --> D["Remotion Engine\n(Headless 9:16 Compilation)"]
-    D --> E["src/mailer.ts\n(SMTP Review Email)"]
-    E --> F["Review & Sign-Off\n(Mark DONE in calendar)"]
-```
-
-### Key Workflow Stages
-1. **Queue Dispatcher (`src/workflow.ts`)**:
-   - Compares the system clock with `scheduledDate` and `scheduledTime` (Morning `08:00`, Afternoon `13:00`, Evening `18:00`).
-   - Identifies the next eligible `PENDING` short.
-   - CLI flags: `--force` (run next pending immediately) and `--dry-run` (simulate without live SMTP).
-2. **Asset Generation (Google Flow MCP)**:
-   - Uses prompt cues (`visualAction`, `spokenLine`, `sfxCue`) to generate visual assets for the 3 clips.
-3. **Video Compilation (Remotion)**:
-   - Assembles clips into vertical 1080x1920 30fps `.mp4` videos with animated subtitles, progress bars, and SFX cues in `out/`.
-4. **Review & Notification (`src/mailer.ts`)**:
-   - Dispatches an HTML review email to the designated reviewer with video attachment.
-5. **State Persistence**:
-   - Updates `calendar.json` status to `DONE` upon successful execution.
-
----
-
-## 3. Project Structure & Key Files
-
-```
-yt-automation-wf/
-├── data/
-│   └── calendar.json             # 60 scheduled shorts with clip prompts and time slots
-├── src/
-│   ├── paths.ts                  # Universal root & path resolver (No __dirname / import.meta issues)
-│   ├── types/
-│   │   └── calendar.ts           # Strict TypeScript interfaces (CalendarEntry, Clip, Status)
-│   ├── update.ts                 # Staggered timestamp updater (08:00, 13:00, 18:00)
-│   ├── mailer.ts                 # Nodemailer SMTP transporter and notification helper
-│   └── workflow.ts               # Core workflow orchestrator and timed pipeline runner
-├── scripts/
-│   └── update-calendar-times.ts  # Standalone calendar updater script
-├── tests/
-│   └── calendar.test.ts          # Vitest test suite (schema, slots, status constraints)
-├── .agents/
-│   └── skills/
-│       └── director/
-│           └── SKILL.md          # Antigravity skill for Shorts creative direction
-├── .env                          # SMTP & runtime configuration
-├── package.json                  # Scripts & dependencies (ESM module)
-├── tsconfig.json                 # Strict NodeNext TypeScript configuration
-└── GEMINI.md                     # This architectural & operational specification
+flowchart TD
+    Cron["System Cron / Trigger\n(08:00, 13:00, 18:00)"] -->|Invokes agy with single conversation ID| AGY["Antigravity CLI\n(agy --conversation <id> --dangerously-skip-permissions)"]
+    AGY -->|1. Reads Schedule| Cal["data/calendar.json\n(60 Scheduled Shorts)"]
+    AGY -->|2. Directs & Generates Assets| Flow["Google Flow MCP\n(tools/flow-mcp / Veo)"]
+    AGY -->|3. Compiles 9:16 Video| Remotion["Remotion Engine\n(src/render.ts -> out/[serialId].mp4)"]
+    AGY -->|4. Dispatches Review Email| Mail["src/mailer.ts\n(SMTP Review with Video Attachment)"]
+    AGY -->|5. Updates State| CalDone["Mark status: DONE in calendar.json"]
 ```
 
 ---
 
-## 4. Development & TypeScript Guidelines
+## 2. Five-Stage Production Pipeline
 
-1. **Path Resolution Rule**:
-   - **Never** use raw `__dirname` (fails in ESM) or raw `import.meta.url` (fails in CommonJS).
-   - **Always** import `getCalendarPath()`, `getOutDir()`, or `resolveProjectPath()` from `src/paths.ts`.
-2. **Strict Type Safety**:
-   - All calendar interactions must adhere to `CalendarEntry` in `src/types/calendar.ts`.
-   - Preserve both `topic` and `title` compatibility.
-3. **Quality Gates**:
-   - Type check: `npm run typecheck` (`tsc --noEmit`)
-   - Build check: `npm run build` (`tsc`)
-   - Unit tests: `npm test` (`vitest run`)
-   - Dry run test: `npm run workflow -- --force --dry-run`
+### Stage 1: Queue Inspection
+- Read `data/calendar.json`.
+- Identify the eligible short matching the current slot (`08:00` Morning, `13:00` Afternoon, or `18:00` Evening) whose status is `PENDING`.
+- Extract the 3 sequential clips:
+  1. **The Hook** (~8–10s): Immediate premise and disruption (`visualAction`, `spokenLine`, `sfxCue`).
+  2. **The Escalation** (~8–10s): Tension, mechanics, and macro shot.
+  3. **The Climax** (~8–10s): Release, dramatic result, and loop teaser.
+
+### Stage 2: Generative Visual Asset Production (Google Flow MCP)
+- Google Flow MCP is installed at `tools/flow-mcp` and wired globally into `agy mcp`.
+- Generates 9:16 vertical visual scenes for the 3 clips using Flow's free daily credits.
+- One-time sign-in required on the host machine:
+  ```bash
+  cd tools/flow-mcp && npm run login
+  ```
+
+### Stage 3: Video Assembly & Kinetic Typography (Remotion)
+- Remotion composition located at `src/remotion/ShortComposition.tsx` (1080x1920, 30fps).
+- Features:
+  - Sequences the 3 clips with dynamic transitions.
+  - Kinetic typography styling the narration lines (`spokenLine`).
+  - SFX cue badges and sound placement (`sfxCue`).
+  - Top header and global progress bar.
+- Render handler: `src/render.ts` (`renderShortVideo(entry)`).
+
+### Stage 4: SMTP Notification & Review
+- Uses `src/mailer.ts` (`sendReviewEmail({ serialId, title, videoPath })`).
+- Emails the completed video to `NOTIFICATION_EMAIL` configured in `.env`.
+
+### Stage 5: State Persistence
+- Upon verified compilation and dispatch, mark the entry in `data/calendar.json` with `status: "DONE"`.
 
 ---
 
-## 5. Next Steps for Full Automation
-- [ ] Connect Google Flow MCP tool calls into `src/workflow.ts` to generate clip media.
-- [ ] Implement headless Remotion rendering for final `.mp4` assembly into `out/`.
-- [ ] Schedule recurring execution (e.g. cron job or `/schedule` at `08:00`, `13:00`, `18:00`).
+## 3. Autonomous Antigravity CLI Execution
+
+### Headless Production Command
+To produce the scheduled short using the persistent conversation:
+```bash
+agy --conversation fcdb013c-7946-4c00-8518-a92ebcf45cdd \
+  -p "Produce the scheduled YouTube Short for the current time slot. Generate clip assets via Google Flow, assemble in Remotion to out/, dispatch the review email, and mark as DONE." \
+  --dangerously-skip-permissions
+```
+
+### Scheduled Cron Automation (08:00, 13:00, 18:00)
+Add to crontab (`crontab -e`):
+```bash
+0 8,13,18 * * * cd /home/oluomachi-c-udezue/projects/yt-automation-wf && /home/oluomachi-c-udezue/.local/bin/agy --conversation fcdb013c-7946-4c00-8518-a92ebcf45cdd -p "Execute scheduled YouTube Short production for current time slot." --dangerously-skip-permissions >> /home/oluomachi-c-udezue/projects/yt-automation-wf/cron.log 2>&1
+```
+
+---
+
+## 4. Quality Gates & Validation
+- **Typecheck:** `npm run typecheck` (`tsc --noEmit`)
+- **Unit Tests:** `npm test` (`vitest run`)
+- **Calendar Update:** `npm run update-calendar`
