@@ -5,12 +5,12 @@ import { ShortComposition, ShortCompositionProps } from './ShortComposition.js';
 const defaultProps: ShortCompositionProps = {
   serialId: 'VID-001',
   topic: 'What happens if you replace your femur with a titanium torsion spring?',
-  targetDurationSeconds: 28,
+  targetDurationSeconds: 16,
   audioVoiceoverPath: 'audio/VID-001.mp3',
   clips: [
     {
       clipIndex: 1,
-      durationSeconds: 9,
+      durationSeconds: 5.3,
       visualAction:
         'Cutaway 3D skeletal leg, femur bone glows neon green and dissolves into a polished blue titanium frame with a heavy torsion spring.',
       spokenLine:
@@ -20,7 +20,7 @@ const defaultProps: ShortCompositionProps = {
     },
     {
       clipIndex: 2,
-      durationSeconds: 10,
+      durationSeconds: 5.0,
       visualAction:
         'Close-up macro shot of the torsion spring tightening and glowing red as a 3D character model crouches down.',
       spokenLine:
@@ -30,7 +30,7 @@ const defaultProps: ShortCompositionProps = {
     },
     {
       clipIndex: 3,
-      durationSeconds: 9,
+      durationSeconds: 5.7,
       visualAction:
         'Wide shot of character launching off a stone courtyard, clearing an entire suburban house in a single superhuman bound.',
       spokenLine:
@@ -47,7 +47,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="ShortComposition"
         component={ShortComposition as React.FC<Record<string, unknown>>}
-        durationInFrames={28 * 30}
+        durationInFrames={16 * 30}
         fps={30}
         width={1080}
         height={1920}
@@ -58,7 +58,7 @@ export const RemotionRoot: React.FC = () => {
           const durationSeconds =
             typedProps.targetDurationSeconds ||
             clips.reduce((acc, c) => acc + (c.durationSeconds || 0), 0) ||
-            28;
+            16;
           return {
             durationInFrames: Math.round(durationSeconds * 30),
             props: typedProps,

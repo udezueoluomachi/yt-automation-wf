@@ -1,10 +1,12 @@
 import React from 'react';
 import {
   AbsoluteFill,
+  interpolate,
   useCurrentFrame,
   useVideoConfig,
   Sequence,
   staticFile,
+  Easing,
 } from 'remotion';
 import { Video, Audio } from '@remotion/media';
 
@@ -60,7 +62,7 @@ export const ShortComposition: React.FC<ShortCompositionProps> = ({
 }) => {
   const { fps, width, height } = useVideoConfig();
 
-  // Calculate cumulative start frames for each clip
+  // Cumulative frame timing
   let runningFrame = 0;
   const clipRanges = (clips || []).map((clip) => {
     const from = runningFrame;
@@ -87,10 +89,10 @@ export const ShortComposition: React.FC<ShortCompositionProps> = ({
         height,
       }}
     >
-      {/* 1. Synchronized Voiceover Audio Track (Ludo / Zack D. Films style) */}
+      {/* 1. Synchronized Voiceover Audio Track (Ludo / Zack D. Films style from AI Studio) */}
       {voiceoverUrl && <Audio src={voiceoverUrl} />}
 
-      {/* 2. Sequential Video Clips */}
+      {/* 2. Sequential Video Clips with Dynamic Pacing & Transitions */}
       {clipRanges.map(({ clip, from, durationFrames }) => (
         <Sequence
           key={clip.clipIndex}
@@ -108,7 +110,7 @@ export const ShortComposition: React.FC<ShortCompositionProps> = ({
 };
 
 /**
- * Single Clip Scene: Fullscreen Video Background + Clean Text-Only Kinetic Captions
+ * Single Clip Scene: Fullscreen Video Background + Dynamic Motion Punch + Seamless Cut
  */
 const ClipScene: React.FC<{
   clip: ClipItem;
@@ -117,10 +119,36 @@ const ClipScene: React.FC<{
   const frame = useCurrentFrame();
   const mediaUrl = resolveMediaUrl(clip.mediaPath, clip.clipIndex);
 
+  // Subtle camera scale-punch on cut (1.06 -> 1.0) so transitions feel energetic and alive
+  const cameraScale = interpolate(frame, [0, 9], [1.06, 1.0], {
+    extrapolateRight: 'clamp',
+    easing: Easing.bezier(0.16, 1, 0.3, 1),
+  });
+
+  // Smooth 4-frame cross-fade entrance & exit to prevent jarring cuts
+  const fadeIn = interpolate(frame, [0, 4], [0.3, 1], {
+    extrapolateRight: 'clamp',
+  });
+  const fadeOut = interpolate(
+    frame,
+    [clipDurationFrames - 4, clipDurationFrames],
+    [1, 0.4],
+    {
+      extrapolateLeft: 'clamp',
+      extrapolateRight: 'clamp',
+    }
+  );
+  const opacity = Math.min(fadeIn, fadeOut);
+
   return (
-    <AbsoluteFill>
-      {/* Fullscreen 3D Video Background */}
-      <AbsoluteFill>
+    <AbsoluteFill style={{ opacity }}>
+      {/* Fullscreen 3D Video Layer with dynamic scale */}
+      <AbsoluteFill
+        style={{
+          transform: `scale(${cameraScale})`,
+          transformOrigin: 'center center',
+        }}
+      >
         <Video
           src={mediaUrl}
           objectFit="cover"
@@ -131,7 +159,7 @@ const ClipScene: React.FC<{
         />
       </AbsoluteFill>
 
-      {/* Clean Kinetic Subtitle Typography (No background box, no pills) */}
+      {/* Clean Kinetic Subtitle Typography (No background box, floating directly on video) */}
       <KineticCaptions
         spokenLine={clip.spokenLine}
         clipDurationFrames={clipDurationFrames}
@@ -143,8 +171,7 @@ const ClipScene: React.FC<{
 
 /**
  * Clean Kinetic Subtitle Component
- * Floating directly on the screen without background containers or extra meta pills.
- * Highlights words in sync with the spoken voiceover line.
+ * Accurately highlights each word in real-time as Ludo speaks the line.
  */
 const KineticCaptions: React.FC<{
   spokenLine: string;
@@ -154,8 +181,8 @@ const KineticCaptions: React.FC<{
   const words = spokenLine.trim().split(/\s+/);
   const totalWords = words.length;
 
-  // The narration for this clip's sentence spans roughly 5.2 seconds (156 frames at 30fps)
-  const speechFrames = Math.min(clipDurationFrames, Math.round(5.2 * 30));
+  // Active word calculation matched to speaking tempo (~0.33s per word)
+  const speechFrames = Math.min(clipDurationFrames, Math.round(totalWords * 10)); // ~0.33s per word at 30fps
   const wordDuration = speechFrames / Math.max(1, totalWords);
   const isSpeechFinished = frame >= speechFrames;
   const currentWordIndex = isSpeechFinished
