@@ -1,7 +1,7 @@
 # Autonomous YouTube Shorts Production Engine (`yt-automation-wf`)
 
 ## 1. Mission & Operational Architecture
-This project runs an autonomous production engine powered by **Antigravity CLI (`agy`)**. It scheduled, generates, edits, reviews, and dispatches high-retention 9:16 vertical YouTube Shorts (15–30 seconds) based on a structured content calendar (`data/calendar.json`).
+This project runs an autonomous production engine powered by **Antigravity CLI (`agy`)**. It schedules, generates, edits, reviews, and dispatches high-retention 9:16 vertical YouTube Shorts (15–30 seconds) based on a structured content calendar (`data/calendar.json`).
 
 All autonomous executions reuse a single persistent conversation context (`--conversation fcdb013c-7946-4c00-8518-a92ebcf45cdd`) so the agent preserves complete memory, feedback, and execution history.
 
@@ -9,7 +9,8 @@ All autonomous executions reuse a single persistent conversation context (`--con
 flowchart TD
     Cron["System Cron / Trigger\n(08:00, 13:00, 18:00)"] -->|Invokes agy with single conversation ID| AGY["Antigravity CLI\n(agy --conversation <id> --dangerously-skip-permissions)"]
     AGY -->|1. Reads Schedule| Cal["data/calendar.json\n(60 Scheduled Shorts)"]
-    AGY -->|2. Directs & Generates Assets| Flow["Google Flow MCP\n(tools/flow-mcp / Veo)"]
+    AGY -->|2. Drives Google Flow via Kimi Extension| Kimi["Kimi WebBridge Daemon\n(127.0.0.1:10086 <-> Chrome Extension)"]
+    Kimi -->|Generates & Downloads Clips| Media["out/clips/ (Veo 9:16)"]
     AGY -->|3. Compiles 9:16 Video| Remotion["Remotion Engine\n(src/render.ts -> out/[serialId].mp4)"]
     AGY -->|4. Dispatches Review Email| Mail["src/mailer.ts\n(SMTP Review with Video Attachment)"]
     AGY -->|5. Updates State| CalDone["Mark status: DONE in calendar.json"]
@@ -27,13 +28,17 @@ flowchart TD
   2. **The Escalation** (~8–10s): Tension, mechanics, and macro shot.
   3. **The Climax** (~8–10s): Release, dramatic result, and loop teaser.
 
-### Stage 2: Generative Visual Asset Production (Google Flow MCP)
-- Google Flow MCP is installed at `tools/flow-mcp` and wired globally into `agy mcp`.
-- Generates 9:16 vertical visual scenes for the 3 clips using Flow's free daily credits.
-- One-time sign-in required on the host machine:
+### Stage 2: Browser Automation via Kimi Browser Extension (WebBridge)
+- The **Kimi Browser Extension (`kimi-webbridge`)** connects Antigravity directly to your active Chrome browser with your existing Google login sessions.
+- **Daemon:** Running locally on `127.0.0.1:10086`. Check status anytime with:
   ```bash
-  cd tools/flow-mcp && npm run login
+  ~/.kimi-webbridge/bin/kimi-webbridge status
   ```
+- **Skill Location:** `.agents/skills/kimi-webbridge/SKILL.md` (and globally in `~/.gemini/config/skills/kimi-webbridge`).
+- **How it works:**
+  1. The Kimi Extension in your Chrome connects to the local daemon at `127.0.0.1:10086`.
+  2. Antigravity sends JSON commands (`navigate`, `click`, `fill`, `wait`, `screenshot`) to control Google Flow (`flow.google.com`) in your active browser session.
+  3. No port restarts or second logins needed!
 
 ### Stage 3: Video Assembly & Kinetic Typography (Remotion)
 - Remotion composition located at `src/remotion/ShortComposition.tsx` (1080x1920, 30fps).
@@ -59,7 +64,7 @@ flowchart TD
 To produce the scheduled short using the persistent conversation:
 ```bash
 agy --conversation fcdb013c-7946-4c00-8518-a92ebcf45cdd \
-  -p "Produce the scheduled YouTube Short for the current time slot. Generate clip assets via Google Flow, assemble in Remotion to out/, dispatch the review email, and mark as DONE." \
+  -p "Produce the scheduled YouTube Short for the current time slot. Generate clip assets via Google Flow using the Kimi browser extension, assemble in Remotion to out/, dispatch the review email, and mark as DONE." \
   --dangerously-skip-permissions
 ```
 

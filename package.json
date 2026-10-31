@@ -9,6 +9,7 @@
     "start": "tsx src/workflow.ts",
     "workflow": "tsx src/workflow.ts",
     "update-calendar": "tsx scripts/update-calendar-times.ts",
+    "chrome:debug": "google-chrome --remote-debugging-port=9333",
     "typecheck": "tsc --noEmit",
     "build": "tsc",
     "test": "vitest run"
