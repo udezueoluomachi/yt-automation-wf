@@ -187,7 +187,20 @@ A basic cron job fails if your computer is asleep or Chrome is closed. This proj
 - **Wi-Fi Reconnect Grace**: Waits up to 60 seconds with backoff for network reconnection upon waking.
 - **Exponential Retry Loop**: Retries up to 3 times (with 3-minute backoff) if temporary rate limits or network glitches occur.
 
-### Setting Up Systemd User Timer (Recommended)
+### 🌍 Cross-Platform Execution Options
+
+The production pipeline is 100% cross-platform and runs identically on **Linux**, **macOS**, and **Windows**:
+
+| Platform | Command / Script | Scheduler |
+| :--- | :--- | :--- |
+| **Universal (All OS)** | `npm run job` (`npx tsx src/runner.ts`) | Works anywhere Node is installed |
+| **Linux** | `scripts/run-production-job.sh` | `systemd --user` timer or `cron` |
+| **Windows** | `scripts/run-production-job.ps1` | **Windows Task Scheduler** |
+| **macOS** | `scripts/run-production-job.sh` or `npm run job` | `launchd` or `cron` |
+
+---
+
+### Setting Up Systemd User Timer (Linux Recommended)
 
 1. Create service `~/.config/systemd/user/yt-shorts-producer.service`:
    ```ini
@@ -225,10 +238,19 @@ A basic cron job fails if your computer is asleep or Chrome is closed. This proj
    systemctl --user enable --now yt-shorts-producer.timer
    ```
 
-### Crontab Fallback
+### Crontab Fallback (Linux & macOS)
 Add to `crontab -e`:
 ```bash
 0 8,13,18 * * * /path/to/yt-automation-wf/scripts/run-production-job.sh >> /path/to/yt-automation-wf/cron.log 2>&1
+```
+
+### Windows Task Scheduler Setup
+On Windows, schedule `scripts\run-production-job.ps1` via PowerShell or Task Scheduler:
+```powershell
+# Create task running at 08:00, 13:00, 18:00
+$Action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-ExecutionPolicy Bypass -File C:\path\to\yt-automation-wf\scripts\run-production-job.ps1"
+$Trigger = New-ScheduledTaskTrigger -Daily -At "08:00"
+Register-ScheduledTask -TaskName "YTShortsProducer" -Action $Action -Trigger $Trigger
 ```
 
 ---

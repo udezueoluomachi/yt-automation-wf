@@ -287,7 +287,8 @@ app.post('/api/produce/:serialId', (req: Request, res: Response): void => {
     return;
   }
 
-  const agyBin = process.env.AGY_BIN_PATH || 'agy';
+  const isWindows = process.platform === 'win32';
+  const agyBin = process.env.AGY_BIN_PATH || (isWindows ? 'agy.cmd' : 'agy');
   const conversationId = process.env.AGY_CONVERSATION_ID;
 
   if (!conversationId) {
@@ -309,7 +310,8 @@ app.post('/api/produce/:serialId', (req: Request, res: Response): void => {
     ['--conversation', conversationId, '-p', prompt, '--dangerously-skip-permissions'],
     {
       cwd: resolveProjectPath(),
-      detached: true,
+      detached: !isWindows,
+      shell: isWindows,
       stdio: 'ignore',
     }
   );
