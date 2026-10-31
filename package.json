@@ -6,6 +6,7 @@
   "main": "dist/workflow.js",
   "types": "dist/workflow.d.ts",
   "scripts": {
+    "setup": "tsx scripts/setup.ts",
     "start": "tsx src/workflow.ts",
     "job": "tsx src/runner.ts",
     "dashboard": "tsx src/server.ts",

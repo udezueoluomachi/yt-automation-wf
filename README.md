@@ -4,6 +4,24 @@
 
 ---
 
+### 🤖 1-Click AI Agent Prompt (Instant Setup)
+
+Copy and paste this into **Google Antigravity**, **Claude Code**, **Cursor**, **Windsurf**, or **Gemini CLI** to replicate this entire system in seconds:
+
+```text
+I have cloned this repository. Please act as my Autonomous Pipeline Engineer:
+1. Inspect SETUP.md, README.md, and GEMINI.md to understand the workflow and directorial rules.
+2. Run `npm install` and `npm run setup` to verify system prerequisites and create required directories.
+3. Help me configure `.env` from `.env.example` (prompt me for my SMTP credentials and AGY conversation ID).
+4. Run `npm run typecheck` and `npm test` to verify all quality gates pass.
+5. Start the background Remote Management Dashboard (`npm run dashboard`).
+6. Trigger a test Short render using `npm run workflow -- --force` and confirm the complete review pack is dispatched.
+```
+
+*(See [SETUP.md](./SETUP.md) for detailed automated agent workflows and manual setup steps).*
+
+---
+
 ## 📌 Table of Contents
 - [Architecture & Workflow](#-architecture--workflow)
 - [Creative & Directorial Standards](#-creative--directorial-standards)
