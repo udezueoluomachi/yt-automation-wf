@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>YouTube Shorts • Remote Mission Control</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              yellow: '#FFE600',
+              dark: '#0B0F19',
+              card: '#151D2E',
+              border: '#222F46',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #0B0F19; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #0B0F19; }
+    ::-webkit-scrollbar-thumb { background: #222F46; border-radius: 3px; }
+  </style>
+</head>
+<body class="text-slate-100 min-h-screen pb-20">
+
+  <!-- TOP HEADER -->
+  <header class="sticky top-0 z-30 bg-[#0B0F19]/90 backdrop-blur border-b border-brand-border px-4 py-3">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-amber-400 to-yellow-500 flex items-center justify-center shadow-lg shadow-yellow-500/20 text-black font-extrabold text-lg">
+          🎬
+        </div>
+        <div>
+          <h1 class="font-bold text-base md:text-lg tracking-tight flex items-center space-x-2">
+            <span>Shorts Mission Control</span>
+            <span class="text-[10px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-full font-mono border border-emerald-500/30">ONLINE</span>
+          </h1>
+          <p class="text-xs text-slate-400 hidden sm:block">Automated 9:16 CGI Production Pipeline</p>
+        </div>
+      </div>
+
+      <div class="flex items-center space-x-2">
+        <button onclick="refreshData()" class="p-2 rounded-lg bg-brand-card hover:bg-slate-800 border border-brand-border text-slate-300 text-xs flex items-center space-x-1 transition">
+          <svg id="refresh-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+          <span class="hidden md:inline">Sync</span>
+        </button>
+        <button onclick="openAddModal()" class="px-3 py-1.5 rounded-lg bg-yellow-400 hover:bg-yellow-300 text-black font-semibold text-xs transition shadow-md shadow-yellow-400/20 flex items-center space-x-1">
+          <span>+ Add Short</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 pt-6 space-y-6">
+
+    <!-- OVERVIEW STATS -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <div class="bg-brand-card border border-brand-border rounded-xl p-3.5 flex flex-col justify-between">
+        <span class="text-xs text-slate-400 font-medium">Total Shorts</span>
+        <span id="stat-total" class="text-2xl font-black text-white mt-1">--</span>
+      </div>
+      <div class="bg-brand-card border border-brand-border rounded-xl p-3.5 flex flex-col justify-between">
+        <span class="text-xs text-emerald-400 font-medium">Completed</span>
+        <span id="stat-done" class="text-2xl font-black text-emerald-400 mt-1">--</span>
+      </div>
+      <div class="bg-brand-card border border-brand-border rounded-xl p-3.5 flex flex-col justify-between">
+        <span class="text-xs text-amber-400 font-medium">Pending Queue</span>
+        <span id="stat-pending" class="text-2xl font-black text-amber-400 mt-1">--</span>
+      </div>
+      <div class="bg-brand-card border border-brand-border rounded-xl p-3.5 flex flex-col justify-between">
+        <span class="text-xs text-purple-400 font-medium">Next Scheduled</span>
+        <span id="stat-next" class="text-sm font-bold text-slate-200 mt-1 truncate">--</span>
+      </div>
+    </div>
+
+    <!-- SEARCH & FILTER BAR -->
+    <div class="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-between">
+      <!-- Status Pills -->
+      <div class="flex items-center space-x-1 bg-brand-card border border-brand-border p-1 rounded-xl text-xs overflow-x-auto">
+        <button onclick="setStatusFilter('ALL')" id="tab-ALL" class="filter-tab px-3 py-1.5 rounded-lg font-medium bg-yellow-400 text-black transition">All</button>
+        <button onclick="setStatusFilter('PENDING')" id="tab-PENDING" class="filter-tab px-3 py-1.5 rounded-lg font-medium text-slate-400 hover:text-white transition">Pending</button>
+        <button onclick="setStatusFilter('DONE')" id="tab-DONE" class="filter-tab px-3 py-1.5 rounded-lg font-medium text-slate-400 hover:text-white transition">Done</button>
+        <button onclick="setStatusFilter('FAILED')" id="tab-FAILED" class="filter-tab px-3 py-1.5 rounded-lg font-medium text-slate-400 hover:text-white transition">Failed</button>
+      </div>
+
+      <!-- Search Input -->
+      <div class="relative flex-1 sm:max-w-xs">
+        <input
+          type="text"
+          id="search-input"
+          oninput="handleSearch(this.value)"
+          placeholder="Search topic or ID..."
+          class="w-full bg-brand-card border border-brand-border rounded-xl px-3.5 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-yellow-400 transition"
+        />
+      </div>
+    </div>
+
+    <!-- CALENDAR CARDS LIST -->
+    <div id="calendar-container" class="space-y-3">
+      <!-- Dynamic cards rendered here -->
+      <div class="text-center py-12 text-slate-500 text-sm">Loading content calendar...</div>
+    </div>
+
+  </main>
+
+  <!-- VIDEO PREVIEW MODAL -->
+  <div id="video-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-brand-card border border-brand-border rounded-2xl max-w-sm w-full overflow-hidden shadow-2xl relative flex flex-col items-center p-4">
+      <div class="w-full flex justify-between items-center pb-2 mb-2 border-b border-brand-border">
+        <h3 id="video-modal-title" class="text-xs font-bold text-yellow-400 truncate max-w-[240px]">Preview</h3>
+        <button onclick="closeVideoModal()" class="text-slate-400 hover:text-white text-lg font-bold">&times;</button>
+      </div>
+      <div class="w-full aspect-[9/16] bg-black rounded-xl overflow-hidden relative flex items-center justify-center">
+        <video id="player" controls playsinline class="w-full h-full object-contain"></video>
+      </div>
+      <div class="w-full mt-3 flex justify-end">
+        <a id="video-download-btn" href="#" download class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg border border-brand-border">
+          📥 Download MP4
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- EDIT / ADD MODAL -->
+  <div id="edit-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-brand-card border border-brand-border rounded-2xl max-w-lg w-full p-5 shadow-2xl relative my-8">
+      <div class="flex justify-between items-center pb-3 border-b border-brand-border mb-4">
+        <h3 id="modal-heading" class="text-sm font-bold text-white">Edit YouTube Short</h3>
+        <button onclick="closeEditModal()" class="text-slate-400 hover:text-white text-lg font-bold">&times;</button>
+      </div>
+
+      <form id="edit-form" onsubmit="saveEntry(event)" class="space-y-4 text-xs">
+        <input type="hidden" id="entry-serialId" />
+
+        <div>
+          <label class="block text-slate-400 mb-1 font-medium">Topic / Title</label>
+          <input type="text" id="entry-topic" required class="w-full bg-[#0B0F19] border border-brand-border rounded-xl p-2.5 text-white focus:outline-none focus:border-yellow-400 text-xs" />
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-slate-400 mb-1 font-medium">Scheduled Date</label>
+            <input type="date" id="entry-date" required class="w-full bg-[#0B0F19] border border-brand-border rounded-xl p-2.5 text-white focus:outline-none focus:border-yellow-400 text-xs" />
+          </div>
+          <div>
+            <label class="block text-slate-400 mb-1 font-medium">Slot Time</label>
+            <select id="entry-time" class="w-full bg-[#0B0F19] border border-brand-border rounded-xl p-2.5 text-white focus:outline-none focus:border-yellow-400 text-xs">
+              <option value="08:00">08:00 (Morning)</option>
+              <option value="13:00">13:00 (Afternoon)</option>
+              <option value="18:00">18:00 (Evening)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-slate-400 mb-1 font-medium">Status</label>
+            <select id="entry-status" class="w-full bg-[#0B0F19] border border-brand-border rounded-xl p-2.5 text-white focus:outline-none focus:border-yellow-400 text-xs">
+              <option value="PENDING">PENDING</option>
+              <option value="DONE">DONE</option>
+              <option value="FAILED">FAILED</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-slate-400 mb-1 font-medium">Duration (Seconds)</label>
+            <input type="number" id="entry-duration" value="16" min="10" max="30" class="w-full bg-[#0B0F19] border border-brand-border rounded-xl p-2.5 text-white focus:outline-none focus:border-yellow-400 text-xs" />
+          </div>
+        </div>
+
+        <div class="pt-3 border-t border-brand-border flex justify-between items-center">
+          <button type="button" id="btn-delete" onclick="deleteCurrentEntry()" class="text-rose-400 hover:text-rose-300 font-medium">Delete</button>
+          <div class="flex space-x-2">
+            <button type="button" onclick="closeEditModal()" class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700">Cancel</button>
+            <button type="submit" class="px-4 py-1.5 rounded-lg bg-yellow-400 hover:bg-yellow-300 text-black font-semibold">Save Changes</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    let calendarData = [];
+    let currentFilter = 'ALL';
+    let searchQuery = '';
+
+    async function loadStats() {
+      try {
+        const res = await fetch('/api/status');
+        const json = await res.json();
+        if (json.success) {
+          document.getElementById('stat-total').innerText = json.stats.total;
+          document.getElementById('stat-done').innerText = json.stats.done;
+          document.getElementById('stat-pending').innerText = json.stats.pending;
+          if (json.nextScheduled) {
+            document.getElementById('stat-next').innerText = `${json.nextScheduled.serialId} • ${json.nextScheduled.time}`;
+          } else {
+            document.getElementById('stat-next').innerText = 'All Caught Up';
+          }
+        }
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    async function loadCalendar() {
+      try {
+        let url = `/api/calendar?status=${currentFilter}`;
+        if (searchQuery) url += `&search=${encodeURIComponent(searchQuery)}`;
+        const res = await fetch(url);
+        const json = await res.json();
+        if (json.success) {
+          calendarData = json.data;
+          renderList();
+        }
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    function renderList() {
+      const container = document.getElementById('calendar-container');
+      if (!calendarData || calendarData.length === 0) {
+        container.innerHTML = '<div class="text-center py-12 text-slate-500 text-sm">No Shorts found matching filter.</div>';
+        return;
+      }
+
+      container.innerHTML = calendarData.map(item => {
+        const isDone = item.status === 'DONE';
+        const isFailed = item.status === 'FAILED';
+        const statusBadge = isDone
+          ? '<span class="px-2 py-0.5 text-[10px] font-bold rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">DONE</span>'
+          : isFailed
+          ? '<span class="px-2 py-0.5 text-[10px] font-bold rounded-full bg-rose-500/20 text-rose-400 border border-rose-500/30">FAILED</span>'
+          : '<span class="px-2 py-0.5 text-[10px] font-bold rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30">PENDING</span>';
+
+        return `
+          <div class="bg-brand-card border border-brand-border rounded-xl p-4 transition hover:border-slate-700 space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-2">
+                <span class="font-mono text-xs font-bold text-yellow-400">${item.serialId}</span>
+                <span class="text-slate-500">•</span>
+                <span class="text-xs text-slate-400 font-medium">${item.scheduledDate} (${item.scheduledTime || '08:00'})</span>
+                <span class="text-slate-500 hidden sm:inline">•</span>
+                <span class="text-xs text-slate-400 hidden sm:inline">${item.slotName || 'Slot ' + item.slot}</span>
+              </div>
+              <div>${statusBadge}</div>
+            </div>
+
+            <div class="font-semibold text-sm text-slate-100 leading-snug">
+              ${item.title || item.topic}
+            </div>
+
+            <!-- Acts accordion / preview -->
+            ${item.clips && item.clips.length > 0 ? `
+              <div class="bg-[#0B0F19]/60 rounded-lg p-2.5 text-[11px] text-slate-400 space-y-1 border border-brand-border/60">
+                <div class="text-slate-500 font-mono text-[10px] uppercase tracking-wider">Act Breakdown (${item.clips.length} Clips • ~${item.targetDurationSeconds || 16}s)</div>
+                <div class="truncate text-slate-300"><b>1:</b> "${item.clips[0].spokenLine}"</div>
+                ${item.clips[1] ? `<div class="truncate text-slate-300"><b>2:</b> "${item.clips[1].spokenLine}"</div>` : ''}
+              </div>
+            ` : ''}
+
+            <div class="flex items-center justify-between pt-1">
+              <div class="flex space-x-2">
+                <button onclick="editEntry('${item.serialId}')" class="px-2.5 py-1 text-xs rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-brand-border">
+                  ✏️ Edit
+                </button>
+                ${isDone ? `
+                  <button onclick="playVideo('${item.serialId}', '${encodeURIComponent(item.title || item.topic)}')" class="px-2.5 py-1 text-xs rounded-lg bg-emerald-950/60 hover:bg-emerald-900/80 text-emerald-300 border border-emerald-800/40 font-medium">
+                    🎬 Preview Video
+                  </button>
+                ` : ''}
+              </div>
+
+              <div>
+                <button onclick="produceNow('${item.serialId}')" id="btn-produce-${item.serialId}" class="px-3 py-1 text-xs rounded-lg bg-yellow-400 hover:bg-yellow-300 text-black font-bold shadow-md shadow-yellow-400/10 flex items-center space-x-1">
+                  <span>▶️ Produce</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function setStatusFilter(status) {
+      currentFilter = status;
+      document.querySelectorAll('.filter-tab').forEach(tab => {
+        tab.className = 'filter-tab px-3 py-1.5 rounded-lg font-medium text-slate-400 hover:text-white transition';
+      });
+      const active = document.getElementById(`tab-${status}`);
+      if (active) active.className = 'filter-tab px-3 py-1.5 rounded-lg font-medium bg-yellow-400 text-black transition';
+      loadCalendar();
+    }
+
+    function handleSearch(val) {
+      searchQuery = val.trim();
+      loadCalendar();
+    }
+
+    async function refreshData() {
+      const icon = document.getElementById('refresh-icon');
+      icon.classList.add('animate-spin');
+      await Promise.all([loadStats(), loadCalendar()]);
+      setTimeout(() => icon.classList.remove('animate-spin'), 400);
+    }
+
+    async function produceNow(serialId) {
+      const btn = document.getElementById(`btn-produce-${serialId}`);
+      if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = `<span class="animate-spin inline-block mr-1">⏳</span> Triggering...`;
+      }
+
+      try {
+        const res = await fetch(`/api/produce/${serialId}`, { method: 'POST' });
+        const json = await res.json();
+        alert(json.message);
+      } catch (e) {
+        alert('Failed to trigger production: ' + e.message);
+      } finally {
+        if (btn) {
+          btn.disabled = false;
+          btn.innerHTML = `<span>▶️ Produce</span>`;
+        }
+      }
+    }
+
+    function playVideo(serialId, title) {
+      const modal = document.getElementById('video-modal');
+      const player = document.getElementById('player');
+      const titleElem = document.getElementById('video-modal-title');
+      const downloadBtn = document.getElementById('video-download-btn');
+
+      titleElem.innerText = decodeURIComponent(title);
+      player.src = `/out/${serialId}.mp4`;
+      downloadBtn.href = `/out/${serialId}.mp4`;
+      player.load();
+      player.play();
+      modal.classList.remove('hidden');
+    }
+
+    function closeVideoModal() {
+      const modal = document.getElementById('video-modal');
+      const player = document.getElementById('player');
+      player.pause();
+      player.src = '';
+      modal.classList.add('hidden');
+    }
+
+    function editEntry(serialId) {
+      const entry = calendarData.find(c => c.serialId === serialId);
+      if (!entry) return;
+
+      document.getElementById('modal-heading').innerText = `Edit [${entry.serialId}]`;
+      document.getElementById('entry-serialId').value = entry.serialId;
+      document.getElementById('entry-topic').value = entry.title || entry.topic;
+      document.getElementById('entry-date').value = entry.scheduledDate;
+      document.getElementById('entry-time').value = entry.scheduledTime || '08:00';
+      document.getElementById('entry-status').value = entry.status;
+      document.getElementById('entry-duration').value = entry.targetDurationSeconds || 16;
+      document.getElementById('btn-delete').classList.remove('hidden');
+
+      document.getElementById('edit-modal').classList.remove('hidden');
+    }
+
+    function openAddModal() {
+      document.getElementById('modal-heading').innerText = 'Add New Short to Calendar';
+      document.getElementById('entry-serialId').value = '';
+      document.getElementById('entry-topic').value = '';
+      document.getElementById('entry-date').value = new Date().toISOString().split('T')[0];
+      document.getElementById('entry-time').value = '08:00';
+      document.getElementById('entry-status').value = 'PENDING';
+      document.getElementById('entry-duration').value = 16;
+      document.getElementById('btn-delete').classList.add('hidden');
+
+      document.getElementById('edit-modal').classList.remove('hidden');
+    }
+
+    function closeEditModal() {
+      document.getElementById('edit-modal').classList.add('hidden');
+    }
+
+    async function saveEntry(e) {
+      e.preventDefault();
+      const serialId = document.getElementById('entry-serialId').value;
+      const topic = document.getElementById('entry-topic').value;
+      const scheduledDate = document.getElementById('entry-date').value;
+      const scheduledTime = document.getElementById('entry-time').value;
+      const status = document.getElementById('entry-status').value;
+      const targetDurationSeconds = parseInt(document.getElementById('entry-duration').value, 10);
+
+      const payload = {
+        topic,
+        title: topic,
+        scheduledDate,
+        scheduledTime,
+        status,
+        targetDurationSeconds,
+      };
+
+      try {
+        if (serialId) {
+          await fetch(`/api/calendar/${serialId}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+        } else {
+          await fetch('/api/calendar', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+        }
+        closeEditModal();
+        refreshData();
+      } catch (err) {
+        alert('Failed to save: ' + err.message);
+      }
+    }
+
+    async function deleteCurrentEntry() {
+      const serialId = document.getElementById('entry-serialId').value;
+      if (!serialId) return;
+      if (!confirm(`Are you sure you want to delete ${serialId}?`)) return;
+
+      try {
+        await fetch(`/api/calendar/${serialId}`, { method: 'DELETE' });
+        closeEditModal();
+        refreshData();
+      } catch (err) {
+        alert('Failed to delete: ' + err.message);
+      }
+    }
+
+    // Auto-refresh every 60 seconds
+    setInterval(refreshData, 60000);
+
+    // Initial load
+    refreshData();
+  </script>
+</body>
+</html>

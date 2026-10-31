@@ -7,6 +7,7 @@
   "types": "dist/workflow.d.ts",
   "scripts": {
     "start": "tsx src/workflow.ts",
+    "dashboard": "tsx src/server.ts",
     "workflow": "tsx src/workflow.ts",
     "update-calendar": "tsx scripts/update-calendar-times.ts",
     "chrome:debug": "google-chrome --remote-debugging-port=9333",
@@ -19,12 +20,14 @@
     "@remotion/media": "^4.0.539",
     "@remotion/renderer": "^4.0.539",
     "dotenv": "^16.4.5",
+    "express": "^5.3.0",
     "nodemailer": "^6.9.15",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "remotion": "^4.0.539"
   },
   "devDependencies": {
+    "@types/express": "^5.0.6",
     "@types/node": "^20.14.0",
     "@types/nodemailer": "^6.4.16",
     "@types/react": "^18.3.31",
