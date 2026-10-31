@@ -15,6 +15,7 @@ const defaultProps: ShortCompositionProps = {
       spokenLine:
         'Replace the bones in your leg with a titanium frame and a massive torsion spring.',
       sfxCue: 'Pneumatic hiss, metallic lock click',
+      mediaPath: 'clips/clip1.mp4',
     },
     {
       clipIndex: 2,
@@ -24,6 +25,7 @@ const defaultProps: ShortCompositionProps = {
       spokenLine:
         'As you crouch, the springs twist tighter, storing energy instead of letting it escape.',
       sfxCue: 'High-tension ratchet winding sound',
+      mediaPath: 'clips/clip2.mp4',
     },
     {
       clipIndex: 3,
@@ -33,6 +35,7 @@ const defaultProps: ShortCompositionProps = {
       spokenLine:
         'When you push off, the latches release all at once, launching you high enough to clear a house.',
       sfxCue: 'Sonic boom / spring release snap',
+      mediaPath: 'clips/clip3.mp4',
     },
   ],
 };

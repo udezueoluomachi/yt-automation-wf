@@ -6,6 +6,7 @@ import type {
   PipelineExecutionOptions,
 } from './types/calendar.js';
 import { sendReviewEmail } from './mailer.js';
+import { renderShortVideo } from './render.js';
 import { getCalendarPath, getOutDir } from './paths.js';
 
 dotenv.config();
@@ -89,6 +90,8 @@ export async function runTimedPipeline(
 
     if (dryRun) {
       console.log(`[DryRun] Simulated compilation to: ${outputVideoPath}`);
+    } else {
+      await renderShortVideo(task);
     }
 
     // STEP 3: Dispatch Email Notification with Video Attachment

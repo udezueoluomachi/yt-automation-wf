@@ -3,7 +3,7 @@
     "serialId": "VID-001",
     "scheduledDate": "2026-11-01",
     "slot": 1,
-    "status": "PENDING",
+    "status": "DONE",
     "topic": "What happens if you replace your femur with a titanium torsion spring?",
     "targetDurationSeconds": 28,
     "clips": [

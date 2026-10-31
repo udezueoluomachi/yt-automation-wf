@@ -21,9 +21,20 @@ export async function getRemotionBundle(): Promise<string> {
   }
 
   console.log(`[Remotion] Bundling composition from: ${entryPoint}...`);
+  const publicDir = resolveProjectPath('public');
   cachedBundleLocation = await bundle({
     entryPoint,
-    webpackOverride: (config) => config,
+    publicDir,
+    webpackOverride: (config) => ({
+      ...config,
+      resolve: {
+        ...config.resolve,
+        extensionAlias: {
+          '.js': ['.ts', '.tsx', '.js'],
+          '.mjs': ['.mts', '.mjs'],
+        },
+      },
+    }),
   });
 
   console.log(`[Remotion] Bundled successfully.`);
@@ -55,7 +66,12 @@ export async function renderShortVideo(
     serialId: entry.serialId,
     topic: entry.topic || entry.title || '',
     targetDurationSeconds: totalDuration,
-    clips: entry.clips,
+    clips: entry.clips.map((c, i) => ({
+      ...c,
+      mediaPath:
+        (c as { mediaPath?: string }).mediaPath ||
+        `clips/clip${c.clipIndex || i + 1}.mp4`,
+    })),
   };
 
   const composition = await selectComposition({
