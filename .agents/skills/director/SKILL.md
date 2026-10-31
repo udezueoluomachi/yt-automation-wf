@@ -72,3 +72,11 @@ Each short in `calendar.json` follows a 3-clip narrative arc:
    - Set total duration to match natural audio length (~15–20s).
    - Render clean, boxless kinetic subtitles with dynamic scale punches.
    - Render to `out/[serialId].mp4`.
+
+5. **Complete Production Asset Dispatch:**
+   - Dispatch review email via `sendReviewEmail` with ALL production files attached:
+     - `[serialId]_Final_Render.mp4`
+     - `[serialId]_Voiceover.mp3`
+     - `[serialId]_Raw_Clip_01.mp4`, `02.mp4`, etc.
+     - `[serialId]_Edit_Manifest.txt` (act timestamps, narration lines, SFX cues, and mobile editing tips for CapCut/VN/Premiere Rush).
+   - Ensures the producer can review or manually edit independently on mobile away from the workstation.

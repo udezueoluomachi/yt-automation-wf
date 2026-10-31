@@ -103,6 +103,7 @@ export async function runTimedPipeline(
         serialId: task.serialId,
         title,
         videoPath: outputVideoPath,
+        entry: task,
       });
     }
 

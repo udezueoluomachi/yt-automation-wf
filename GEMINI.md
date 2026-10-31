@@ -48,6 +48,15 @@ flowchart TD
 - **No dark background boxes/containers behind captions.**
 - Captions must float directly over the 3D video as raw, bold kinetic typography (`#FFE600` active word highlights, `#FFFFFF` text with solid black drop shadow/stroke).
 
+### 📦 Complete Production Package Email Dispatch
+- **Always attach all raw & edited assets for independent editing:**
+  1. `[serialId]_Final_Render.mp4`: Complete compiled short with kinetic captions and voiceover.
+  2. `[serialId]_Voiceover.mp3`: Clean voiceover track (Ludo, Google AI Studio TTS).
+  3. `[serialId]_Raw_Clip_01.mp4`, `02.mp4`, etc.: Individual 3D CGI clips (Google Flow).
+  4. `[serialId]_Edit_Manifest.txt`: Plain text document containing act-by-act narration lines, visual prompts, SFX cues, and mobile editing tips (CapCut / VN).
+- **Auto-fallback on size limits:** If the combined size exceeds SMTP provider limits, automatically dispatch in two parts (Part 1: Render & Audio, Part 2: Raw Clips).
+- **Mobile First:** Assets are cleanly labeled so the user can import directly into phone video editors when away from their desk.
+
 ### 🔒 Git Hygiene (Zero Media in Git)
 - Media files (`.mp4`, `.mp3`, `.wav`, `.mov`) must **never** be committed to Git.
 - `public/audio/`, `public/clips/`, and `out/` are strictly ignored in `.gitignore`.

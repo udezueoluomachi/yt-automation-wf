@@ -43,6 +43,10 @@ export interface ReviewEmailOptions {
   title: string;
   videoPath: string;
   recipientEmail?: string;
+  audioPath?: string;
+  rawClips?: string[];
+  manifestText?: string;
+  entry?: CalendarEntry;
 }
 
 export interface PipelineExecutionOptions {
