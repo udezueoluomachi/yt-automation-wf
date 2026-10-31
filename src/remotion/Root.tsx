@@ -11,7 +11,7 @@ const defaultProps: ShortCompositionProps = {
       clipIndex: 1,
       durationSeconds: 9,
       visualAction:
-        'Cutaway 3D skeletal leg, femur bone glows neon green and dissolves into a polished blue titanium frame with a heavy torsion spring.',
+        'Stylized 3D CGI anatomical model of human leg, femur bone glows neon green and dissolves into a polished blue titanium frame with a heavy torsion spring.',
       spokenLine:
         'Replace the bones in your leg with a titanium frame and a massive torsion spring.',
       sfxCue: 'Pneumatic hiss, metallic lock click',
@@ -21,7 +21,7 @@ const defaultProps: ShortCompositionProps = {
       clipIndex: 2,
       durationSeconds: 10,
       visualAction:
-        'Close-up macro shot of the torsion spring tightening and glowing red as a 3D character model crouches down.',
+        'Close-up macro shot of the torsion spring tightening and glowing red as a 3D mannequin model crouches down.',
       spokenLine:
         'As you crouch, the springs twist tighter, storing energy instead of letting it escape.',
       sfxCue: 'High-tension ratchet winding sound',
@@ -31,7 +31,7 @@ const defaultProps: ShortCompositionProps = {
       clipIndex: 3,
       durationSeconds: 9,
       visualAction:
-        'Wide shot of character launching off a stone courtyard, clearing an entire suburban house in a single superhuman bound.',
+        'Stylized 3D CGI character launching off a stone courtyard, clearing an entire suburban house in a single superhuman bound.',
       spokenLine:
         'When you push off, the latches release all at once, launching you high enough to clear a house.',
       sfxCue: 'Sonic boom / spring release snap',

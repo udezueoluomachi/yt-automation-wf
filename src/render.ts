@@ -62,10 +62,20 @@ export async function renderShortVideo(
     entry.clips.reduce((acc, c) => acc + (c.durationSeconds || 0), 0) ||
     28;
 
+  const audioCandidate = path.join(
+    resolveProjectPath('public'),
+    'audio',
+    `${entry.serialId}.mp3`
+  );
+  const audioVoiceoverPath = fs.existsSync(audioCandidate)
+    ? `audio/${entry.serialId}.mp3`
+    : (entry as { audioVoiceoverPath?: string }).audioVoiceoverPath;
+
   const inputProps = {
     serialId: entry.serialId,
     topic: entry.topic || entry.title || '',
     targetDurationSeconds: totalDuration,
+    audioVoiceoverPath,
     clips: entry.clips.map((c, i) => ({
       ...c,
       mediaPath:

@@ -1,14 +1,12 @@
 import React from 'react';
 import {
   AbsoluteFill,
-  interpolate,
   useCurrentFrame,
   useVideoConfig,
   Sequence,
-  Easing,
   staticFile,
 } from 'remotion';
-import { Video } from '@remotion/media';
+import { Video, Audio } from '@remotion/media';
 
 export interface ClipItem {
   clipIndex: number;
@@ -24,6 +22,7 @@ export type ShortCompositionProps = {
   topic: string;
   targetDurationSeconds: number;
   clips: ClipItem[];
+  audioVoiceoverPath?: string;
   [key: string]: unknown;
 };
 
@@ -42,17 +41,24 @@ function resolveMediaUrl(mediaPath?: string, clipIndex?: number): string {
   return staticFile(`clips/clip${clipIndex || 1}.mp4`);
 }
 
-export const ShortComposition: React.FC<ShortCompositionProps> = ({
-  serialId,
-  topic,
-  targetDurationSeconds,
-  clips,
-}) => {
-  const frame = useCurrentFrame();
-  const { fps, durationInFrames, width, height } = useVideoConfig();
+function resolveAudioUrl(audioPath?: string): string | null {
+  if (!audioPath) return null;
+  if (
+    audioPath.startsWith('http://') ||
+    audioPath.startsWith('https://') ||
+    audioPath.startsWith('data:')
+  ) {
+    return audioPath;
+  }
+  const clean = audioPath.replace(/^\/+/, '');
+  return staticFile(clean);
+}
 
-  // Overall progress bar (0% to 100%)
-  const progressPercent = Math.min(100, (frame / durationInFrames) * 100);
+export const ShortComposition: React.FC<ShortCompositionProps> = ({
+  clips,
+  audioVoiceoverPath,
+}) => {
+  const { fps, width, height } = useVideoConfig();
 
   // Calculate cumulative start frames for each clip
   let runningFrame = 0;
@@ -67,10 +73,12 @@ export const ShortComposition: React.FC<ShortCompositionProps> = ({
     };
   });
 
+  const voiceoverUrl = resolveAudioUrl(audioVoiceoverPath);
+
   return (
     <AbsoluteFill
       style={{
-        backgroundColor: '#05070d',
+        backgroundColor: '#000000',
         color: '#ffffff',
         fontFamily:
           "'Montserrat', 'Arial Black', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
@@ -79,7 +87,10 @@ export const ShortComposition: React.FC<ShortCompositionProps> = ({
         height,
       }}
     >
-      {/* 1. Sequential Clips (Video + SFX + Kinetic Captions) */}
+      {/* 1. Optional Voiceover Audio Track (from Google AI Studio) */}
+      {voiceoverUrl && <Audio src={voiceoverUrl} />}
+
+      {/* 2. Sequential Video Clips */}
       {clipRanges.map(({ clip, from, durationFrames }) => (
         <Sequence
           key={clip.clipIndex}
@@ -88,292 +99,39 @@ export const ShortComposition: React.FC<ShortCompositionProps> = ({
         >
           <ClipScene
             clip={clip}
-            totalClips={clips.length}
             clipDurationFrames={durationFrames}
           />
         </Sequence>
       ))}
-
-      {/* 2. Top Header & Title Overlay (persistent across whole Short) */}
-      <TopOverlay
-        serialId={serialId}
-        topic={topic}
-        progressPercent={progressPercent}
-        frame={frame}
-        fps={fps}
-        targetDurationSeconds={
-          targetDurationSeconds || Math.round(durationInFrames / fps)
-        }
-      />
-
-      {/* 3. Bottom Brand Watermark */}
-      <div
-        style={{
-          position: 'absolute',
-          bottom: 36,
-          left: 0,
-          right: 0,
-          textAlign: 'center',
-          fontSize: 22,
-          fontWeight: 800,
-          letterSpacing: '0.22em',
-          color: 'rgba(255, 255, 255, 0.45)',
-          textTransform: 'uppercase',
-          textShadow: '0 2px 8px rgba(0,0,0,0.8)',
-          pointerEvents: 'none',
-          zIndex: 60,
-        }}
-      >
-        YT SHORTS LAB • OMNI VEO
-      </div>
     </AbsoluteFill>
   );
 };
 
 /**
- * Top floating bar & hook headline
- */
-const TopOverlay: React.FC<{
-  serialId: string;
-  topic: string;
-  progressPercent: number;
-  frame: number;
-  fps: number;
-  targetDurationSeconds: number;
-}> = ({ serialId, topic, progressPercent, frame, fps, targetDurationSeconds }) => {
-  return (
-    <div
-      style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        padding: '50px 48px 30px 48px',
-        background:
-          'linear-gradient(180deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0) 100%)',
-        zIndex: 50,
-        pointerEvents: 'none',
-      }}
-    >
-      {/* Sleek Glowing Progress Bar */}
-      <div
-        style={{
-          width: '100%',
-          height: 8,
-          backgroundColor: 'rgba(255, 255, 255, 0.2)',
-          borderRadius: 8,
-          overflow: 'hidden',
-          marginBottom: 24,
-          boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
-        }}
-      >
-        <div
-          style={{
-            width: `${progressPercent}%`,
-            height: '100%',
-            background: 'linear-gradient(90deg, #10b981, #06b6d4, #3b82f6)',
-            boxShadow: '0 0 16px rgba(16, 185, 129, 0.9)',
-          }}
-        />
-      </div>
-
-      {/* Meta Header Row */}
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          marginBottom: 16,
-        }}
-      >
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 12,
-            backgroundColor: 'rgba(255, 255, 255, 0.12)',
-            padding: '8px 20px',
-            borderRadius: 24,
-            backdropFilter: 'blur(16px)',
-            border: '1px solid rgba(255, 255, 255, 0.2)',
-          }}
-        >
-          <div
-            style={{
-              width: 12,
-              height: 12,
-              borderRadius: '50%',
-              backgroundColor: '#ef4444',
-              boxShadow: '0 0 10px #ef4444',
-            }}
-          />
-          <span
-            style={{
-              fontSize: 22,
-              fontWeight: 800,
-              letterSpacing: '0.08em',
-              textTransform: 'uppercase',
-              color: '#ffffff',
-            }}
-          >
-            {serialId || 'YT-001'} • WHAT IF?
-          </span>
-        </div>
-
-        <div
-          style={{
-            fontSize: 22,
-            fontWeight: 700,
-            color: '#cbd5e1',
-            backgroundColor: 'rgba(0, 0, 0, 0.55)',
-            padding: '8px 18px',
-            borderRadius: 20,
-            border: '1px solid rgba(255, 255, 255, 0.1)',
-          }}
-        >
-          {Math.floor(frame / fps)}s / {targetDurationSeconds}s
-        </div>
-      </div>
-
-      {/* Main Punchy Topic Hook */}
-      <div
-        style={{
-          backgroundColor: 'rgba(10, 15, 28, 0.75)',
-          padding: '20px 28px',
-          borderRadius: 24,
-          backdropFilter: 'blur(20px)',
-          border: '1px solid rgba(255, 255, 255, 0.18)',
-          boxShadow: '0 16px 36px rgba(0, 0, 0, 0.5)',
-        }}
-      >
-        <h1
-          style={{
-            fontSize: 38,
-            lineHeight: 1.25,
-            fontWeight: 900,
-            margin: 0,
-            color: '#ffffff',
-            letterSpacing: '-0.02em',
-            textShadow: '0 3px 12px rgba(0,0,0,0.85)',
-          }}
-        >
-          {topic}
-        </h1>
-      </div>
-    </div>
-  );
-};
-
-/**
- * Single Clip Scene: Fullscreen Video Background + SFX Badge + Kinetic Subtitle
+ * Single Clip Scene: Fullscreen Video Background + Clean Text-Only Kinetic Captions
  */
 const ClipScene: React.FC<{
   clip: ClipItem;
-  totalClips: number;
   clipDurationFrames: number;
-}> = ({ clip, totalClips, clipDurationFrames }) => {
+}> = ({ clip, clipDurationFrames }) => {
   const frame = useCurrentFrame();
-
-  const entranceOpacity = interpolate(frame, [0, 8], [0, 1], {
-    extrapolateRight: 'clamp',
-  });
-  const exitOpacity = interpolate(
-    frame,
-    [clipDurationFrames - 6, clipDurationFrames],
-    [1, 0.3],
-    {
-      extrapolateLeft: 'clamp',
-      extrapolateRight: 'clamp',
-    }
-  );
-  const opacity = Math.min(entranceOpacity, exitOpacity);
-
-  // Pop-in scale for the SFX Badge
-  const sfxScale = interpolate(frame, [5, 18], [0, 1], {
-    extrapolateLeft: 'clamp',
-    extrapolateRight: 'clamp',
-    easing: Easing.bezier(0.175, 0.885, 0.32, 1.275),
-  });
-
   const mediaUrl = resolveMediaUrl(clip.mediaPath, clip.clipIndex);
 
   return (
-    <AbsoluteFill style={{ opacity }}>
-      {/* Fullscreen Background Video Layer (Veo 9:16) */}
+    <AbsoluteFill>
+      {/* Fullscreen 3D Video Background */}
       <AbsoluteFill>
         <Video
           src={mediaUrl}
+          objectFit="cover"
           style={{
             width: '100%',
             height: '100%',
-            objectFit: 'cover',
           }}
         />
       </AbsoluteFill>
 
-      {/* Dark Vignette Overlay for subtitle contrast */}
-      <AbsoluteFill
-        style={{
-          background:
-            'linear-gradient(180deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,0.15) 60%, rgba(0,0,0,0.92) 100%)',
-          pointerEvents: 'none',
-        }}
-      />
-
-      {/* Act Indicator & SFX Cue Badge (floating mid-top) */}
-      <div
-        style={{
-          position: 'absolute',
-          top: 360,
-          left: 48,
-          right: 48,
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          zIndex: 40,
-        }}
-      >
-        <div
-          style={{
-            backgroundColor: '#2563eb',
-            color: '#ffffff',
-            padding: '10px 24px',
-            borderRadius: 30,
-            fontSize: 22,
-            fontWeight: 800,
-            letterSpacing: '0.08em',
-            boxShadow: '0 6px 20px rgba(37, 99, 235, 0.5)',
-            textTransform: 'uppercase',
-          }}
-        >
-          ACT {clip.clipIndex} / {totalClips}
-        </div>
-
-        {clip.sfxCue && frame < 120 && (
-          <div
-            style={{
-              transform: `scale(${sfxScale})`,
-              transformOrigin: 'right center',
-              backgroundColor: 'rgba(245, 158, 11, 0.92)',
-              color: '#000000',
-              padding: '10px 22px',
-              borderRadius: 30,
-              fontSize: 22,
-              fontWeight: 900,
-              letterSpacing: '0.04em',
-              boxShadow: '0 6px 22px rgba(245, 158, 11, 0.6)',
-              display: 'flex',
-              alignItems: 'center',
-              gap: 8,
-            }}
-          >
-            <span>🔊</span>
-            <span>{clip.sfxCue}</span>
-          </div>
-        )}
-      </div>
-
-      {/* Kinetic Subtitle Typography (Bottom Third) */}
+      {/* Clean Kinetic Subtitle Typography (No background box, no pills) */}
       <KineticCaptions
         spokenLine={clip.spokenLine}
         clipDurationFrames={clipDurationFrames}
@@ -384,8 +142,9 @@ const ClipScene: React.FC<{
 };
 
 /**
- * Kinetic Subtitle Component
- * Displays the spoken line with animated high-impact word highlights
+ * Clean Kinetic Subtitle Component
+ * Floating directly on the screen without background containers or extra meta pills.
+ * Features high-contrast outline and punchy active word highlights.
  */
 const KineticCaptions: React.FC<{
   spokenLine: string;
@@ -395,7 +154,7 @@ const KineticCaptions: React.FC<{
   const words = spokenLine.trim().split(/\s+/);
   const totalWords = words.length;
 
-  // Calculate current active word index based on playback progress
+  // Active word calculation based on duration
   const wordDuration = clipDurationFrames / Math.max(1, totalWords);
   const currentWordIndex = Math.min(
     totalWords - 1,
@@ -406,90 +165,45 @@ const KineticCaptions: React.FC<{
     <div
       style={{
         position: 'absolute',
-        bottom: 220,
-        left: 48,
-        right: 48,
+        bottom: 280, // Safe zone above YouTube Shorts interface
+        left: 60,
+        right: 60,
         display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
+        flexWrap: 'wrap',
         justifyContent: 'center',
-        zIndex: 45,
+        alignItems: 'center',
+        gap: '12px 18px',
+        textAlign: 'center',
+        pointerEvents: 'none',
+        zIndex: 50,
       }}
     >
-      <div
-        style={{
-          backgroundColor: 'rgba(0, 0, 0, 0.82)',
-          borderRadius: 28,
-          padding: '28px 36px',
-          border: '2px solid rgba(255, 255, 255, 0.15)',
-          boxShadow: '0 20px 50px rgba(0, 0, 0, 0.85)',
-          maxWidth: 980,
-          textAlign: 'center',
-          backdropFilter: 'blur(16px)',
-        }}
-      >
-        <div
-          style={{
-            fontSize: 20,
-            fontWeight: 900,
-            letterSpacing: '0.15em',
-            color: '#38bdf8',
-            textTransform: 'uppercase',
-            marginBottom: 14,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: 8,
-          }}
-        >
-          <span>🎙️</span>
-          <span>NARRATION</span>
-        </div>
+      {words.map((word, idx) => {
+        const isActive = idx === currentWordIndex;
+        const isPast = idx < currentWordIndex;
 
-        <div
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: '10px 14px',
-          }}
-        >
-          {words.map((word, idx) => {
-            const isActive = idx === currentWordIndex;
-            const isPast = idx < currentWordIndex;
-
-            return (
-              <span
-                key={idx}
-                style={{
-                  display: 'inline-block',
-                  fontSize: isActive ? 46 : 40,
-                  fontWeight: 900,
-                  lineHeight: 1.25,
-                  transform: isActive ? 'scale(1.12)' : 'scale(1)',
-                  transition: 'all 0.1s ease-out',
-                  color: isActive
-                    ? '#facc15'
-                    : isPast
-                    ? '#ffffff'
-                    : 'rgba(255, 255, 255, 0.65)',
-                  backgroundColor: isActive
-                    ? 'rgba(234, 179, 8, 0.25)'
-                    : 'transparent',
-                  padding: isActive ? '2px 10px' : '0 2px',
-                  borderRadius: 8,
-                  textShadow: isActive
-                    ? '0 0 20px rgba(250, 204, 21, 0.8), 0 3px 6px rgba(0,0,0,0.9)'
-                    : '0 2px 6px rgba(0, 0, 0, 0.9)',
-                }}
-              >
-                {word}
-              </span>
-            );
-          })}
-        </div>
-      </div>
+        return (
+          <span
+            key={idx}
+            style={{
+              display: 'inline-block',
+              fontSize: isActive ? 52 : 46,
+              fontWeight: 900,
+              letterSpacing: '-0.01em',
+              lineHeight: 1.25,
+              textTransform: 'uppercase',
+              transform: isActive ? 'scale(1.15)' : 'scale(1)',
+              transition: 'transform 0.08s ease-out',
+              color: isActive ? '#FFE600' : isPast ? '#FFFFFF' : 'rgba(255, 255, 255, 0.75)',
+              textShadow:
+                '0 4px 16px rgba(0,0,0,0.95), 0 0 8px rgba(0,0,0,1), -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 6px 0 #000',
+              WebkitTextStroke: isActive ? '1px rgba(0,0,0,0.6)' : 'none',
+            }}
+          >
+            {word}
+          </span>
+        );
+      })}
     </div>
   );
 };

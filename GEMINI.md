@@ -9,62 +9,42 @@ All autonomous executions reuse a single persistent conversation context (`--con
 flowchart TD
     Cron["System Cron / Trigger\n(08:00, 13:00, 18:00)"] -->|Invokes agy with single conversation ID| AGY["Antigravity CLI\n(agy --conversation <id> --dangerously-skip-permissions)"]
     AGY -->|1. Reads Schedule| Cal["data/calendar.json\n(60 Scheduled Shorts)"]
-    AGY -->|2. Drives Google Flow via Kimi Extension| Kimi["Kimi WebBridge Daemon\n(127.0.0.1:10086 <-> Chrome Extension)"]
-    Kimi -->|Generates & Downloads Clips| Media["out/clips/ (Veo 9:16)"]
-    AGY -->|3. Compiles 9:16 Video| Remotion["Remotion Engine\n(src/render.ts -> out/[serialId].mp4)"]
-    AGY -->|4. Dispatches Review Email| Mail["src/mailer.ts\n(SMTP Review with Video Attachment)"]
-    AGY -->|5. Updates State| CalDone["Mark status: DONE in calendar.json"]
+    AGY -->|2. Directs Google Flow via Kimi| Flow["Google Flow (3D CGI Models Veo 9:16)"]
+    AGY -->|3. Generates Voiceover via Kimi| AIStudio["Google AI Studio (Natural Voiceover)"]
+    AGY -->|4. Compiles Clean 9:16 Video| Remotion["Remotion Engine\n(Clean Kinetic Text, No UI Clutter)"]
+    AGY -->|5. Dispatches Review Email| Mail["src/mailer.ts\n(SMTP Review with Video Attachment)"]
+    AGY -->|6. Updates State| CalDone["Mark status: DONE in calendar.json"]
 ```
 
 ---
 
-## 2. Five-Stage Production Pipeline
+## 2. Creative & Directorial Standards
 
-### Stage 1: Queue Inspection
-- Read `data/calendar.json`.
-- Identify the eligible short matching the current slot (`08:00` Morning, `13:00` Afternoon, or `18:00` Evening) whose status is `PENDING`.
-- Extract the 3 sequential clips:
-  1. **The Hook** (~8–10s): Immediate premise and disruption (`visualAction`, `spokenLine`, `sfxCue`).
-  2. **The Escalation** (~8–10s): Tension, mechanics, and macro shot.
-  3. **The Climax** (~8–10s): Release, dramatic result, and loop teaser.
+### 🚫 Strict 3D Model Policy (Zero Real Humans)
+- **Never depict or prompt real humans, live-action footage, or photos of real people.**
+- **All subjects must be stylized 3D models:** 3D anatomical models, digital mannequins, Blender/Octane CGI characters, mechanical 3D cross-sections.
+- Prompts must always include: `stylized 3D CGI model, digital mannequin, Octane 3D anatomical render` and negative prompt `real human, photo, live-action`.
 
-### Stage 2: Browser Automation via Kimi Browser Extension (WebBridge)
-- The **Kimi Browser Extension (`kimi-webbridge`)** connects Antigravity directly to your active Chrome browser with your existing Google login sessions.
-- **Daemon:** Running locally on `127.0.0.1:10086`. Check status anytime with:
-  ```bash
-  ~/.kimi-webbridge/bin/kimi-webbridge status
-  ```
-- **Skill Location:** `.agents/skills/kimi-webbridge/SKILL.md` (and globally in `~/.gemini/config/skills/kimi-webbridge`).
-- **How it works:**
-  1. The Kimi Extension in your Chrome connects to the local daemon at `127.0.0.1:10086`.
-  2. Antigravity sends JSON commands (`navigate`, `click`, `fill`, `wait`, `screenshot`) to control Google Flow (`flow.google.com`) in your active browser session.
-  3. No port restarts or second logins needed!
+### 🚫 Zero UI Clutter in Remotion
+- **No progress bars** or top timers.
+- **No act/clip indicators** ("Act 1 / 3").
+- **No narration label headers** ("🎙️ NARRATION").
+- **No dark background boxes/containers behind captions.**
+- Captions must float directly over the 3D video as raw, bold kinetic typography (`#FFE600` active word highlights, `#FFFFFF` text with solid black drop shadow/stroke).
 
-### Stage 3: Video Assembly & Kinetic Typography (Remotion)
-- Remotion composition located at `src/remotion/ShortComposition.tsx` (1080x1920, 30fps).
-- Features:
-  - Sequences the 3 clips with dynamic transitions.
-  - Kinetic typography styling the narration lines (`spokenLine`).
-  - SFX cue badges and sound placement (`sfxCue`).
-  - Top header and global progress bar.
-- Render handler: `src/render.ts` (`renderShortVideo(entry)`).
-
-### Stage 4: SMTP Notification & Review
-- Uses `src/mailer.ts` (`sendReviewEmail({ serialId, title, videoPath })`).
-- Emails the completed video to `NOTIFICATION_EMAIL` configured in `.env`.
-
-### Stage 5: State Persistence
-- Upon verified compilation and dispatch, mark the entry in `data/calendar.json` with `status: "DONE"`.
+### 🎙️ Audio Voiceover (Google AI Studio via Kimi WebBridge)
+- Automated voiceover generated via Google AI Studio (`aistudio.google.com`) using natural voices.
+- Driven autonomously through the local Kimi WebBridge extension daemon (`127.0.0.1:10086`).
+- Audio files saved to `public/audio/[serialId].mp3` and mixed directly in Remotion.
 
 ---
 
 ## 3. Autonomous Antigravity CLI Execution
 
 ### Headless Production Command
-To produce the scheduled short using the persistent conversation:
 ```bash
 agy --conversation fcdb013c-7946-4c00-8518-a92ebcf45cdd \
-  -p "Produce the scheduled YouTube Short for the current time slot. Generate clip assets via Google Flow using the Kimi browser extension, assemble in Remotion to out/, dispatch the review email, and mark as DONE." \
+  -p "Produce the scheduled YouTube Short for the current time slot. Generate 3D model clips via Google Flow, voiceover via Google AI Studio, assemble clean kinetic video in Remotion, dispatch review email, and mark as DONE." \
   --dangerously-skip-permissions
 ```
 
