@@ -32,28 +32,56 @@
 <body class="text-slate-100 min-h-screen pb-20">
 
   <!-- TOP HEADER -->
-  <header class="sticky top-0 z-30 bg-[#0B0F19]/90 backdrop-blur border-b border-brand-border px-4 py-3">
+  <header class="sticky top-0 z-30 bg-[#0B0F19]/90 backdrop-blur border-b border-brand-border px-3 sm:px-4 py-3">
     <div class="max-w-5xl mx-auto flex items-center justify-between">
-      <div class="flex items-center space-x-3">
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-amber-400 to-yellow-500 flex items-center justify-center shadow-lg shadow-yellow-500/20 text-black font-extrabold text-lg">
+      <div class="flex items-center space-x-2.5 sm:space-x-3">
+        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-amber-400 to-yellow-500 flex items-center justify-center shadow-lg shadow-yellow-500/20 text-black font-extrabold text-base sm:text-lg">
           🎬
         </div>
         <div>
-          <h1 class="font-bold text-base md:text-lg tracking-tight flex items-center space-x-2">
+          <h1 class="font-bold text-sm sm:text-base md:text-lg tracking-tight flex items-center space-x-2">
             <span>Shorts Mission Control</span>
-            <span class="text-[10px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-full font-mono border border-emerald-500/30">ONLINE</span>
+            <span class="text-[9px] sm:text-[10px] bg-emerald-500/20 text-emerald-400 px-1.5 sm:px-2 py-0.5 rounded-full font-mono border border-emerald-500/30">ONLINE</span>
           </h1>
-          <p class="text-xs text-slate-400 hidden sm:block">Automated 9:16 CGI Production Pipeline</p>
+          <p class="text-[11px] text-slate-400 hidden sm:block">Automated 9:16 CGI Production Pipeline</p>
         </div>
       </div>
 
-      <div class="flex items-center space-x-2">
-        <button onclick="refreshData()" class="p-2 rounded-lg bg-brand-card hover:bg-slate-800 border border-brand-border text-slate-300 text-xs flex items-center space-x-1 transition">
-          <svg id="refresh-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-          <span class="hidden md:inline">Sync</span>
+      <!-- Action Buttons -->
+      <div class="flex items-center space-x-1.5 sm:space-x-2">
+        <!-- Export Dropdown -->
+        <div class="relative inline-block text-left">
+          <button onclick="toggleExportMenu()" class="px-2.5 py-1.5 rounded-lg bg-brand-card hover:bg-slate-800 border border-brand-border text-slate-300 text-xs flex items-center space-x-1 transition font-medium">
+            <span>⬇️</span>
+            <span class="hidden md:inline">Export</span>
+            <svg class="w-3 h-3 text-slate-400 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div id="export-dropdown" class="hidden absolute right-0 mt-1.5 w-36 bg-brand-card border border-brand-border rounded-xl shadow-xl z-50 py-1 text-xs">
+            <a href="/api/calendar/export?format=json" download class="block px-3 py-2 text-slate-200 hover:bg-slate-800 flex items-center space-x-2">
+              <span>📄</span>
+              <span>JSON File</span>
+            </a>
+            <a href="/api/calendar/export?format=csv" download class="block px-3 py-2 text-slate-200 hover:bg-slate-800 flex items-center space-x-2">
+              <span>📊</span>
+              <span>CSV (Sheets)</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Import / Append Button -->
+        <button onclick="openImportModal()" class="px-2.5 py-1.5 rounded-lg bg-brand-card hover:bg-slate-800 border border-brand-border text-slate-200 text-xs flex items-center space-x-1 transition font-medium">
+          <span>⬆️</span>
+          <span class="hidden sm:inline">Import</span>
         </button>
-        <button onclick="openAddModal()" class="px-3 py-1.5 rounded-lg bg-yellow-400 hover:bg-yellow-300 text-black font-semibold text-xs transition shadow-md shadow-yellow-400/20 flex items-center space-x-1">
-          <span>+ Add Short</span>
+
+        <!-- Sync Button -->
+        <button onclick="refreshData()" class="p-1.5 sm:p-2 rounded-lg bg-brand-card hover:bg-slate-800 border border-brand-border text-slate-300 text-xs flex items-center transition" title="Sync Calendar">
+          <svg id="refresh-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+        </button>
+
+        <!-- Add Short Button -->
+        <button onclick="openAddModal()" class="px-2.5 sm:px-3 py-1.5 rounded-lg bg-yellow-400 hover:bg-yellow-300 text-black font-semibold text-xs transition shadow-md shadow-yellow-400/20 flex items-center space-x-1">
+          <span>+ Add</span>
         </button>
       </div>
     </div>
@@ -77,7 +105,7 @@
       </div>
       <div class="bg-brand-card border border-brand-border rounded-xl p-3.5 flex flex-col justify-between">
         <span class="text-xs text-purple-400 font-medium">Next Scheduled</span>
-        <span id="stat-next" class="text-sm font-bold text-slate-200 mt-1 truncate">--</span>
+        <span id="stat-next" class="text-xs sm:text-sm font-bold text-slate-200 mt-1 truncate">--</span>
       </div>
     </div>
 
@@ -105,11 +133,66 @@
 
     <!-- CALENDAR CARDS LIST -->
     <div id="calendar-container" class="space-y-3">
-      <!-- Dynamic cards rendered here -->
       <div class="text-center py-12 text-slate-500 text-sm">Loading content calendar...</div>
     </div>
 
   </main>
+
+  <!-- IMPORT / APPEND MODAL -->
+  <div id="import-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-brand-card border border-brand-border rounded-2xl max-w-lg w-full p-5 shadow-2xl relative my-8">
+      <div class="flex justify-between items-center pb-3 border-b border-brand-border mb-4">
+        <div>
+          <h3 class="text-sm font-bold text-white flex items-center space-x-2">
+            <span>⬆️ Import & Append Calendar</span>
+          </h3>
+          <p class="text-[11px] text-slate-400 mt-0.5">Appends new topics to your calendar. Dates & serial IDs will auto-continue.</p>
+        </div>
+        <button onclick="closeImportModal()" class="text-slate-400 hover:text-white text-lg font-bold">&times;</button>
+      </div>
+
+      <div class="space-y-4 text-xs">
+        <!-- Tabs: File or Paste -->
+        <div class="flex space-x-2 border-b border-brand-border pb-2">
+          <button id="import-tab-file" onclick="setImportMode('file')" class="px-3 py-1 rounded-lg font-semibold bg-yellow-400 text-black">Upload JSON File</button>
+          <button id="import-tab-paste" onclick="setImportMode('paste')" class="px-3 py-1 rounded-lg font-semibold text-slate-400 hover:text-white">Paste JSON Text</button>
+        </div>
+
+        <!-- File Upload Section -->
+        <div id="import-file-section" class="space-y-2">
+          <label class="block text-slate-400">Select .json calendar file:</label>
+          <input type="file" id="import-file-input" accept=".json" onchange="handleFileSelect(event)" class="w-full bg-[#0B0F19] border border-brand-border rounded-xl p-2.5 text-slate-300 focus:outline-none file:mr-3 file:py-1 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-yellow-400 file:text-black cursor-pointer" />
+        </div>
+
+        <!-- Paste Text Section -->
+        <div id="import-paste-section" class="hidden space-y-2">
+          <label class="block text-slate-400">Paste JSON array of Shorts:</label>
+          <textarea id="import-text-input" rows="6" oninput="handleTextChange()" placeholder='[ { "topic": "What if bones were carbon fiber?" }, ... ]' class="w-full bg-[#0B0F19] border border-brand-border rounded-xl p-3 text-slate-200 font-mono text-[11px] focus:outline-none focus:border-yellow-400"></textarea>
+        </div>
+
+        <!-- Preview Box -->
+        <div id="import-preview-box" class="hidden bg-[#0B0F19] border border-brand-border rounded-xl p-3 space-y-2">
+          <div class="flex items-center justify-between text-[11px]">
+            <span class="font-bold text-emerald-400 flex items-center space-x-1">
+              <span>✓</span>
+              <span id="import-preview-count">0 items ready</span>
+            </span>
+            <span class="text-slate-500 font-mono">Auto-formatting enabled</span>
+          </div>
+          <div id="import-preview-list" class="text-[11px] text-slate-300 space-y-1 max-h-28 overflow-y-auto pl-1 border-l-2 border-yellow-400/50"></div>
+        </div>
+
+        <div id="import-error-box" class="hidden p-2.5 bg-rose-950/40 border border-rose-800/40 rounded-xl text-rose-300 text-[11px]"></div>
+
+        <div class="pt-3 border-t border-brand-border flex justify-end space-x-2">
+          <button type="button" onclick="closeImportModal()" class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700">Cancel</button>
+          <button type="button" id="btn-submit-import" onclick="submitImport()" disabled class="px-4 py-1.5 rounded-lg bg-yellow-400 disabled:opacity-40 disabled:cursor-not-allowed hover:bg-yellow-300 text-black font-semibold">
+            Append to Calendar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- VIDEO PREVIEW MODAL -->
   <div id="video-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
@@ -190,6 +273,19 @@
     let calendarData = [];
     let currentFilter = 'ALL';
     let searchQuery = '';
+    let parsedImportItems = [];
+
+    function toggleExportMenu() {
+      const menu = document.getElementById('export-dropdown');
+      menu.classList.toggle('hidden');
+    }
+
+    document.addEventListener('click', (e) => {
+      const dropdown = document.getElementById('export-dropdown');
+      if (!e.target.closest('#export-dropdown') && !e.target.closest('button[onclick="toggleExportMenu()"]')) {
+        dropdown.classList.add('hidden');
+      }
+    });
 
     async function loadStats() {
       try {
@@ -438,6 +534,132 @@
         refreshData();
       } catch (err) {
         alert('Failed to delete: ' + err.message);
+      }
+    }
+
+    // --- IMPORT / APPEND LOGIC ---
+    function openImportModal() {
+      parsedImportItems = [];
+      document.getElementById('import-preview-box').classList.add('hidden');
+      document.getElementById('import-error-box').classList.add('hidden');
+      document.getElementById('btn-submit-import').disabled = true;
+      document.getElementById('import-file-input').value = '';
+      document.getElementById('import-text-input').value = '';
+      document.getElementById('import-modal').classList.remove('hidden');
+    }
+
+    function closeImportModal() {
+      document.getElementById('import-modal').classList.add('hidden');
+    }
+
+    function setImportMode(mode) {
+      const fileTab = document.getElementById('import-tab-file');
+      const pasteTab = document.getElementById('import-tab-paste');
+      const fileSec = document.getElementById('import-file-section');
+      const pasteSec = document.getElementById('import-paste-section');
+
+      if (mode === 'file') {
+        fileTab.className = 'px-3 py-1 rounded-lg font-semibold bg-yellow-400 text-black';
+        pasteTab.className = 'px-3 py-1 rounded-lg font-semibold text-slate-400 hover:text-white';
+        fileSec.classList.remove('hidden');
+        pasteSec.classList.add('hidden');
+      } else {
+        pasteTab.className = 'px-3 py-1 rounded-lg font-semibold bg-yellow-400 text-black';
+        fileTab.className = 'px-3 py-1 rounded-lg font-semibold text-slate-400 hover:text-white';
+        pasteSec.classList.remove('hidden');
+        fileSec.classList.add('hidden');
+      }
+    }
+
+    function handleFileSelect(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        try {
+          const raw = e.target.result;
+          const parsed = JSON.parse(raw);
+          parseIncomingData(parsed);
+        } catch (err) {
+          showImportError('Invalid JSON file format: ' + err.message);
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    function handleTextChange() {
+      const val = document.getElementById('import-text-input').value.trim();
+      if (!val) {
+        document.getElementById('import-preview-box').classList.add('hidden');
+        document.getElementById('btn-submit-import').disabled = true;
+        return;
+      }
+
+      try {
+        const parsed = JSON.parse(val);
+        parseIncomingData(parsed);
+      } catch (err) {
+        showImportError('Invalid JSON syntax: ' + err.message);
+      }
+    }
+
+    function parseIncomingData(data) {
+      const items = Array.isArray(data) ? data : (data.items && Array.isArray(data.items) ? data.items : [data]);
+      if (!items || items.length === 0) {
+        showImportError('No items found in uploaded data.');
+        return;
+      }
+
+      parsedImportItems = items;
+      document.getElementById('import-error-box').classList.add('hidden');
+
+      const previewBox = document.getElementById('import-preview-box');
+      const countElem = document.getElementById('import-preview-count');
+      const listElem = document.getElementById('import-preview-list');
+
+      countElem.innerText = `${items.length} Shorts parsed and ready to append`;
+      listElem.innerHTML = items.slice(0, 5).map((it, idx) => `
+        <div class="truncate">• <b>#${idx + 1}:</b> ${it.topic || it.title || 'Untitled topic'}</div>
+      `).join('') + (items.length > 5 ? `<div class="text-slate-500 italic">+ ${items.length - 5} more...</div>` : '');
+
+      previewBox.classList.remove('hidden');
+      document.getElementById('btn-submit-import').disabled = false;
+    }
+
+    function showImportError(msg) {
+      const errorBox = document.getElementById('import-error-box');
+      errorBox.innerText = msg;
+      errorBox.classList.remove('hidden');
+      document.getElementById('import-preview-box').classList.add('hidden');
+      document.getElementById('btn-submit-import').disabled = true;
+    }
+
+    async function submitImport() {
+      if (!parsedImportItems || parsedImportItems.length === 0) return;
+      const btn = document.getElementById('btn-submit-import');
+      btn.disabled = true;
+      btn.innerText = 'Appending...';
+
+      try {
+        const res = await fetch('/api/calendar/import', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(parsedImportItems)
+        });
+        const json = await res.json();
+        if (json.success) {
+          alert(`🎉 ${json.message}\nTotal calendar count is now: ${json.totalCount}`);
+          closeImportModal();
+          refreshData();
+        } else {
+          alert('Import error: ' + json.error);
+        }
+      } catch (err) {
+        alert('Failed to import: ' + err.message);
+      } finally {
+        btn.disabled = false;
+        btn.innerText = 'Append to Calendar';
       }
     }
 

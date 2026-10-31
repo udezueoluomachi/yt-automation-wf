@@ -4,6 +4,11 @@ import path from 'path';
 import { loadCalendar, saveCalendar } from './workflow.js';
 import { getOutDir, resolveProjectPath } from './paths.js';
 import type { CalendarEntry } from './types/calendar.js';
+import {
+  exportCalendarJson,
+  exportCalendarCsv,
+  importAndAppendCalendar,
+} from './calendar-io.js';
 import { spawn } from 'child_process';
 
 const app = express();
@@ -71,6 +76,77 @@ app.get('/api/calendar', (req: Request, res: Response): void => {
     }
 
     res.json({ success: true, count: result.length, data: result });
+  } catch (error) {
+    res.status(500).json({ success: false, error: (error as Error).message });
+  }
+});
+
+// GET /api/calendar/export - Download calendar file as JSON or CSV
+app.get('/api/calendar/export', (req: Request, res: Response): void => {
+  try {
+    const calendar = loadCalendar();
+    const format = req.query.format as string;
+    const nowStr = new Date().toISOString().split('T')[0]!;
+
+    if (format === 'csv') {
+      const csv = exportCalendarCsv(calendar);
+      res.setHeader('Content-Type', 'text/csv');
+      res.setHeader(
+        'Content-Disposition',
+        `attachment; filename="calendar-${nowStr}.csv"`
+      );
+      res.send(csv);
+    } else {
+      const json = exportCalendarJson(calendar);
+      res.setHeader('Content-Type', 'application/json');
+      res.setHeader(
+        'Content-Disposition',
+        `attachment; filename="calendar-${nowStr}.json"`
+      );
+      res.send(json);
+    }
+  } catch (error) {
+    res.status(500).json({ success: false, error: (error as Error).message });
+  }
+});
+
+// POST /api/calendar/import - Upload and append calendar items
+app.post('/api/calendar/import', (req: Request, res: Response): void => {
+  try {
+    const calendar = loadCalendar();
+    const body = req.body;
+    let itemsToImport: Partial<CalendarEntry>[] = [];
+
+    if (Array.isArray(body)) {
+      itemsToImport = body;
+    } else if (body && Array.isArray(body.items)) {
+      itemsToImport = body.items;
+    } else if (body && typeof body === 'object') {
+      itemsToImport = [body];
+    }
+
+    if (itemsToImport.length === 0) {
+      res.status(400).json({
+        success: false,
+        error: 'No valid calendar items found to import.',
+      });
+      return;
+    }
+
+    const { updatedCalendar, addedItems, addedCount } = importAndAppendCalendar(
+      calendar,
+      itemsToImport
+    );
+
+    saveCalendar(updatedCalendar);
+
+    res.json({
+      success: true,
+      message: `Successfully appended ${addedCount} new Shorts to the calendar.`,
+      addedCount,
+      totalCount: updatedCalendar.length,
+      addedItems,
+    });
   } catch (error) {
     res.status(500).json({ success: false, error: (error as Error).message });
   }
