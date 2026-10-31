@@ -5,3 +5,8 @@ tools/
 *.log
 out/
 public/clips/
+public/audio/
+*.mp4
+*.mp3
+*.wav
+*.mov

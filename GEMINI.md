@@ -33,9 +33,10 @@ flowchart TD
 - Captions must float directly over the 3D video as raw, bold kinetic typography (`#FFE600` active word highlights, `#FFFFFF` text with solid black drop shadow/stroke).
 
 ### 🎙️ Audio Voiceover (Google AI Studio via Kimi WebBridge)
-- Automated voiceover generated via Google AI Studio (`aistudio.google.com`) using natural voices.
-- Driven autonomously through the local Kimi WebBridge extension daemon (`127.0.0.1:10086`).
-- Audio files saved to `public/audio/[serialId].mp3` and mixed directly in Remotion.
+- **Standard Voice:** **`Ludo`** (Gemini 3.8 Flash TTS in Google AI Studio).
+- **Tone Profile:** Confident, clear, articulate, low-pitch male voice modeled on the curiosity-driven, fast-paced cadence of *Zack D. Films* without copyright/infringement flags.
+- **Workflow:** Automated voiceover generated via Google AI Studio (`aistudio.google.com/generate-speech?model=gemini-3.8-flash-tts`) driven through the local Kimi WebBridge extension daemon (`127.0.0.1:10086`).
+- **Integration:** Audio saved to `public/audio/[serialId].mp3` and mixed directly in Remotion (`<Audio src={audioVoiceoverPath} />`).
 
 ---
 

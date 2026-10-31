@@ -6,6 +6,7 @@
     "status": "DONE",
     "topic": "What happens if you replace your femur with a titanium torsion spring?",
     "targetDurationSeconds": 28,
+    "audioVoiceoverPath": "audio/VID-001.mp3",
     "clips": [
       {
         "clipIndex": 1,

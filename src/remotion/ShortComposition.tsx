@@ -87,7 +87,7 @@ export const ShortComposition: React.FC<ShortCompositionProps> = ({
         height,
       }}
     >
-      {/* 1. Optional Voiceover Audio Track (from Google AI Studio) */}
+      {/* 1. Synchronized Voiceover Audio Track (Ludo / Zack D. Films style) */}
       {voiceoverUrl && <Audio src={voiceoverUrl} />}
 
       {/* 2. Sequential Video Clips */}
@@ -144,7 +144,7 @@ const ClipScene: React.FC<{
 /**
  * Clean Kinetic Subtitle Component
  * Floating directly on the screen without background containers or extra meta pills.
- * Features high-contrast outline and punchy active word highlights.
+ * Highlights words in sync with the spoken voiceover line.
  */
 const KineticCaptions: React.FC<{
   spokenLine: string;
@@ -154,12 +154,13 @@ const KineticCaptions: React.FC<{
   const words = spokenLine.trim().split(/\s+/);
   const totalWords = words.length;
 
-  // Active word calculation based on duration
-  const wordDuration = clipDurationFrames / Math.max(1, totalWords);
-  const currentWordIndex = Math.min(
-    totalWords - 1,
-    Math.floor(frame / wordDuration)
-  );
+  // The narration for this clip's sentence spans roughly 5.2 seconds (156 frames at 30fps)
+  const speechFrames = Math.min(clipDurationFrames, Math.round(5.2 * 30));
+  const wordDuration = speechFrames / Math.max(1, totalWords);
+  const isSpeechFinished = frame >= speechFrames;
+  const currentWordIndex = isSpeechFinished
+    ? totalWords - 1
+    : Math.min(totalWords - 1, Math.floor(frame / wordDuration));
 
   return (
     <div
@@ -179,8 +180,8 @@ const KineticCaptions: React.FC<{
       }}
     >
       {words.map((word, idx) => {
-        const isActive = idx === currentWordIndex;
-        const isPast = idx < currentWordIndex;
+        const isActive = !isSpeechFinished && idx === currentWordIndex;
+        const isPast = isSpeechFinished || idx < currentWordIndex;
 
         return (
           <span
