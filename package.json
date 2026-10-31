@@ -1,0 +1,27 @@
+{
+  "name": "yt-shorts-engine",
+  "version": "1.0.0",
+  "description": "YouTube Shorts Automated Production Workflow",
+  "type": "module",
+  "main": "dist/workflow.js",
+  "types": "dist/workflow.d.ts",
+  "scripts": {
+    "start": "tsx src/workflow.ts",
+    "workflow": "tsx src/workflow.ts",
+    "update-calendar": "tsx scripts/update-calendar-times.ts",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "nodemailer": "^6.9.15"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/nodemailer": "^6.4.16",
+    "tsx": "^4.19.0",
+    "typescript": "^5.4.0",
+    "vitest": "^2.1.4"
+  }
+}

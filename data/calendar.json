@@ -1,0 +1,2042 @@
+[
+  {
+    "serialId": "VID-001",
+    "scheduledDate": "2026-11-01",
+    "slot": 1,
+    "status": "PENDING",
+    "topic": "What happens if you replace your femur with a titanium torsion spring?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Cutaway 3D skeletal leg, femur bone glows neon green and dissolves into a polished blue titanium frame with a heavy torsion spring.",
+        "spokenLine": "Replace the bones in your leg with a titanium frame and a massive torsion spring.",
+        "sfxCue": "Pneumatic hiss, metallic lock click"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Close-up macro shot of the torsion spring tightening and glowing red as a 3D character model crouches down.",
+        "spokenLine": "As you crouch, the springs twist tighter, storing energy instead of letting it escape.",
+        "sfxCue": "High-tension ratchet winding sound"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Wide shot of character launching off a stone courtyard, clearing an entire suburban house in a single superhuman bound.",
+        "spokenLine": "When you push off, the latches release all at once, launching you high enough to clear a house.",
+        "sfxCue": "Sonic boom / spring release snap"
+      }
+    ],
+    "title": "What happens if you replace your femur with a titanium torsion spring?",
+    "scheduledTime": "08:00",
+    "slotName": "Morning"
+  },
+  {
+    "serialId": "VID-002",
+    "scheduledDate": "2026-11-01",
+    "slot": 2,
+    "status": "PENDING",
+    "topic": "What if your heart was replaced with a maglev turbine pump?",
+    "targetDurationSeconds": 27,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "3D human torso cross-section, heart area highlighted in green and replaced with a magnetic levitation turbine rotor.",
+        "spokenLine": "Replace your natural heart with a frictionless maglev turbine pump spinning at ten thousand RPM.",
+        "sfxCue": "High-pitch electric whine"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 9,
+        "visualAction": "Macro shot of blood cells rushing through smooth titanium channels without friction or wear.",
+        "spokenLine": "Blood cells glide through magnetic fields with zero friction, eliminating heart attacks entirely.",
+        "sfxCue": "Smooth liquid rush sound"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Character running on a treadmill, chest glowing blue with a battery status indicator showing 100% capacity.",
+        "spokenLine": "Plug your chest into a USB-C port for thirty minutes, and you are good for an entire week.",
+        "sfxCue": "Digital chime notification"
+      }
+    ],
+    "title": "What if your heart was replaced with a maglev turbine pump?",
+    "scheduledTime": "13:00",
+    "slotName": "Afternoon"
+  },
+  {
+    "serialId": "VID-003",
+    "scheduledDate": "2026-11-01",
+    "slot": 3,
+    "status": "PENDING",
+    "topic": "What if your skull was lined with carbon-nanotube armor plates?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Transparent 3D skull model opening up as woven carbon nanotube hexagonal plates lock seamlessly over the brain.",
+        "spokenLine": "Line your skull interior with interlocking hexagonal carbon nanotube armor plates.",
+        "sfxCue": "Mechanical snap-fit click"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "A high-speed steel hammer strikes the side of the head; the shockwave disperses instantly across the hexagonal grid.",
+        "spokenLine": "Impact force is instantly distributed across the entire dome instead of focusing on one point.",
+        "sfxCue": "Deep bass shockwave thump"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Character shakes off the blow smiling, looking directly into the camera lens with glowing HUD eyes.",
+        "spokenLine": "Concussions become a thing of the past, and heavy impacts feel like a gentle tap.",
+        "sfxCue": "Futuristic power hum"
+      }
+    ],
+    "title": "What if your skull was lined with carbon-nanotube armor plates?",
+    "scheduledTime": "18:00",
+    "slotName": "Evening"
+  },
+  {
+    "serialId": "VID-004",
+    "scheduledDate": "2026-11-02",
+    "slot": 1,
+    "status": "PENDING",
+    "topic": "What if your spine had built-in hydraulic shock absorbers?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Close-up of human vertebrae separating as miniature nitrogen-charged hydraulic dampeners insert between each disc.",
+        "spokenLine": "Install nitrogen-charged hydraulic dampeners between every single vertebra in your spine.",
+        "sfxCue": "Pneumatic cylinder slide"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Character jumping off a ten-foot ledge and landing heavily on heels; pistons compress and absorb 95 percent of the force.",
+        "spokenLine": "When you land from high heights, the pistons compress and absorb ninety-five percent of the impact.",
+        "sfxCue": "Heavy air compression whoosh"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Spine glowing neon green, returning instantly to neutral position with zero spinal compression damage.",
+        "spokenLine": "Your back stays completely straight, protecting your discs from lifetime wear and tear.",
+        "sfxCue": "Clean mechanical lock"
+      }
+    ],
+    "title": "What if your spine had built-in hydraulic shock absorbers?",
+    "scheduledTime": "08:00",
+    "slotName": "Morning"
+  },
+  {
+    "serialId": "VID-005",
+    "scheduledDate": "2026-11-02",
+    "slot": 2,
+    "status": "PENDING",
+    "topic": "What if your lungs were upgraded to titanium oxygenators?",
+    "targetDurationSeconds": 27,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Ribcage opening to reveal spongy lungs retracting, replaced by dual honeycomb titanium oxygenator chambers.",
+        "spokenLine": "Replace your biological lungs with high-efficiency honeycomb titanium gas-exchange chambers.",
+        "sfxCue": "Valve open hiss"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 9,
+        "visualAction": "Macro shot of micro-filters extracting oxygen directly from water or thin air with glowing indicators.",
+        "spokenLine": "Micro-filters extract oxygen molecules instantly, letting you breathe underwater for hours.",
+        "sfxCue": "Bubbling liquid pump"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Character swimming deep underwater effortlessly with mechanical ripples trailing from their chest.",
+        "spokenLine": "You will never run out of breath during cardio or deep-sea diving ever again.",
+        "sfxCue": "Submerged sonar ping"
+      }
+    ],
+    "title": "What if your lungs were upgraded to titanium oxygenators?",
+    "scheduledTime": "13:00",
+    "slotName": "Afternoon"
+  },
+  {
+    "serialId": "VID-006",
+    "scheduledDate": "2026-11-02",
+    "slot": 3,
+    "status": "PENDING",
+    "topic": "What if your forearms had built-in pneumatic winches?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Forearm muscle tissue retracting to expose high-tensile steel cables wrapped around a motorized winch drum.",
+        "spokenLine": "Embed a high-tensile steel cable winch inside the radius and ulna bones of each forearm.",
+        "sfxCue": "Motor whir and cable spool"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Character shooting a grappling hook from their wrist up to a skyscraper ledge, locking instantly.",
+        "spokenLine": "Fire a tungsten grappling hook from your wrist to scale buildings at fifty miles per hour.",
+        "sfxCue": "Hook launch snap"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Winch motor pulling the character upward rapidly against gravity with sparks flying from the spool.",
+        "spokenLine": "The internal electric motor pulls your entire body weight upward with zero arm strain.",
+        "sfxCue": "High-torque electric spin"
+      }
+    ],
+    "title": "What if your forearms had built-in pneumatic winches?",
+    "scheduledTime": "18:00",
+    "slotName": "Evening"
+  },
+  {
+    "serialId": "VID-007",
+    "scheduledDate": "2026-11-03",
+    "slot": 1,
+    "status": "PENDING",
+    "topic": "What if your eyes were upgraded to optical zoom lenses?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Macro view of human eye pupils expanding into mechanical aperture iris rings with glass lens elements.",
+        "spokenLine": "Replace your natural eye lenses with twenty-times optical zoom mechanical glass apertures.",
+        "sfxCue": "Aperture click and focus whir"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "View shifts to extreme telephoto zoom across a city skyline, locking onto a license plate two miles away.",
+        "spokenLine": "Zoom in on objects miles away with crisp crystal-clear stabilization and thermal overlays.",
+        "sfxCue": "Digital zoom click and HUD sweep"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Character blinking twice to snap a high-resolution photo with a shutter sound effect.",
+        "spokenLine": "Capture high-resolution screenshots and record video straight from your field of view instantly.",
+        "sfxCue": "Camera shutter click"
+      }
+    ],
+    "title": "What if your eyes were upgraded to optical zoom lenses?",
+    "scheduledTime": "08:00",
+    "slotName": "Morning"
+  },
+  {
+    "serialId": "VID-008",
+    "scheduledDate": "2026-11-03",
+    "slot": 2,
+    "status": "PENDING",
+    "topic": "What if your hands had micro-servo finger actuators?",
+    "targetDurationSeconds": 27,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Skin of human fingers peeling back to reveal miniature brushless servo motors and carbon tendons.",
+        "spokenLine": "Integrate micro-servo actuators and carbon-fiber tendons into each finger joint.",
+        "sfxCue": "High-frequency servo hum"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 9,
+        "visualAction": "Character crushing a solid steel nut between two fingers with steel strain gauges glowing red.",
+        "spokenLine": "Exert up to five hundred pounds of crushing force with absolute millimeter precision.",
+        "sfxCue": "Steel crunch and strain beep"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Character threading a microscopic needle effortlessly on the first try with magnified micro-vision.",
+        "spokenLine": "Lock your hand movements into dead-steady robotic stillness for delicate surgical tasks.",
+        "sfxCue": "Lock engage chime"
+      }
+    ],
+    "title": "What if your hands had micro-servo finger actuators?",
+    "scheduledTime": "13:00",
+    "slotName": "Afternoon"
+  },
+  {
+    "serialId": "VID-009",
+    "scheduledDate": "2026-11-03",
+    "slot": 3,
+    "status": "PENDING",
+    "topic": "What if your skin had built-in solar panels?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Arm skin shimmering as transparent photovoltaic micro-scales rise and catch sunlight.",
+        "spokenLine": "Coat your entire epidermis in transparent microscopic photovoltaic solar scales.",
+        "sfxCue": "Soft energy hum"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Energy flowing through subcutaneous glowing conduits into an internal biological lithium-ion battery.",
+        "spokenLine": "Soak up sunlight all day to convert ultraviolet rays directly into clean metabolic electricity.",
+        "sfxCue": "Current flowing sound"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Character charging a smartphone directly by plugging a cable into their forearm port outdoors.",
+        "spokenLine": "You will never need to plug your devices into a wall outlet again when you are the power source.",
+        "sfxCue": "Device charging chime"
+      }
+    ],
+    "title": "What if your skin had built-in solar panels?",
+    "scheduledTime": "18:00",
+    "slotName": "Evening"
+  },
+  {
+    "serialId": "VID-010",
+    "scheduledDate": "2026-11-04",
+    "slot": 1,
+    "status": "PENDING",
+    "topic": "What if your ribs were replaced with titanium roll cages?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Chest cavity opening to reveal natural ribs snapping off and replacing with interlocking tubular titanium bars.",
+        "spokenLine": "Replace your ribcage with an FIA-certified tubular titanium racing roll cage.",
+        "sfxCue": "Heavy metal wrench and bolt"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "A massive boulder rolling over the character's chest; the titanium cage deflects the load completely.",
+        "spokenLine": "Crushing weights and high-speed car impacts bounce off your torso without breaking a single bone.",
+        "sfxCue": "Massive structural impact boom"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Character standing up smiling from the rubble, brushing dust off their undamaged shirt.",
+        "spokenLine": "Internal organs stay completely safe inside an impenetrable steel fortress.",
+        "sfxCue": "Metallic ring tone"
+      }
+    ],
+    "title": "What if your ribs were replaced with titanium roll cages?",
+    "scheduledTime": "08:00",
+    "slotName": "Morning"
+  },
+  {
+    "serialId": "VID-011",
+    "scheduledDate": "2026-11-04",
+    "slot": 2,
+    "status": "PENDING",
+    "topic": "What if your tongue had a built-in multi-tool?",
+    "targetDurationSeconds": 27,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "X-ray view of mouth showing a deployable titanium multi-tool blade and hex wrench hidden under the tongue.",
+        "spokenLine": "Embed a deployable titanium multi-tool and laser cutter underneath your tongue tissue.",
+        "sfxCue": "Surgical slide mechanism"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 9,
+        "visualAction": "Character slicing open a heavy shipping box or cutting wire effortlessly using mouth motion.",
+        "spokenLine": "Cut through zip ties, strip electrical wires, and tighten tiny screws using only your mouth.",
+        "sfxCue": "Clean metal snip"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Retracting the blade smoothly back into the sublingual slot with a watertight seal locking.",
+        "spokenLine": "It retracts safely behind a watertight biopolymer seal when you are ready to eat or speak.",
+        "sfxCue": "Seal click"
+      }
+    ],
+    "title": "What if your tongue had a built-in multi-tool?",
+    "scheduledTime": "13:00",
+    "slotName": "Afternoon"
+  },
+  {
+    "serialId": "VID-012",
+    "scheduledDate": "2026-11-04",
+    "slot": 3,
+    "status": "PENDING",
+    "topic": "What if your calves had jet-turbine micro-thrusters?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Calf muscle opening up to reveal twin micro-turbine combustion chambers with glowing blue exhaust nozzles.",
+        "spokenLine": "Mount twin hydrogen micro-turbine thrusters directly into the back of each calf muscle.",
+        "sfxCue": "Turbine spool-up whine"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Character igniting thrusters while running, shooting forward across a track at one hundred miles per hour.",
+        "spokenLine": "Ignite the afterburners to sprint at highway speeds and leave a trail of blue plasma fire.",
+        "sfxCue": "Jet roar and sonic ripple"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Landing gracefully as thrust vectoring nozzles pivot downward to brake instantly.",
+        "spokenLine": "Vector nozzles pivot downward on landing to bring you to an immediate dead stop.",
+        "sfxCue": "Retro-thruster puff"
+      }
+    ],
+    "title": "What if your calves had jet-turbine micro-thrusters?",
+    "scheduledTime": "18:00",
+    "slotName": "Evening"
+  },
+  {
+    "serialId": "VID-013",
+    "scheduledDate": "2026-11-05",
+    "slot": 1,
+    "status": "PENDING",
+    "topic": "What if your shoulders had gyroscopic stabilizer rings?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Shoulder socket scanned with X-ray, revealing dual spinning brass gyroscope rings running on magnetic bearings.",
+        "spokenLine": "Install high-speed gyroscopic stabilizer rings inside both shoulder sockets.",
+        "sfxCue": "High-RPM gyro spin hum"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Character walking across a tightrope in a hurricane while their upper body remains perfectly level and stable.",
+        "spokenLine": "No matter how much you slip or stumble, gyros instantly lock your upper body level to the horizon.",
+        "sfxCue": "Servo adjustment click"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Carrying a tray stacked with full wine glasses across rough terrain without spilling a single drop.",
+        "spokenLine": "Walk across earthquake rubble or tightropes without spilling a single drop of water.",
+        "sfxCue": "Calm ambient chime"
+      }
+    ],
+    "title": "What if your shoulders had gyroscopic stabilizer rings?",
+    "scheduledTime": "08:00",
+    "slotName": "Morning"
+  },
+  {
+    "serialId": "VID-014",
+    "scheduledDate": "2026-11-05",
+    "slot": 2,
+    "status": "PENDING",
+    "topic": "What if your ears had ultrasonic radar echolocation?",
+    "targetDurationSeconds": 27,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Inner ear bones glowing as piezoelectric sonar transducers integrate with the cochlea.",
+        "spokenLine": "Upgrade your inner ear cochlea with piezoelectric ultrasonic sonar transducers.",
+        "sfxCue": "Subtle sonar pulse ping"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 9,
+        "visualAction": "Character standing in total pitch blackness while a 3D wireframe map of the room renders in their mind.",
+        "spokenLine": "Emit silent soundwaves to render a complete 3D wireframe map of rooms in total darkness.",
+        "sfxCue": "Radar sweep sound"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Hearing a whisper from across a crowded football stadium clearly through directional audio filtering.",
+        "spokenLine": "Isolate and amplify a single conversation from across a crowded football stadium.",
+        "sfxCue": "Audio zoom frequency filter"
+      }
+    ],
+    "title": "What if your ears had ultrasonic radar echolocation?",
+    "scheduledTime": "13:00",
+    "slotName": "Afternoon"
+  },
+  {
+    "serialId": "VID-015",
+    "scheduledDate": "2026-11-05",
+    "slot": 3,
+    "status": "PENDING",
+    "topic": "What if your blood had nanobots to heal wounds instantly?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Microscopic view of bloodstream swarming with millions of silver medical nanobots carrying fresh platelets.",
+        "spokenLine": "Inject trillions of self-repairing medical nanobots into your circulatory bloodstream.",
+        "sfxCue": "Microscopic mechanical whir"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "A knife cuts deep into skin; nanobots swarm the wound site, knitting tissue and skin back together in three seconds.",
+        "spokenLine": "When you get cut or bruised, nanobots swarm the injury and knit tissue back together in seconds.",
+        "sfxCue": "Rapid tissue stitch zap"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Skin returning to pristine condition instantly with zero scarring or blood loss.",
+        "spokenLine": "Bleeding is completely eliminated, and scars become a thing of ancient history.",
+        "sfxCue": "Success chime"
+      }
+    ],
+    "title": "What if your blood had nanobots to heal wounds instantly?",
+    "scheduledTime": "18:00",
+    "slotName": "Evening"
+  },
+  {
+    "serialId": "VID-016",
+    "scheduledDate": "2026-11-06",
+    "slot": 1,
+    "status": "PENDING",
+    "topic": "What if your teeth were made of industrial tungsten carbide?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Dental scan showing enamel teeth dissolving and replacing with matte-grey tungsten carbide crowns.",
+        "spokenLine": "Replace your tooth enamel with indestructible industrial tungsten carbide implants.",
+        "sfxCue": "Grinding metal tool"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Character biting down and chewing solid granite rock into fine dust with sparks flying.",
+        "spokenLine": "Crunch through solid granite rocks, iron nails, and steel bolts like they are potato chips.",
+        "sfxCue": "Rock crush and metal grind"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Smiling into the mirror showing gleaming indestructible industrial teeth with zero wear.",
+        "spokenLine": "Cavities, root canals, and chipped teeth are permanently engineered out of existence.",
+        "sfxCue": "Polished ding sound"
+      }
+    ],
+    "title": "What if your teeth were made of industrial tungsten carbide?",
+    "scheduledTime": "08:00",
+    "slotName": "Morning"
+  },
+  {
+    "serialId": "VID-017",
+    "scheduledDate": "2026-11-06",
+    "slot": 2,
+    "status": "PENDING",
+    "topic": "What if your feet had magnetic clamp boots?",
+    "targetDurationSeconds": 27,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Soles of feet splitting open to reveal powerful rare-earth electromagnet coils wired to nerve impulses.",
+        "spokenLine": "Embed rare-earth electromagnet coils into the sole bones of both feet.",
+        "sfxCue": "Electromagnet charge hum"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 9,
+        "visualAction": "Character walking upside down on the metal ceiling of a tunnel, sticking firmly with each step.",
+        "spokenLine": "Flip a mental switch to walk upside down along steel ceilings and vertical bridges at will.",
+        "sfxCue": "Magnetic snap lock"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Releasing magnetic polarity instantly to drop safely back down to the floor.",
+        "spokenLine": "Deactivate the field instantly with a thought whenever you want to return to the ground.",
+        "sfxCue": "Magnetic field release"
+      }
+    ],
+    "title": "What if your feet had magnetic clamp boots?",
+    "scheduledTime": "13:00",
+    "slotName": "Afternoon"
+  },
+  {
+    "serialId": "VID-018",
+    "scheduledDate": "2026-11-06",
+    "slot": 3,
+    "status": "PENDING",
+    "topic": "What if your neck had a 360-degree swivel joint?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Neck vertebrae replaced by a smooth stainless steel ball-and-socket bearing joint with flexible wiring.",
+        "spokenLine": "Replace your cervical vertebrae with a stainless steel 360-degree ball-bearing swivel joint.",
+        "sfxCue": "Smooth ball bearing roll"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Character looking straight forward while their entire head rotates completely backward to see behind them.",
+        "spokenLine": "Rotate your head all the way around to check your blind spots without turning your torso.",
+        "sfxCue": "Mechanical pivot click"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Head snapping back to front instantly with fluid optical cable slack management.",
+        "spokenLine": "Internal slip-rings keep your optical and neural cables from ever tangling or twisting.",
+        "sfxCue": "Lock engage click"
+      }
+    ],
+    "title": "What if your neck had a 360-degree swivel joint?",
+    "scheduledTime": "18:00",
+    "slotName": "Evening"
+  },
+  {
+    "serialId": "VID-019",
+    "scheduledDate": "2026-11-07",
+    "slot": 1,
+    "status": "PENDING",
+    "topic": "What if your elbows had hydraulic locking struts?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Elbow joint opening to install high-pressure hydraulic locking struts alongside tendon cables.",
+        "spokenLine": "Install high-pressure hydraulic locking struts across each elbow joint.",
+        "sfxCue": "Hydraulic fluid pressure valve"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Character holding a two-ton steel beam overhead with locked arms, showing zero muscle fatigue or bend.",
+        "spokenLine": "Lock your arms in place to hold heavy loads indefinitely without expending a single calorie of energy.",
+        "sfxCue": "Heavy locking pin slam"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Releasing the valve instantly to bend the arm smoothly with a whoosh of air.",
+        "spokenLine": "Hit the release trigger to instantly regain fluid arm mobility and flexibility.",
+        "sfxCue": "Pressure release hiss"
+      }
+    ],
+    "title": "What if your elbows had hydraulic locking struts?",
+    "scheduledTime": "08:00",
+    "slotName": "Morning"
+  },
+  {
+    "serialId": "VID-020",
+    "scheduledDate": "2026-11-07",
+    "slot": 2,
+    "status": "PENDING",
+    "topic": "What if your sweat glands produced cooling liquid nitrogen?",
+    "targetDurationSeconds": 27,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Skin cross-section showing sweat glands re-routed to micro-cryogenic cooling tanks filled with liquid coolant.",
+        "spokenLine": "Re-route your sweat glands into micro-cryogenic liquid coolant reservoirs.",
+        "sfxCue": "Cryo tank valve click"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 9,
+        "visualAction": "Character standing in a blazing desert fire while frost forms instantly on their skin, keeping them at room temp.",
+        "spokenLine": "When body temperature spikes, release a fine mist of frost that instantly neutralizes extreme heat.",
+        "sfxCue": "Frost evaporation hiss"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Steaming cool vapor rising from the skin as the character smiles comfortably in volcanic heat.",
+        "spokenLine": "You will never overheat, sweat uncomfortably, or suffer from heatstroke again.",
+        "sfxCue": "Cooling fan whir"
+      }
+    ],
+    "title": "What if your sweat glands produced cooling liquid nitrogen?",
+    "scheduledTime": "13:00",
+    "slotName": "Afternoon"
+  },
+  {
+    "serialId": "VID-021",
+    "scheduledDate": "2026-11-07",
+    "slot": 3,
+    "status": "PENDING",
+    "topic": "What if your nose had a built-in chemical gas analyzer?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Nasal cavity scanned to reveal miniature mass spectrometer gas sensors wired directly to the olfactory nerve.",
+        "spokenLine": "Integrate a miniature mass spectrometer gas analyzer directly into your nasal cavity.",
+        "sfxCue": "Sensor scan beep"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Character sniffing a suspicious room; a glowing HUD appears in their vision identifying toxic carbon monoxide gas.",
+        "spokenLine": "Instantly detect poisonous gases, explosives, and toxins in the air with digital ppm readouts.",
+        "sfxCue": "Warning alarm pulse"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Internal air filter vents sealing shut automatically to block the toxic fumes.",
+        "spokenLine": "Automatic micro-filters seal your airway the second dangerous airborne chemicals are detected.",
+        "sfxCue": "Airtight valve snap"
+      }
+    ],
+    "title": "What if your nose had a built-in chemical gas analyzer?",
+    "scheduledTime": "18:00",
+    "slotName": "Evening"
+  },
+  {
+    "serialId": "VID-022",
+    "scheduledDate": "2026-11-08",
+    "slot": 1,
+    "status": "PENDING",
+    "topic": "What if your hips had motorized ball bearings for infinite walking?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Hip joints replaced with motorized titanium ball bearings connected to kinetic energy generators.",
+        "spokenLine": "Replace your hip sockets with motorized titanium ball-bearing assemblies.",
+        "sfxCue": "Electric motor hum"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Character walking across continents for days straight without stopping, hips glowing with kinetic charge.",
+        "spokenLine": "Walk across entire countries for days at a time without feeling an ounce of leg fatigue.",
+        "sfxCue": "Rhythmic stride click"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Energy recovered from walking being channeled directly into powering internal bionic batteries.",
+        "spokenLine": "Your stride generates enough electrical power to keep all your cybernetic implants fully charged.",
+        "sfxCue": "Battery fill chime"
+      }
+    ],
+    "title": "What if your hips had motorized ball bearings for infinite walking?",
+    "scheduledTime": "08:00",
+    "slotName": "Morning"
+  },
+  {
+    "serialId": "VID-023",
+    "scheduledDate": "2026-11-08",
+    "slot": 2,
+    "status": "PENDING",
+    "topic": "What if your knuckles had tungsten spikes?",
+    "targetDurationSeconds": 27,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Fist clenched as knuckle skin slides back to deploy half-inch hardened tungsten steel spikes.",
+        "spokenLine": "Hide retractable hardened tungsten steel spikes beneath the skin of each knuckle.",
+        "sfxCue": "Spring-loaded spike snap"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 9,
+        "visualAction": "Punching directly through a thick steel vault door, piercing the metal cleanly with zero hand damage.",
+        "spokenLine": "Punch straight through solid steel doors and concrete walls with absolute ease.",
+        "sfxCue": "Steel puncture crash"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Spikes retracting smoothly beneath the skin as the hand relaxes back to normal form.",
+        "spokenLine": "Retract them flush beneath your skin when you are done breaking things.",
+        "sfxCue": "Smooth lock click"
+      }
+    ],
+    "title": "What if your knuckles had tungsten spikes?",
+    "scheduledTime": "13:00",
+    "slotName": "Afternoon"
+  },
+  {
+    "serialId": "VID-024",
+    "scheduledDate": "2026-11-08",
+    "slot": 3,
+    "status": "PENDING",
+    "topic": "What if your voice box had an acoustic loudspeaker booster?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Throat cross-section showing vocal cords wrapped in a piezoelectric ceramic acoustic amplifier and speaker cone.",
+        "spokenLine": "Wrap your vocal cords in a piezoelectric ceramic acoustic amplifier and directional speaker.",
+        "sfxCue": "Microphone feedback whine"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Character whispering normally while soundwaves shatter glass windows across the street.",
+        "spokenLine": "Whisper softly while projecting your voice loud enough to shatter glass windows a block away.",
+        "sfxCue": "Glass shattering explosion"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Adjusting acoustic frequency dial on throat to produce deep ultrasonic frequencies that scatter crowds.",
+        "spokenLine": "Modulate your frequency to project sonic shockwaves or broadcast crystal-clear audio anywhere.",
+        "sfxCue": "Deep bass wave pulse"
+      }
+    ],
+    "title": "What if your voice box had an acoustic loudspeaker booster?",
+    "scheduledTime": "18:00",
+    "slotName": "Evening"
+  },
+  {
+    "serialId": "VID-025",
+    "scheduledDate": "2026-11-09",
+    "slot": 1,
+    "status": "PENDING",
+    "topic": "What if your stomach had an industrial acid neutralization valve?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Stomach lining fitted with a titanium valve and alkaline buffer injection ports.",
+        "spokenLine": "Install a titanium neutralization valve and alkaline buffer injector inside your stomach lining.",
+        "sfxCue": "Valve turn click"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Character swallowing a rusty iron bolt or spoiled food; stomach acid neutralizes toxins instantly.",
+        "spokenLine": "Eat anything from rusty scrap metal to spoiled food without getting food poisoning or indigestion.",
+        "sfxCue": "Chemical fizz neutralize"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Digestive system glowing green as nutrients are extracted at 100 percent efficiency with zero waste.",
+        "spokenLine": "Extract one hundred percent nutritional value from every meal with zero toxic waste leftover.",
+        "sfxCue": "Completion chime"
+      }
+    ],
+    "title": "What if your stomach had an industrial acid neutralization valve?",
+    "scheduledTime": "08:00",
+    "slotName": "Morning"
+  },
+  {
+    "serialId": "VID-026",
+    "scheduledDate": "2026-11-09",
+    "slot": 2,
+    "status": "PENDING",
+    "topic": "What if your thighs had hydraulic jump pistons?",
+    "targetDurationSeconds": 27,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Quad muscles parting to reveal high-pressure pneumatic jump cylinders running parallel to the femur.",
+        "spokenLine": "Embed high-pressure pneumatic jump cylinders inside both thigh muscles.",
+        "sfxCue": "Pneumatic charge hiss"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 9,
+        "visualAction": "Character leaping vertically over a three-story building in a single effortless bound.",
+        "spokenLine": "Release stored pneumatic pressure to leap fifty feet straight up into the air instantly.",
+        "sfxCue": "Air launch whoosh"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Pistons compressing on landing to absorb 100 percent of the downward gravitational force.",
+        "spokenLine": "Cylinders recompress on landing to cushion your joints against heavy impact forces.",
+        "sfxCue": "Hydraulic dampening thud"
+      }
+    ],
+    "title": "What if your thighs had hydraulic jump pistons?",
+    "scheduledTime": "13:00",
+    "slotName": "Afternoon"
+  },
+  {
+    "serialId": "VID-027",
+    "scheduledDate": "2026-11-09",
+    "slot": 3,
+    "status": "PENDING",
+    "topic": "What if your fingers had built-in lockpick tools?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Fingertip skin sliding open to reveal ultra-thin titanium tension wrenches and lockpick picks.",
+        "spokenLine": "Concealed micro-titanium lockpick pins slide out from the tip of each index finger.",
+        "sfxCue": "Precision metal slide"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Inserting fingers into a mechanical padlock keyhole; internal sensors feel tumbler clicks precisely.",
+        "spokenLine": "Feel tumbler pins and spring tension at a microscopic level to pick any lock in seconds.",
+        "sfxCue": "Tumbler click series"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Padlock spring opens with a satisfying snap as picks retract neatly back into the fingers.",
+        "spokenLine": "The ultimate covert tool is always attached right to your fingertips.",
+        "sfxCue": "Lock open latch snap"
+      }
+    ],
+    "title": "What if your fingers had built-in lockpick tools?",
+    "scheduledTime": "18:00",
+    "slotName": "Evening"
+  },
+  {
+    "serialId": "VID-028",
+    "scheduledDate": "2026-11-10",
+    "slot": 1,
+    "status": "PENDING",
+    "topic": "What if your forehead had a high-intensity LED searchlight?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Forehead skin parting to reveal a waterproof high-power Cree LED emitter connected to skull bone.",
+        "spokenLine": "Embed a five-thousand lumen LED searchlight directly into the center of your forehead.",
+        "sfxCue": "Power click and warm hum"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Character standing in a pitch black cave, turning on the forehead beam to illuminate a cavern a mile ahead.",
+        "spokenLine": "Project a blinding beam of white light that illuminates entire dark caves and tunnels ahead.",
+        "sfxCue": "High-power beam ignition"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Switching beam mode to infrared night vision glow with a smooth iris shutter closing.",
+        "spokenLine": "Switch seamlessly between visible floodlights and invisible infrared night vision.",
+        "sfxCue": "Iris shutter click"
+      }
+    ],
+    "title": "What if your forehead had a high-intensity LED searchlight?",
+    "scheduledTime": "08:00",
+    "slotName": "Morning"
+  },
+  {
+    "serialId": "VID-029",
+    "scheduledDate": "2026-11-10",
+    "slot": 2,
+    "status": "PENDING",
+    "topic": "What if your spine had a built-in Wi-Fi router?",
+    "targetDurationSeconds": 27,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Spinal column glowing with fiber optic data lines connected to a quantum Wi-Fi 7 transmitter chip.",
+        "spokenLine": "Integrate a quantum Wi-Fi 7 transceiver chip directly into your upper spine vertebrae.",
+        "sfxCue": "Digital data stream hum"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 9,
+        "visualAction": "Files transferring from a computer straight into brain memory at 10 gigabytes per second wirelessly.",
+        "spokenLine": "Download movies, maps, and gigabytes of data directly into your neural memory instantly.",
+        "sfxCue": "Fast data transfer beep"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Character sharing high-speed internet hotspot with friends just by standing near them.",
+        "spokenLine": "Act as a walking high-speed internet hotspot for everyone around you with zero lag.",
+        "sfxCue": "Connection established chime"
+      }
+    ],
+    "title": "What if your spine had a built-in Wi-Fi router?",
+    "scheduledTime": "13:00",
+    "slotName": "Afternoon"
+  },
+  {
+    "serialId": "VID-030",
+    "scheduledDate": "2026-11-10",
+    "slot": 3,
+    "status": "PENDING",
+    "topic": "What if your ankles had omnidirectional roller bearings?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Ankle joints replaced with motorized omnidirectional roller ball bearings in titanium housings.",
+        "spokenLine": "Replace your ankle joints with motorized omnidirectional roller ball bearings.",
+        "sfxCue": "Roller bearing spin"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Character gliding sideways and diagonally across the floor smoothly like an ice skater on wheels.",
+        "spokenLine": "Glide sideways, diagonally, and backward at high speeds without moving your feet steps.",
+        "sfxCue": "Smooth glide whoosh"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Locking rollers instantly with magnetic brakes to stand firmly in place on a steep slope.",
+        "spokenLine": "Lock the rollers instantly with magnetic brakes whenever you want to plant your footing.",
+        "sfxCue": "Brake lock snap"
+      }
+    ],
+    "title": "What if your ankles had omnidirectional roller bearings?",
+    "scheduledTime": "18:00",
+    "slotName": "Evening"
+  },
+  {
+    "serialId": "VID-031",
+    "scheduledDate": "2026-11-11",
+    "slot": 1,
+    "status": "PENDING",
+    "topic": "What if your wrists had built-in laser pointers and cutters?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Wrist skin retracting to expose a medical-grade blue laser diode emitter powered by wrist kinetic motion.",
+        "spokenLine": "Embed a high-power industrial blue laser diode inside each wrist housing.",
+        "sfxCue": "Laser diode charge whine"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Firing a concentrated blue laser beam that melts through a steel padlock shackle in two seconds.",
+        "spokenLine": "Slice through padlocks, sheet metal, and thick ropes with a pinpoint beam of concentrated light.",
+        "sfxCue": "Laser cutting sizzle"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Retracting laser emitter safely beneath skin shutter with a watertight seal locking.",
+        "spokenLine": "Shielded behind a sapphire crystal window when not in use for absolute safety.",
+        "sfxCue": "Crystal shutter click"
+      }
+    ],
+    "title": "What if your wrists had built-in laser pointers and cutters?",
+    "scheduledTime": "08:00",
+    "slotName": "Morning"
+  },
+  {
+    "serialId": "VID-032",
+    "scheduledDate": "2026-11-11",
+    "slot": 2,
+    "status": "PENDING",
+    "topic": "What if your kidneys were upgraded to nuclear dialysis filters?",
+    "targetDurationSeconds": 27,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Kidneys replaced with dual titanium centrifugal dialysis units spinning at high RPM.",
+        "spokenLine": "Replace your biological kidneys with centrifugal nano-filtration dialysis units.",
+        "sfxCue": "Centrifuge spin hum"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 9,
+        "visualAction": "Toxins, heavy metals, and alcohol filtering out of blood instantly into a tiny internal waste capsule.",
+        "spokenLine": "Filter out toxins, heavy metals, and alcohol from your blood stream in mere seconds.",
+        "sfxCue": "Purification chime"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Character drinking toxic muddy water; purified water separates instantly into hydration channels.",
+        "spokenLine": "You can drink contaminated swamp water and have it purified inside your body instantly.",
+        "sfxCue": "Fresh water drip"
+      }
+    ],
+    "title": "What if your kidneys were upgraded to nuclear dialysis filters?",
+    "scheduledTime": "13:00",
+    "slotName": "Afternoon"
+  },
+  {
+    "serialId": "VID-033",
+    "scheduledDate": "2026-11-11",
+    "slot": 3,
+    "status": "PENDING",
+    "topic": "What if your jaw had a hydraulic bone crusher bite?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Jaw hinges fitted with miniature hydraulic jaw actuators connected to skull bone anchors.",
+        "spokenLine": "Install high-torque hydraulic jaw actuators alongside your mandible bone.",
+        "sfxCue": "Hydraulic cylinder pressure"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Biting down on a solid steel wrench; teeth indentation sinks deep into the metal effortlessly.",
+        "spokenLine": "Exert one thousand pounds of bite force to crush solid steel tools and wrench handles.",
+        "sfxCue": "Metal deformation crunch"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Releasing jaw pressure with a smooth fluid valve reset, smiling normally.",
+        "spokenLine": "Your jaw muscles never tire out, giving you superhuman bite strength on demand.",
+        "sfxCue": "Valve reset click"
+      }
+    ],
+    "title": "What if your jaw had a hydraulic bone crusher bite?",
+    "scheduledTime": "18:00",
+    "slotName": "Evening"
+  },
+  {
+    "serialId": "VID-034",
+    "scheduledDate": "2026-11-12",
+    "slot": 1,
+    "status": "PENDING",
+    "topic": "What if your fingers had built-in USB flash drives?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Pinky finger tip sliding open to reveal a gold-plated USB-C male connector plug wired to brain memory.",
+        "spokenLine": "Integrate a gold-plated USB-C data connector into the tip of your pinky finger.",
+        "sfxCue": "Data port slide click"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Plugging finger directly into a laptop port; files stream instantly from mind to screen.",
+        "spokenLine": "Plug your finger directly into computers to transfer terabytes of data straight from your mind.",
+        "sfxCue": "USB connect chime"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Unplugging finger and watching connector slide back flush into waterproof skin seal.",
+        "spokenLine": "Unplug and watch the connector seal shut inside a waterproof bio-membrane.",
+        "sfxCue": "Seal lock click"
+      }
+    ],
+    "title": "What if your fingers had built-in USB flash drives?",
+    "scheduledTime": "08:00",
+    "slotName": "Morning"
+  },
+  {
+    "serialId": "VID-035",
+    "scheduledDate": "2026-11-12",
+    "slot": 2,
+    "status": "PENDING",
+    "topic": "What if your knees had shock-absorbing magnetic dampeners?",
+    "targetDurationSeconds": 27,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Knee joint scanned to show magneto-rheological fluid dampers replacing cartilage meniscus.",
+        "spokenLine": "Install magneto-rheological fluid dampers inside both knee joint capsules.",
+        "sfxCue": "Fluid viscosity shift hum"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 9,
+        "visualAction": "Jumping off a rooftop onto concrete; knees absorb impact with zero shock traveling up the spine.",
+        "spokenLine": "Magnetic fluid stiffens instantly on impact to absorb one hundred percent of landing shocks.",
+        "sfxCue": "Magnetic dampening thud"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Knees returning to liquid fluidity for smooth, effortless running stride.",
+        "spokenLine": "Fluid thins out immediately after landing so you can sprint with absolute joint freedom.",
+        "sfxCue": "Smooth fluid flow"
+      }
+    ],
+    "title": "What if your knees had shock-absorbing magnetic dampeners?",
+    "scheduledTime": "13:00",
+    "slotName": "Afternoon"
+  },
+  {
+    "serialId": "VID-036",
+    "scheduledDate": "2026-11-12",
+    "slot": 3,
+    "status": "PENDING",
+    "topic": "What if your skull had a built-in compass radar?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Brain cortex glowing with a microscopic superconducting quantum interference magnetometer chip.",
+        "spokenLine": "Embed a quantum magnetic compass chip into your frontal lobe cortex.",
+        "sfxCue": "Quantum sensor hum"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Character closing eyes in a dense desert; a glowing directional arrow floats in their vision pointing north.",
+        "spokenLine": "Always know your exact global coordinates and heading without needing a map or GPS.",
+        "sfxCue": "Compass lock chime"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Detecting underground magnetic iron ore deposits glowing red through rock layers.",
+        "spokenLine": "Detect underground metal pipes, mineral veins, and magnetic fields through solid earth.",
+        "sfxCue": "Radar pulse beep"
+      }
+    ],
+    "title": "What if your skull had a built-in compass radar?",
+    "scheduledTime": "18:00",
+    "slotName": "Evening"
+  },
+  {
+    "serialId": "VID-037",
+    "scheduledDate": "2026-11-13",
+    "slot": 1,
+    "status": "PENDING",
+    "topic": "What if your lungs could store compressed oxygen tanks?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Chest cavity opening to reveal miniature carbon-fiber high-pressure oxygen tanks flanking the lungs.",
+        "spokenLine": "Stow carbon-fiber compressed oxygen tanks alongside your lung chambers.",
+        "sfxCue": "Tank valve hiss"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Character diving deep underwater for three hours straight without taking a single breath.",
+        "spokenLine": "Store enough breathable oxygen under high pressure to stay submerged for up to four hours.",
+        "sfxCue": "Underwater bubble stream"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Automatic pressure regulator valves refilling tanks from ambient air when surfacing.",
+        "spokenLine": "Internal miniature compressors automatically refill your tanks the moment you surface.",
+        "sfxCue": "Compressor pump whir"
+      }
+    ],
+    "title": "What if your lungs could store compressed oxygen tanks?",
+    "scheduledTime": "08:00",
+    "slotName": "Morning"
+  },
+  {
+    "serialId": "VID-038",
+    "scheduledDate": "2026-11-13",
+    "slot": 2,
+    "status": "PENDING",
+    "topic": "What if your fingers had built-in blowtorches?",
+    "targetDurationSeconds": 27,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Thumb tip sliding open to reveal a micro-propane jet nozzle and piezoelectric igniter spark.",
+        "spokenLine": "Integrate a micro-propane gas jet nozzle into the tip of your thumb.",
+        "sfxCue": "Gas valve hiss and spark"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 9,
+        "visualAction": "Igniting a fierce blue flame shooting two feet from the thumb to weld steel pipes together.",
+        "spokenLine": "Generate a three-thousand degree blue flame to weld metal pipes and start campfires instantly.",
+        "sfxCue": "Blowtorch roar"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Extinguishing flame instantly and sealing nozzle shut with a heat-resistant ceramic cap.",
+        "spokenLine": "Shut off fuel supply instantly with a mental trigger for complete fire safety.",
+        "sfxCue": "Flame snuff out click"
+      }
+    ],
+    "title": "What if your fingers had built-in blowtorches?",
+    "scheduledTime": "13:00",
+    "slotName": "Afternoon"
+  },
+  {
+    "serialId": "VID-039",
+    "scheduledDate": "2026-11-13",
+    "slot": 3,
+    "status": "PENDING",
+    "topic": "What if your spine had a built-in backup battery pack?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Spinal column replaced with modular solid-state lithium-ceramic battery cylindrical segments.",
+        "spokenLine": "Replace your spinal vertebrae with modular solid-state lithium-ceramic battery cells.",
+        "sfxCue": "Battery cell click"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Character running out of cybernetic power; spine battery engages, glowing bright blue to restore energy.",
+        "spokenLine": "Store enough reserve electrical energy to keep all your cybernetic implants running for a month.",
+        "sfxCue": "Power surge hum"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Inductive wireless charging pad held against back; battery bars refill rapidly on HUD.",
+        "spokenLine": "Recharge your entire body overnight using a wireless induction pad placed against your back.",
+        "sfxCue": "Induction charge chime"
+      }
+    ],
+    "title": "What if your spine had a built-in backup battery pack?",
+    "scheduledTime": "18:00",
+    "slotName": "Evening"
+  },
+  {
+    "serialId": "VID-040",
+    "scheduledDate": "2026-11-14",
+    "slot": 1,
+    "status": "PENDING",
+    "topic": "What if your eyes had polarized anti-glare shutter lenses?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Eyeball surface layered with liquid crystal polarization film connected to optic nerve sensors.",
+        "spokenLine": "Layer your eye corneas with liquid crystal polarization shutter films.",
+        "sfxCue": "Liquid crystal shift"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Staring directly into a blazing welding arc or flashbang grenade; lenses darken instantly to absolute black.",
+        "spokenLine": "Shutter films darken in microseconds when hit with blinding flashes or intense welding arcs.",
+        "sfxCue": "Rapid shutter snap"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Vision clearing instantly with zero retinal damage or temporary blindness.",
+        "spokenLine": "Protect your vision permanently from sun glare, flashbangs, and laser blindness.",
+        "sfxCue": "Crystal clear chime"
+      }
+    ],
+    "title": "What if your eyes had polarized anti-glare shutter lenses?",
+    "scheduledTime": "08:00",
+    "slotName": "Morning"
+  },
+  {
+    "serialId": "VID-041",
+    "scheduledDate": "2026-11-14",
+    "slot": 2,
+    "status": "PENDING",
+    "topic": "What if your calves had spring-loaded pogo stilts?",
+    "targetDurationSeconds": 27,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Shin bones fitted with heavy titanium leaf springs and hydraulic locking latches.",
+        "spokenLine": "Integrate heavy titanium leaf springs and hydraulic latches along your shins.",
+        "sfxCue": "Leaf spring tension flex"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 9,
+        "visualAction": "Character bounding across fields in massive twenty-foot bouncing strides like a lunar astronaut.",
+        "spokenLine": "Bounce across rough terrain in twenty-foot strides with zero impact on your joints.",
+        "sfxCue": "Spring bounce whoosh"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Latches engaging to lock springs flat against legs for normal walking mode.",
+        "spokenLine": "Lock the springs flat whenever you want to walk normally through standard doorways.",
+        "sfxCue": "Latch lock click"
+      }
+    ],
+    "title": "What if your calves had spring-loaded pogo stilts?",
+    "scheduledTime": "13:00",
+    "slotName": "Afternoon"
+  },
+  {
+    "serialId": "VID-042",
+    "scheduledDate": "2026-11-14",
+    "slot": 3,
+    "status": "PENDING",
+    "topic": "What if your ears had active noise-canceling vacuum chambers?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Inner ear canals fitted with miniature acoustic phase-inversion speakers and vacuum seals.",
+        "spokenLine": "Install miniature acoustic phase-inversion speakers inside your ear canals.",
+        "sfxCue": "Phase cancellation hum"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Standing next to a roaring jet engine while sound waves cancel out into absolute, peaceful silence.",
+        "spokenLine": "Cancel out jet engines, sirens, and explosions into absolute, peaceful silence instantly.",
+        "sfxCue": "Sound drop silence"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Amplifying a quiet whisper across the room while keeping background noise muted.",
+        "spokenLine": "Selectively amplify quiet conversations while keeping destructive noise permanently muted.",
+        "sfxCue": "Audio filter activation chime"
+      }
+    ],
+    "title": "What if your ears had active noise-canceling vacuum chambers?",
+    "scheduledTime": "18:00",
+    "slotName": "Evening"
+  },
+  {
+    "serialId": "VID-043",
+    "scheduledDate": "2026-11-15",
+    "slot": 1,
+    "status": "PENDING",
+    "topic": "What if your hands had built-in Geiger counter radiation sensors?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Palm skin revealing a miniature Geiger-Muller radiation detection tube wired to tactile nerve endings.",
+        "spokenLine": "Embed a miniature Geiger-Muller radiation sensor tube into the palm of your hand.",
+        "sfxCue": "Geiger counter tick"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Placing hand near a barrel of toxic waste; Geiger counter clicks rapidly and HUD flashes red warning.",
+        "spokenLine": "Detect invisible radioactive fallout and gamma rays with rapid audio clicks and visual warnings.",
+        "sfxCue": "Rapid Geiger click alarm"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Pulling hand away as warning stops, palm skin sealing back flush.",
+        "spokenLine": "Never walk blindly into nuclear contamination zones ever again.",
+        "sfxCue": "Safe zone chime"
+      }
+    ],
+    "title": "What if your hands had built-in Geiger counter radiation sensors?",
+    "scheduledTime": "08:00",
+    "slotName": "Morning"
+  },
+  {
+    "serialId": "VID-044",
+    "scheduledDate": "2026-11-15",
+    "slot": 2,
+    "status": "PENDING",
+    "topic": "What if your heart had a manual backup hand pump valve?",
+    "targetDurationSeconds": 27,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Chest wall featuring a discreet mechanical titanium priming lever connected to the aorta.",
+        "spokenLine": "Install a mechanical titanium emergency priming lever on your left chest wall.",
+        "sfxCue": "Mechanical lever click"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 9,
+        "visualAction": "Simulated electronic heart failure; character pumps the chest lever manually to keep blood flowing.",
+        "spokenLine": "If electronic systems fail, pump the lever by hand to keep your blood circulating manually.",
+        "sfxCue": "Manual pump whoosh"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Primary turbine restarting successfully as lever folds flush back into skin recess.",
+        "spokenLine": "A foolproof mechanical backup for the ultimate survivalist machine.",
+        "sfxCue": "Engine restart chime"
+      }
+    ],
+    "title": "What if your heart had a manual backup hand pump valve?",
+    "scheduledTime": "13:00",
+    "slotName": "Afternoon"
+  },
+  {
+    "serialId": "VID-045",
+    "scheduledDate": "2026-11-15",
+    "slot": 3,
+    "status": "PENDING",
+    "topic": "What if your feet had heated thermal copper soles?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Sole bones embedded with micro-channel copper heating coils powered by metabolic battery.",
+        "spokenLine": "Weave micro-channel copper thermal heating coils through the sole bones of your feet.",
+        "sfxCue": "Thermal coil warm hum"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Character walking barefoot across snow and ice while thermal heat radiates warmly from their feet.",
+        "spokenLine": "Walk comfortably across freezing snow and ice barefoot while your soles stay at cozy body temperature.",
+        "sfxCue": "Snow melt sizzle"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Flipping temperature control switch on ankle; soles cool down instantly in desert heat.",
+        "spokenLine": "Switch to cooling mode in the desert to keep your feet refreshed during long hikes.",
+        "sfxCue": "Cooling cycle chime"
+      }
+    ],
+    "title": "What if your feet had heated thermal copper soles?",
+    "scheduledTime": "18:00",
+    "slotName": "Evening"
+  },
+  {
+    "serialId": "VID-046",
+    "scheduledDate": "2026-11-16",
+    "slot": 1,
+    "status": "PENDING",
+    "topic": "What if your shoulders had magnetic weapon holsters?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Upper back shoulder blades fitted with high-power rare-earth electromagnet attachment plates.",
+        "spokenLine": "Embed high-power rare-earth electromagnet plates across both shoulder blades.",
+        "sfxCue": "Electromagnet charge hum"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Tossing a steel rifle over the shoulder where it snaps magnetically and securely into place instantly.",
+        "spokenLine": "Snap steel rifles, swords, and tools onto your back magnetically without straps or holsters.",
+        "sfxCue": "Magnetic snap lock"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Reaching back and pulling weapon free instantly with a mental polarity reversal.",
+        "spokenLine": "Release weapons into your hands with a simple thought and magnetic polarity reversal.",
+        "sfxCue": "Polarity switch click"
+      }
+    ],
+    "title": "What if your shoulders had magnetic weapon holsters?",
+    "scheduledTime": "08:00",
+    "slotName": "Morning"
+  },
+  {
+    "serialId": "VID-047",
+    "scheduledDate": "2026-11-16",
+    "slot": 2,
+    "status": "PENDING",
+    "topic": "What if your tongue had a built-in laser barcode scanner?",
+    "targetDurationSeconds": 27,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Tip of tongue equipped with a micro-optical laser scanner diode and QR reader sensor.",
+        "spokenLine": "Integrate a micro-optical laser barcode and QR scanner diode into the tip of your tongue.",
+        "sfxCue": "Laser scan beep"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 9,
+        "visualAction": "Touching tongue to a product barcode; price and ingredient details flash instantly in HUD vision.",
+        "spokenLine": "Lick product barcodes and serial numbers to read pricing, specs, and data instantly.",
+        "sfxCue": "Data read chime"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Retracting scanner safely behind protective saliva-sealed membrane.",
+        "spokenLine": "The most discreet data scanner ever engineered.",
+        "sfxCue": "Seal lock click"
+      }
+    ],
+    "title": "What if your tongue had a built-in laser barcode scanner?",
+    "scheduledTime": "13:00",
+    "slotName": "Afternoon"
+  },
+  {
+    "serialId": "VID-048",
+    "scheduledDate": "2026-11-16",
+    "slot": 3,
+    "status": "PENDING",
+    "topic": "What if your ribs had emergency airbag cushions?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Ribcage cavity fitted with folded Kevlar fabric airbags and compressed nitrogen gas canisters.",
+        "spokenLine": "Stow folded Kevlar safety airbags and nitrogen inflator canisters inside your chest cavity.",
+        "sfxCue": "Canister valve click"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Car crashing into a wall; chest airbags deploy in 10 milliseconds, protecting internal organs completely.",
+        "spokenLine": "Airbags deploy across your ribs in milliseconds during high-speed impacts to prevent trauma.",
+        "sfxCue": "Airbag explosive deployment"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Air releasing slowly through deflation valves as character takes a deep, uninjured breath.",
+        "spokenLine": "Deflate and repack the bags automatically once the danger has passed.",
+        "sfxCue": "Air release hiss"
+      }
+    ],
+    "title": "What if your ribs had emergency airbag cushions?",
+    "scheduledTime": "18:00",
+    "slotName": "Evening"
+  },
+  {
+    "serialId": "VID-049",
+    "scheduledDate": "2026-11-17",
+    "slot": 1,
+    "status": "PENDING",
+    "topic": "What if your eyes had microscopic macro lens attachments?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Eye lenses flipping down sliding sapphire macro glass elements over natural pupils.",
+        "spokenLine": "Flip down hundred-times magnification macro glass elements over your eye lenses.",
+        "sfxCue": "Lens flip click"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Extreme close-up view of a microchip circuit board, seeing individual solder joints and electron paths.",
+        "spokenLine": "Examine microchips, cellular structures, and bacteria at a microscopic cellular level.",
+        "sfxCue": "Microscope focus whir"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Lenses retracting smoothly back into orbital sockets with a clean snap.",
+        "spokenLine": "Retract the macro lenses instantly to return to normal wide-angle vision.",
+        "sfxCue": "Lens retract snap"
+      }
+    ],
+    "title": "What if your eyes had microscopic macro lens attachments?",
+    "scheduledTime": "08:00",
+    "slotName": "Morning"
+  },
+  {
+    "serialId": "VID-050",
+    "scheduledDate": "2026-11-17",
+    "slot": 2,
+    "status": "PENDING",
+    "topic": "What if your forearms had hydraulic car jack pistons?",
+    "targetDurationSeconds": 27,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Forearm bones fitted with dual telescopic hydraulic steel lift cylinders and hand pumps.",
+        "spokenLine": "Install telescopic hydraulic lift cylinders inside the bone structure of both forearms.",
+        "sfxCue": "Hydraulic cylinder slide"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 9,
+        "visualAction": "Lifting the corner of a flipped car entirely off the ground using forearm jacks alone.",
+        "spokenLine": "Lift flipped cars and heavy boulders weighing thousands of pounds with your bare arms.",
+        "sfxCue": "Heavy lift hydraulic strain"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Pistons retracting smoothly into forearms with a hydraulic fluid lock click.",
+        "spokenLine": "Lower payloads safely back down with precision pressure release valves.",
+        "sfxCue": "Pressure release hiss"
+      }
+    ],
+    "title": "What if your forearms had hydraulic car jack pistons?",
+    "scheduledTime": "13:00",
+    "slotName": "Afternoon"
+  },
+  {
+    "serialId": "VID-051",
+    "scheduledDate": "2026-11-17",
+    "slot": 3,
+    "status": "PENDING",
+    "topic": "What if your neck had a built-in oxygen rebreather mask?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Collarbone area opening to deploy a folding neoprene mask connected to internal air scrubbers.",
+        "spokenLine": "Conceal a folding chemical rebreather mask inside your collarbone chamber.",
+        "sfxCue": "Mask deployment click"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Mask sliding up over mouth and nose automatically in a smoke-filled burning building.",
+        "spokenLine": "Deploys automatically over your face in seconds when toxic smoke or gas is detected.",
+        "sfxCue": "Seal lock hiss"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Scrubber recycling exhaled carbon dioxide back into fresh oxygen continuously.",
+        "spokenLine": "Chemical scrubbers recycle your exhaled breath into fresh breathable oxygen indefinitely.",
+        "sfxCue": "Scrubber filter hum"
+      }
+    ],
+    "title": "What if your neck had a built-in oxygen rebreather mask?",
+    "scheduledTime": "18:00",
+    "slotName": "Evening"
+  },
+  {
+    "serialId": "VID-052",
+    "scheduledDate": "2026-11-18",
+    "slot": 1,
+    "status": "PENDING",
+    "topic": "What if your fingers had built-in voltage multimeters?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Fingertips embedded with gold probe contact points wired to a digital voltage reader chip.",
+        "spokenLine": "Embed gold electrical probe contacts into the tips of your thumb and index finger.",
+        "sfxCue": "Probe contact beep"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Touching fingers to live electrical wires; voltage and amperage readouts appear in HUD vision.",
+        "spokenLine": "Touch live wires to measure voltage, resistance, and current instantly with digital readouts.",
+        "sfxCue": "Multimeter beep tone"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Insulating bio-coating sealing fingers safely to prevent any accidental electric shocks.",
+        "spokenLine": "Built-in circuit isolation protects your nervous system from dangerous electrical feedback.",
+        "sfxCue": "Safety isolation click"
+      }
+    ],
+    "title": "What if your fingers had built-in voltage multimeters?",
+    "scheduledTime": "08:00",
+    "slotName": "Morning"
+  },
+  {
+    "serialId": "VID-053",
+    "scheduledDate": "2026-11-18",
+    "slot": 2,
+    "status": "PENDING",
+    "topic": "What if your calves had emergency parachute packs?",
+    "targetDurationSeconds": 27,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Calf muscle housings opening to reveal compressed ballistic nylon parachute canopies.",
+        "spokenLine": "Stow compressed ballistic nylon emergency parachutes inside both calf muscle housings.",
+        "sfxCue": "Canopy pack compression"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 9,
+        "visualAction": "Falling from an aircraft; deployment rockets shoot parachutes out from calves, slowing descent instantly.",
+        "spokenLine": "Rocket-deployed canopies deploy instantly during a fall to guarantee a safe landing from any height.",
+        "sfxCue": "Rocket deployment snap"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Releasing canopies upon landing as fabric packs neatly back into calf compartments.",
+        "spokenLine": "Pack canopies away easily for reuse after every emergency jump.",
+        "sfxCue": "Latch lock click"
+      }
+    ],
+    "title": "What if your calves had emergency parachute packs?",
+    "scheduledTime": "13:00",
+    "slotName": "Afternoon"
+  },
+  {
+    "serialId": "VID-054",
+    "scheduledDate": "2026-11-18",
+    "slot": 3,
+    "status": "PENDING",
+    "topic": "What if your skull had a built-in laser rangefinder?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Glabella forehead bone fitted with a pulsed infrared laser rangefinder diode.",
+        "spokenLine": "Install a pulsed infrared laser rangefinder diode directly between your eyebrows.",
+        "sfxCue": "Infrared emitter pulse"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Looking at a distant mountain peak; exact distance in yards and wind speed float in HUD view.",
+        "spokenLine": "Calculate precise distances, object heights, and trajectories instantly down to the millimeter.",
+        "sfxCue": "Laser calculation beep"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Emitter sliding flush behind skin flap with zero visible trace.",
+        "spokenLine": "Completely hidden behind invisible skin micro-shutter windows.",
+        "sfxCue": "Shutter close click"
+      }
+    ],
+    "title": "What if your skull had a built-in laser rangefinder?",
+    "scheduledTime": "18:00",
+    "slotName": "Evening"
+  },
+  {
+    "serialId": "VID-055",
+    "scheduledDate": "2026-11-19",
+    "slot": 1,
+    "status": "PENDING",
+    "topic": "What if your hips had heavy-duty shock-absorbing leaf springs?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Pelvis and hip joints reinforced with curved titanium leaf spring suspension brackets.",
+        "spokenLine": "Reinforce your pelvis and hip joints with curved titanium leaf spring brackets.",
+        "sfxCue": "Leaf spring flex"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Character dropping from a high crane onto concrete; springs flex and absorb 100 percent of shock.",
+        "spokenLine": "Absorb violent drop impacts and heavy loads without transmitting shock to your spine.",
+        "sfxCue": "Spring tension thud"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Springs snapping back to neutral position with smooth hydraulic dampers.",
+        "spokenLine": "Springs return instantly to neutral to maintain perfect walking posture.",
+        "sfxCue": "Smooth lock click"
+      }
+    ],
+    "title": "What if your hips had heavy-duty shock-absorbing leaf springs?",
+    "scheduledTime": "08:00",
+    "slotName": "Morning"
+  },
+  {
+    "serialId": "VID-056",
+    "scheduledDate": "2026-11-19",
+    "slot": 2,
+    "status": "PENDING",
+    "topic": "What if your teeth had built-in diamond glass cutters?",
+    "targetDurationSeconds": 27,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Canine teeth embedded with industrial synthetic diamond cutting edges on the tips.",
+        "spokenLine": "Embed industrial synthetic diamond cutting edges onto your canine teeth.",
+        "sfxCue": "Diamond edge polish"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 9,
+        "visualAction": "Biting down on a thick glass window and scoring a clean circle, popping the glass out effortlessly.",
+        "spokenLine": "Score and cut through thick bulletproof glass windows with a single bite.",
+        "sfxCue": "Glass score and snap"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Retracting diamond tips slightly into gums to prevent accidental tongue cuts.",
+        "spokenLine": "Retract diamond edges into gum sleeves safely when you are eating normal meals.",
+        "sfxCue": "Gum sleeve slide click"
+      }
+    ],
+    "title": "What if your teeth had built-in diamond glass cutters?",
+    "scheduledTime": "13:00",
+    "slotName": "Afternoon"
+  },
+  {
+    "serialId": "VID-057",
+    "scheduledDate": "2026-11-19",
+    "slot": 3,
+    "status": "PENDING",
+    "topic": "What if your spine had a built-in gyroscope leveling gimbal?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Spinal column fitted with a three-axis motorized mechanical gyroscope gimbal ring.",
+        "spokenLine": "Install a three-axis motorized gyroscope gimbal ring inside your thoracic spine.",
+        "sfxCue": "Gyro motor spin hum"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Character tripping on a rock; gimbal instantly rotates torso to keep body perfectly upright and balanced.",
+        "spokenLine": "Gimbal instantly counter-rotates your torso to prevent falls on ice or unstable ground.",
+        "sfxCue": "Servo adjustment snap"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Gimbal locking smoothly into neutral alignment as walking posture stabilizes.",
+        "spokenLine": "Never lose your balance or stumble on rough terrain again.",
+        "sfxCue": "Lock engage chime"
+      }
+    ],
+    "title": "What if your spine had a built-in gyroscope leveling gimbal?",
+    "scheduledTime": "18:00",
+    "slotName": "Evening"
+  },
+  {
+    "serialId": "VID-058",
+    "scheduledDate": "2026-11-20",
+    "slot": 1,
+    "status": "PENDING",
+    "topic": "What if your fingers had built-in lock picking tension tools?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Thumb and index finger deploying spring-loaded steel tension wrenches from internal slots.",
+        "spokenLine": "Conceal spring-loaded steel tension wrenches inside your thumb and finger joints.",
+        "sfxCue": "Spring tension slide"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Inserting fingers into a mechanical door lock; tension wrench turns cylinder smoothly.",
+        "spokenLine": "Apply exact rotational torque to lock cylinders while picking internal pins.",
+        "sfxCue": "Lock torque click"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Tools snapping back flush into fingers with a waterproof seal latch.",
+        "spokenLine": "Completely invisible and undetectable during standard airport security scans.",
+        "sfxCue": "Seal latch click"
+      }
+    ],
+    "title": "What if your fingers had built-in lock picking tension tools?",
+    "scheduledTime": "08:00",
+    "slotName": "Morning"
+  },
+  {
+    "serialId": "VID-059",
+    "scheduledDate": "2026-11-20",
+    "slot": 2,
+    "status": "PENDING",
+    "topic": "What if your eyes had infrared thermal imaging sensors?",
+    "targetDurationSeconds": 27,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Retinas upgraded with micro-bolometer infrared thermal sensor grids.",
+        "spokenLine": "Upgrade your retinas with micro-bolometer infrared thermal sensor grids.",
+        "sfxCue": "Thermal camera boot beep"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 9,
+        "visualAction": "Switching vision mode to thermal; warm-blooded humans and hidden electrical wires glow bright orange in the dark.",
+        "spokenLine": "See heat signatures, hidden warm-blooded targets, and overheating electrical wires through walls.",
+        "sfxCue": "Thermal gradient shift"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Switching back to normal optical color spectrum with a blink.",
+        "spokenLine": "Toggle between normal optical sight and thermal vision with a double blink.",
+        "sfxCue": "Blink shutter click"
+      }
+    ],
+    "title": "What if your eyes had infrared thermal imaging sensors?",
+    "scheduledTime": "13:00",
+    "slotName": "Afternoon"
+  },
+  {
+    "serialId": "VID-060",
+    "scheduledDate": "2026-11-20",
+    "slot": 3,
+    "status": "PENDING",
+    "topic": "What if your shins had titanium hydraulic shields?",
+    "targetDurationSeconds": 28,
+    "clips": [
+      {
+        "clipIndex": 1,
+        "durationSeconds": 9,
+        "visualAction": "Shin bones fitted with curved titanium plate armor shields mounted on hydraulic shock pins.",
+        "spokenLine": "Strap curved titanium plate armor shields over your shin bones on hydraulic pins.",
+        "sfxCue": "Armor snap-fit click"
+      },
+      {
+        "clipIndex": 2,
+        "durationSeconds": 10,
+        "visualAction": "Being struck across the shins with a steel baseball bat; bat shatters completely against titanium armor.",
+        "spokenLine": "Sledgehammers and baseball bats shatter instantly upon impact against your titanium shins.",
+        "sfxCue": "Bat shatter impact boom"
+      },
+      {
+        "clipIndex": 3,
+        "durationSeconds": 9,
+        "visualAction": "Character walking away unaffected, smiling at the camera with zero leg bruising.",
+        "spokenLine": "Your lower legs become completely indestructible against blunt force trauma.",
+        "sfxCue": "Metallic ring tone"
+      }
+    ],
+    "title": "What if your shins had titanium hydraulic shields?",
+    "scheduledTime": "18:00",
+    "slotName": "Evening"
+  }
+]
