@@ -287,8 +287,16 @@ app.post('/api/produce/:serialId', (req: Request, res: Response): void => {
     return;
   }
 
-  const agyBin = '/home/oluomachi-c-udezue/.local/bin/agy';
-  const conversationId = 'fcdb013c-7946-4c00-8518-a92ebcf45cdd';
+  const agyBin = process.env.AGY_BIN_PATH || 'agy';
+  const conversationId = process.env.AGY_CONVERSATION_ID;
+
+  if (!conversationId) {
+    res.status(500).json({
+      success: false,
+      error: 'AGY_CONVERSATION_ID is not set in .env. Please configure your persistent AGY session ID.',
+    });
+    return;
+  }
   const prompt = `Produce YouTube Short ${serialId} ("${entry.title || entry.topic}"). Generate 3D model clips via Google Flow, voiceover via Google AI Studio, assemble in Remotion, dispatch complete review package email, and mark as DONE.`;
 
   activeJobs.set(serialId, {

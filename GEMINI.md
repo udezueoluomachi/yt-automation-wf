@@ -3,7 +3,7 @@
 ## 1. Mission & Operational Architecture
 This project runs an autonomous production engine powered by **Antigravity CLI (`agy`)**. It schedules, generates, edits, reviews, and dispatches high-retention 9:16 vertical YouTube Shorts (15–20 seconds) based on a structured content calendar (`data/calendar.json`).
 
-All autonomous executions reuse a single persistent conversation context (`--conversation fcdb013c-7946-4c00-8518-a92ebcf45cdd`) so the agent preserves complete memory, feedback, and execution history.
+All autonomous executions reuse a single persistent conversation context (`--conversation $AGY_CONVERSATION_ID` defined in `.env`) so the agent preserves complete memory, feedback, and execution history.
 
 ```mermaid
 flowchart TD
@@ -67,15 +67,16 @@ flowchart TD
 
 ### Headless Production Command
 ```bash
-agy --conversation fcdb013c-7946-4c00-8518-a92ebcf45cdd \
+agy --conversation $(grep AGY_CONVERSATION_ID .env | cut -d '=' -f2) \
   -p "Produce the scheduled YouTube Short for the current time slot. Generate 3D model clips via Google Flow, voiceover via Google AI Studio, assemble clean kinetic video in Remotion, dispatch review email, and mark as DONE." \
   --dangerously-skip-permissions
 ```
 
-### Scheduled Cron Automation (08:00, 13:00, 18:00)
-Add to crontab (`crontab -e`):
+### Scheduled Cron & Systemd Automation (08:00, 13:00, 18:00)
+Runs through the resilient runner script with automatic Wi-Fi retry, Chrome auto-launch, and persistent sleep wake-up catchup:
 ```bash
-0 8,13,18 * * * cd /home/oluomachi-c-udezue/projects/yt-automation-wf && /home/oluomachi-c-udezue/.local/bin/agy --conversation fcdb013c-7946-4c00-8518-a92ebcf45cdd -p "Execute scheduled YouTube Short production for current time slot." --dangerously-skip-permissions >> /home/oluomachi-c-udezue/projects/yt-automation-wf/cron.log 2>&1
+# Handled automatically via scripts/run-production-job.sh
+0 8,13,18 * * * /home/oluomachi-c-udezue/projects/yt-automation-wf/scripts/run-production-job.sh >> /home/oluomachi-c-udezue/projects/yt-automation-wf/cron.log 2>&1
 ```
 
 ---

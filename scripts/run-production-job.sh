@@ -1,9 +1,21 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
-PROJECT_DIR="/home/oluomachi-c-udezue/projects/yt-automation-wf"
-AGY_BIN="/home/oluomachi-c-udezue/.local/bin/agy"
-CONVERSATION_ID="fcdb013c-7946-4c00-8518-a92ebcf45cdd"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
+
+cd "$PROJECT_DIR"
+
+# Load environment variables from .env
+if [ -f "$PROJECT_DIR/.env" ]; then
+  set -a
+  # shellcheck disable=SC1091
+  source "$PROJECT_DIR/.env"
+  set +a
+fi
+
+AGY_BIN="${AGY_BIN_PATH:-$(command -v agy || echo "$HOME/.local/bin/agy")}"
+CONVERSATION_ID="${AGY_CONVERSATION_ID:-$1}"
 LOG_FILE="$PROJECT_DIR/cron.log"
 MAX_RETRIES=3
 RETRY_DELAY=180 # 3 minutes
@@ -11,7 +23,10 @@ RETRY_DELAY=180 # 3 minutes
 echo "==================================================" >> "$LOG_FILE"
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] Starting production job trigger..." >> "$LOG_FILE"
 
-cd "$PROJECT_DIR"
+if [ -z "$CONVERSATION_ID" ]; then
+  echo "[$(date '+%Y-%m-%d %H:%M:%S')] ERROR: AGY_CONVERSATION_ID not set in .env. Exiting." >> "$LOG_FILE"
+  exit 1
+fi
 
 # 1. Wait for network if waking up
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] Checking internet connectivity..." >> "$LOG_FILE"
