@@ -6,6 +6,9 @@ PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 
 cd "$PROJECT_DIR"
 
+# Ensure Node & AGY binaries are on PATH even in non-interactive / systemd / cron shells
+export PATH="$HOME/.nvm/versions/node/v24.21.0/bin:$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin:$PATH"
+
 # Load environment variables from .env
 if [ -f "$PROJECT_DIR/.env" ]; then
   set -a
@@ -14,21 +17,53 @@ if [ -f "$PROJECT_DIR/.env" ]; then
   set +a
 fi
 
+NODE_BIN="$(command -v node || echo "$HOME/.nvm/versions/node/v24.21.0/bin/node")"
 AGY_BIN="${AGY_BIN_PATH:-$(command -v agy || echo "$HOME/.local/bin/agy")}"
 CONVERSATION_ID="${AGY_CONVERSATION_ID:-$1}"
 LOG_FILE="$PROJECT_DIR/cron.log"
 MAX_RETRIES=3
 RETRY_DELAY=180 # 3 minutes
 
+# -----------------------------------------------------------------------------
+# 1. EARLY CHECK: Is any task actually due?
+# Check calendar BEFORE touching network, Chrome, or any service.
+# -----------------------------------------------------------------------------
+NODE_CHECK=$("$NODE_BIN" -e "
+  const fs = require('fs');
+  const cal = JSON.parse(fs.readFileSync('data/calendar.json', 'utf8'));
+  const now = new Date();
+  const dateStr = now.toISOString().split('T')[0];
+  const timeStr = now.toTimeString().slice(0, 5);
+  // Find any pending task from today or earlier that is due
+  const due = cal.find(t => t.status === 'PENDING' && (t.scheduledDate < dateStr || (t.scheduledDate === dateStr && (t.scheduledTime || '00:00') <= timeStr)));
+  if (due) console.log(due.serialId);
+" 2>/dev/null || true)
+
+if [ -z "$NODE_CHECK" ]; then
+  # No task is due: exit immediately without touching Chrome or starting any process
+  exit 0
+fi
+
 echo "==================================================" >> "$LOG_FILE"
-echo "[$(date '+%Y-%m-%d %H:%M:%S')] Starting production job trigger..." >> "$LOG_FILE"
+echo "[$(date '+%Y-%m-%d %H:%M:%S')] Starting production run for due task: $NODE_CHECK" >> "$LOG_FILE"
 
 if [ -z "$CONVERSATION_ID" ]; then
   echo "[$(date '+%Y-%m-%d %H:%M:%S')] ERROR: AGY_CONVERSATION_ID not set in .env. Exiting." >> "$LOG_FILE"
   exit 1
 fi
 
-# 1. Wait for network if waking up
+# -----------------------------------------------------------------------------
+# CLEANUP TRAP: Cleanly terminate automation Chrome and Kimi when done
+# -----------------------------------------------------------------------------
+cleanup() {
+  echo "[$(date '+%Y-%m-%d %H:%M:%S')] Cleaning up temporary automation processes..." >> "$LOG_FILE"
+  pkill -f "remote-debugging-port=9333" >/dev/null 2>&1 || true
+}
+trap cleanup EXIT
+
+# -----------------------------------------------------------------------------
+# 2. Wait for internet connection (up to 60s)
+# -----------------------------------------------------------------------------
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] Checking internet connectivity..." >> "$LOG_FILE"
 NET_OK=0
 for i in {1..12}; do
@@ -46,48 +81,37 @@ if [ $NET_OK -eq 0 ]; then
   exit 1
 fi
 
-# 2. Check & auto-launch Kimi WebBridge if down
+# -----------------------------------------------------------------------------
+# 3. Check & auto-launch Kimi WebBridge if down
+# -----------------------------------------------------------------------------
 if ! curl -s http://127.0.0.1:10086/health >/dev/null 2>&1 && ! pgrep -f "kimi-webbridge" >/dev/null 2>&1; then
   echo "[$(date '+%Y-%m-%d %H:%M:%S')] Kimi WebBridge not running. Starting daemon..." >> "$LOG_FILE"
   nohup /home/oluomachi-c-udezue/.kimi-webbridge/bin/kimi-webbridge run --addr 127.0.0.1:10086 >> "$PROJECT_DIR/kimi.log" 2>&1 &
   sleep 4
 fi
 
-# 3. Check & ensure Chrome is running
-if ! pgrep -f "google-chrome" >/dev/null 2>&1; then
-  echo "[$(date '+%Y-%m-%d %H:%M:%S')] Google Chrome not running. Launching Chrome..." >> "$LOG_FILE"
-  export DISPLAY=:0
-  export WAYLAND_DISPLAY=wayland-0
-  export XDG_RUNTIME_DIR=/run/user/1000
-  nohup google-chrome --remote-debugging-port=9333 >> "$PROJECT_DIR/chrome.log" 2>&1 &
-  sleep 6
+# -----------------------------------------------------------------------------
+# 4. Launch isolated headless Chrome ONLY for this production run
+# Uses strictly its own user-data-dir and NEVER touches the user's regular Chrome profile.
+# Completely unsets DISPLAY and WAYLAND so it NEVER opens a GUI window on the screen.
+# -----------------------------------------------------------------------------
+if ! curl -s http://127.0.0.1:9333/json/version >/dev/null 2>&1; then
+  echo "[$(date '+%Y-%m-%d %H:%M:%S')] Starting isolated headless Chrome on port 9333..." >> "$LOG_FILE"
+  rm -f "$HOME/.config/google-chrome-remote/Singleton"* 2>/dev/null || true
+  
+  CHROME_FLAGS="--remote-debugging-port=9333 --user-data-dir=$HOME/.config/google-chrome-remote --headless=new --disable-gpu --no-first-run --no-default-browser-check"
+  nohup env -u DISPLAY -u WAYLAND_DISPLAY -u XAUTHORITY google-chrome $CHROME_FLAGS https://flow.google.com/ >> "$PROJECT_DIR/chrome.log" 2>&1 &
+  sleep 5
 fi
 
-# 4. Check calendar for any overdue or current task
-NODE_CHECK=$(node -e "
-  const fs = require('fs');
-  const cal = JSON.parse(fs.readFileSync('data/calendar.json', 'utf8'));
-  const now = new Date();
-  const dateStr = now.toISOString().split('T')[0];
-  const timeStr = now.toTimeString().slice(0, 5);
-  // Find any pending task from today or past that is due
-  const due = cal.find(t => t.status === 'PENDING' && (t.scheduledDate < dateStr || (t.scheduledDate === dateStr && (t.scheduledTime || '00:00') <= timeStr)));
-  if (due) console.log(due.serialId);
-")
-
-if [ -z "$NODE_CHECK" ]; then
-  echo "[$(date '+%Y-%m-%d %H:%M:%S')] No pending task due at this time. Exiting cleanly." >> "$LOG_FILE"
-  exit 0
-fi
-
-echo "[$(date '+%Y-%m-%d %H:%M:%S')] Found due task: $NODE_CHECK. Launching Antigravity CLI..." >> "$LOG_FILE"
-
-# 5. Execution loop with retries
+# -----------------------------------------------------------------------------
+# 5. Production execution loop with retries
+# -----------------------------------------------------------------------------
 ATTEMPT=1
 SUCCESS=0
 
 while [ $ATTEMPT -le $MAX_RETRIES ]; do
-  echo "[$(date '+%Y-%m-%d %H:%M:%S')] Attempt $ATTEMPT of $MAX_RETRIES..." >> "$LOG_FILE"
+  echo "[$(date '+%Y-%m-%d %H:%M:%S')] Attempt $ATTEMPT of $MAX_RETRIES for $NODE_CHECK..." >> "$LOG_FILE"
   
   if "$AGY_BIN" --conversation "$CONVERSATION_ID" \
       -p "Produce the scheduled YouTube Short for the current time slot. Generate 3D model clips via Google Flow, voiceover via Google AI Studio, assemble clean kinetic video in Remotion, dispatch review email, and mark as DONE." \

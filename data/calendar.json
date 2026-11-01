@@ -38,28 +38,29 @@
     "serialId": "VID-002",
     "scheduledDate": "2026-11-01",
     "slot": 2,
-    "status": "PENDING",
+    "status": "DONE",
     "topic": "What if your heart was replaced with a maglev turbine pump?",
-    "targetDurationSeconds": 27,
+    "targetDurationSeconds": 17.3,
+    "audioVoiceoverPath": "audio/VID-002.mp3",
     "clips": [
       {
         "clipIndex": 1,
-        "durationSeconds": 9,
-        "visualAction": "3D human torso cross-section, heart area highlighted in green and replaced with a magnetic levitation turbine rotor.",
+        "durationSeconds": 5.5,
+        "visualAction": "Stylized 3D anatomical model of human chest cross-section, glowing blue magnetic levitation turbine rotor spinning smoothly in center of ribcage.",
         "spokenLine": "Replace your natural heart with a frictionless maglev turbine pump spinning at ten thousand RPM.",
         "sfxCue": "High-pitch electric whine"
       },
       {
         "clipIndex": 2,
-        "durationSeconds": 9,
-        "visualAction": "Macro shot of blood cells rushing through smooth titanium channels without friction or wear.",
+        "durationSeconds": 5.8,
+        "visualAction": "Macro 3D CGI view inside polished titanium blood vessel, glowing red blood cells gliding effortlessly through blue magnetic field rings.",
         "spokenLine": "Blood cells glide through magnetic fields with zero friction, eliminating heart attacks entirely.",
         "sfxCue": "Smooth liquid rush sound"
       },
       {
         "clipIndex": 3,
-        "durationSeconds": 9,
-        "visualAction": "Character running on a treadmill, chest glowing blue with a battery status indicator showing 100% capacity.",
+        "durationSeconds": 6,
+        "visualAction": "Stylized 3D digital mannequin sprinting on glowing technological treadmill with effortless stamina, chest glowing with clean cyan battery indicator.",
         "spokenLine": "Plug your chest into a USB-C port for thirty minutes, and you are good for an entire week.",
         "sfxCue": "Digital chime notification"
       }
@@ -72,27 +73,27 @@
     "serialId": "VID-003",
     "scheduledDate": "2026-11-01",
     "slot": 3,
-    "status": "PENDING",
+    "status": "DONE",
     "topic": "What if your skull was lined with carbon-nanotube armor plates?",
-    "targetDurationSeconds": 28,
+    "targetDurationSeconds": 16.2,
     "clips": [
       {
         "clipIndex": 1,
-        "durationSeconds": 9,
+        "durationSeconds": 5,
         "visualAction": "Transparent 3D skull model opening up as woven carbon nanotube hexagonal plates lock seamlessly over the brain.",
         "spokenLine": "Line your skull interior with interlocking hexagonal carbon nanotube armor plates.",
         "sfxCue": "Mechanical snap-fit click"
       },
       {
         "clipIndex": 2,
-        "durationSeconds": 10,
+        "durationSeconds": 5.8,
         "visualAction": "A high-speed steel hammer strikes the side of the head; the shockwave disperses instantly across the hexagonal grid.",
         "spokenLine": "Impact force is instantly distributed across the entire dome instead of focusing on one point.",
         "sfxCue": "Deep bass shockwave thump"
       },
       {
         "clipIndex": 3,
-        "durationSeconds": 9,
+        "durationSeconds": 5.4,
         "visualAction": "Character shakes off the blow smiling, looking directly into the camera lens with glowing HUD eyes.",
         "spokenLine": "Concussions become a thing of the past, and heavy impacts feel like a gentle tap.",
         "sfxCue": "Futuristic power hum"
@@ -100,7 +101,8 @@
     ],
     "title": "What if your skull was lined with carbon-nanotube armor plates?",
     "scheduledTime": "18:00",
-    "slotName": "Evening"
+    "slotName": "Evening",
+    "audioVoiceoverPath": "audio/VID-003.mp3"
   },
   {
     "serialId": "VID-004",
