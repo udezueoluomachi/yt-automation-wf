@@ -108,35 +108,40 @@
     "serialId": "VID-004",
     "scheduledDate": "2026-11-02",
     "slot": 1,
-    "status": "PENDING",
+    "status": "DONE",
     "topic": "What if your spine had built-in hydraulic shock absorbers?",
-    "targetDurationSeconds": 28,
+    "targetDurationSeconds": 16.5,
     "clips": [
       {
         "clipIndex": 1,
-        "durationSeconds": 9,
+        "durationSeconds": 5.1,
         "visualAction": "Close-up of human vertebrae separating as miniature nitrogen-charged hydraulic dampeners insert between each disc.",
         "spokenLine": "Install nitrogen-charged hydraulic dampeners between every single vertebra in your spine.",
-        "sfxCue": "Pneumatic cylinder slide"
+        "sfxCue": "Pneumatic cylinder slide",
+        "mediaPath": "clips/VID-004-clip1.mp4"
       },
       {
         "clipIndex": 2,
-        "durationSeconds": 10,
+        "durationSeconds": 5.7,
         "visualAction": "Character jumping off a ten-foot ledge and landing heavily on heels; pistons compress and absorb 95 percent of the force.",
         "spokenLine": "When you land from high heights, the pistons compress and absorb ninety-five percent of the impact.",
-        "sfxCue": "Heavy air compression whoosh"
+        "sfxCue": "Heavy air compression whoosh",
+        "mediaPath": "clips/VID-004-clip2.mp4"
       },
       {
         "clipIndex": 3,
-        "durationSeconds": 9,
+        "durationSeconds": 5.7,
         "visualAction": "Spine glowing neon green, returning instantly to neutral position with zero spinal compression damage.",
         "spokenLine": "Your back stays completely straight, protecting your discs from lifetime wear and tear.",
-        "sfxCue": "Clean mechanical lock"
+        "sfxCue": "Clean mechanical lock",
+        "mediaPath": "clips/VID-004-clip3.mp4"
       }
     ],
     "title": "What if your spine had built-in hydraulic shock absorbers?",
     "scheduledTime": "08:00",
-    "slotName": "Morning"
+    "slotName": "Morning",
+    "audioVoiceoverPath": "audio/VID-004.mp3",
+    "renderedAt": "2026-11-02T15:40:41.744Z"
   },
   {
     "serialId": "VID-005",
