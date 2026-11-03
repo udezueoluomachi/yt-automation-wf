@@ -186,35 +186,40 @@
     "serialId": "VID-006",
     "scheduledDate": "2026-11-02",
     "slot": 3,
-    "status": "PENDING",
+    "status": "DONE",
     "topic": "What if your forearms had built-in pneumatic winches?",
-    "targetDurationSeconds": 28,
+    "targetDurationSeconds": 16.03,
     "clips": [
       {
         "clipIndex": 1,
-        "durationSeconds": 9,
+        "durationSeconds": 5.3,
         "visualAction": "Forearm muscle tissue retracting to expose high-tensile steel cables wrapped around a motorized winch drum.",
         "spokenLine": "Embed a high-tensile steel cable winch inside the radius and ulna bones of each forearm.",
-        "sfxCue": "Motor whir and cable spool"
+        "sfxCue": "Motor whir and cable spool",
+        "mediaPath": "clips/VID-006-clip1.mp4"
       },
       {
         "clipIndex": 2,
-        "durationSeconds": 10,
+        "durationSeconds": 5.15,
         "visualAction": "Character shooting a grappling hook from their wrist up to a skyscraper ledge, locking instantly.",
         "spokenLine": "Fire a tungsten grappling hook from your wrist to scale buildings at fifty miles per hour.",
-        "sfxCue": "Hook launch snap"
+        "sfxCue": "Hook launch snap",
+        "mediaPath": "clips/VID-006-clip2.mp4"
       },
       {
         "clipIndex": 3,
-        "durationSeconds": 9,
+        "durationSeconds": 5.58,
         "visualAction": "Winch motor pulling the character upward rapidly against gravity with sparks flying from the spool.",
         "spokenLine": "The internal electric motor pulls your entire body weight upward with zero arm strain.",
-        "sfxCue": "High-torque electric spin"
+        "sfxCue": "High-torque electric spin",
+        "mediaPath": "clips/VID-006-clip3.mp4"
       }
     ],
     "title": "What if your forearms had built-in pneumatic winches?",
     "scheduledTime": "18:00",
-    "slotName": "Evening"
+    "slotName": "Evening",
+    "audioVoiceoverPath": "audio/VID-006.mp3",
+    "renderedAt": "2026-11-03T12:13:40.829Z"
   },
   {
     "serialId": "VID-007",
