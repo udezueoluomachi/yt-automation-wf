@@ -147,35 +147,40 @@
     "serialId": "VID-005",
     "scheduledDate": "2026-11-02",
     "slot": 2,
-    "status": "PENDING",
+    "status": "DONE",
     "topic": "What if your lungs were upgraded to titanium oxygenators?",
-    "targetDurationSeconds": 27,
+    "targetDurationSeconds": 16.32,
     "clips": [
       {
         "clipIndex": 1,
-        "durationSeconds": 9,
+        "durationSeconds": 5.5,
         "visualAction": "Ribcage opening to reveal spongy lungs retracting, replaced by dual honeycomb titanium oxygenator chambers.",
         "spokenLine": "Replace your biological lungs with high-efficiency honeycomb titanium gas-exchange chambers.",
-        "sfxCue": "Valve open hiss"
+        "sfxCue": "Valve open hiss",
+        "mediaPath": "clips/VID-005-clip1.mp4"
       },
       {
         "clipIndex": 2,
-        "durationSeconds": 9,
+        "durationSeconds": 5.8,
         "visualAction": "Macro shot of micro-filters extracting oxygen directly from water or thin air with glowing indicators.",
         "spokenLine": "Micro-filters extract oxygen molecules instantly, letting you breathe underwater for hours.",
-        "sfxCue": "Bubbling liquid pump"
+        "sfxCue": "Bubbling liquid pump",
+        "mediaPath": "clips/VID-005-clip2.mp4"
       },
       {
         "clipIndex": 3,
-        "durationSeconds": 9,
+        "durationSeconds": 5.02,
         "visualAction": "Character swimming deep underwater effortlessly with mechanical ripples trailing from their chest.",
         "spokenLine": "You will never run out of breath during cardio or deep-sea diving ever again.",
-        "sfxCue": "Submerged sonar ping"
+        "sfxCue": "Submerged sonar ping",
+        "mediaPath": "clips/VID-005-clip3.mp4"
       }
     ],
     "title": "What if your lungs were upgraded to titanium oxygenators?",
     "scheduledTime": "13:00",
-    "slotName": "Afternoon"
+    "slotName": "Afternoon",
+    "audioVoiceoverPath": "audio/VID-005.mp3",
+    "renderedAt": "2026-11-03T08:06:18.657Z"
   },
   {
     "serialId": "VID-006",
