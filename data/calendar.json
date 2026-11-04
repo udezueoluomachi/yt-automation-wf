@@ -225,35 +225,40 @@
     "serialId": "VID-007",
     "scheduledDate": "2026-11-03",
     "slot": 1,
-    "status": "PENDING",
+    "status": "DONE",
     "topic": "What if your eyes were upgraded to optical zoom lenses?",
-    "targetDurationSeconds": 28,
+    "targetDurationSeconds": 16.51,
     "clips": [
       {
         "clipIndex": 1,
-        "durationSeconds": 9,
+        "durationSeconds": 5,
         "visualAction": "Macro view of human eye pupils expanding into mechanical aperture iris rings with glass lens elements.",
         "spokenLine": "Replace your natural eye lenses with twenty-times optical zoom mechanical glass apertures.",
-        "sfxCue": "Aperture click and focus whir"
+        "sfxCue": "Aperture click and focus whir",
+        "mediaPath": "clips/VID-007-clip1.mp4"
       },
       {
         "clipIndex": 2,
-        "durationSeconds": 10,
+        "durationSeconds": 5.8,
         "visualAction": "View shifts to extreme telephoto zoom across a city skyline, locking onto a license plate two miles away.",
         "spokenLine": "Zoom in on objects miles away with crisp crystal-clear stabilization and thermal overlays.",
-        "sfxCue": "Digital zoom click and HUD sweep"
+        "sfxCue": "Digital zoom click and HUD sweep",
+        "mediaPath": "clips/VID-007-clip2.mp4"
       },
       {
         "clipIndex": 3,
-        "durationSeconds": 9,
+        "durationSeconds": 5.71,
         "visualAction": "Character blinking twice to snap a high-resolution photo with a shutter sound effect.",
         "spokenLine": "Capture high-resolution screenshots and record video straight from your field of view instantly.",
-        "sfxCue": "Camera shutter click"
+        "sfxCue": "Camera shutter click",
+        "mediaPath": "clips/VID-007-clip3.mp4"
       }
     ],
     "title": "What if your eyes were upgraded to optical zoom lenses?",
     "scheduledTime": "08:00",
-    "slotName": "Morning"
+    "slotName": "Morning",
+    "audioVoiceoverPath": "audio/VID-007.mp3",
+    "renderedAt": "2026-11-04T07:23:16.162Z"
   },
   {
     "serialId": "VID-008",
