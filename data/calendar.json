@@ -264,27 +264,27 @@
     "serialId": "VID-008",
     "scheduledDate": "2026-11-03",
     "slot": 2,
-    "status": "PENDING",
+    "status": "DONE",
     "topic": "What if your hands had micro-servo finger actuators?",
-    "targetDurationSeconds": 27,
+    "targetDurationSeconds": 15.4,
     "clips": [
       {
         "clipIndex": 1,
-        "durationSeconds": 9,
+        "durationSeconds": 4.9,
         "visualAction": "Skin of human fingers peeling back to reveal miniature brushless servo motors and carbon tendons.",
         "spokenLine": "Integrate micro-servo actuators and carbon-fiber tendons into each finger joint.",
         "sfxCue": "High-frequency servo hum"
       },
       {
         "clipIndex": 2,
-        "durationSeconds": 9,
+        "durationSeconds": 4.9,
         "visualAction": "Character crushing a solid steel nut between two fingers with steel strain gauges glowing red.",
         "spokenLine": "Exert up to five hundred pounds of crushing force with absolute millimeter precision.",
         "sfxCue": "Steel crunch and strain beep"
       },
       {
         "clipIndex": 3,
-        "durationSeconds": 9,
+        "durationSeconds": 5.6,
         "visualAction": "Character threading a microscopic needle effortlessly on the first try with magnified micro-vision.",
         "spokenLine": "Lock your hand movements into dead-steady robotic stillness for delicate surgical tasks.",
         "sfxCue": "Lock engage chime"
