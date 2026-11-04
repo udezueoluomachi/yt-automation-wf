@@ -298,27 +298,27 @@
     "serialId": "VID-009",
     "scheduledDate": "2026-11-03",
     "slot": 3,
-    "status": "PENDING",
+    "status": "DONE",
     "topic": "What if your skin had built-in solar panels?",
-    "targetDurationSeconds": 28,
+    "targetDurationSeconds": 16.5,
     "clips": [
       {
         "clipIndex": 1,
-        "durationSeconds": 9,
+        "durationSeconds": 5.1,
         "visualAction": "Arm skin shimmering as transparent photovoltaic micro-scales rise and catch sunlight.",
         "spokenLine": "Coat your entire epidermis in transparent microscopic photovoltaic solar scales.",
         "sfxCue": "Soft energy hum"
       },
       {
         "clipIndex": 2,
-        "durationSeconds": 10,
+        "durationSeconds": 6,
         "visualAction": "Energy flowing through subcutaneous glowing conduits into an internal biological lithium-ion battery.",
         "spokenLine": "Soak up sunlight all day to convert ultraviolet rays directly into clean metabolic electricity.",
         "sfxCue": "Current flowing sound"
       },
       {
         "clipIndex": 3,
-        "durationSeconds": 9,
+        "durationSeconds": 5.4,
         "visualAction": "Character charging a smartphone directly by plugging a cable into their forearm port outdoors.",
         "spokenLine": "You will never need to plug your devices into a wall outlet again when you are the power source.",
         "sfxCue": "Device charging chime"
