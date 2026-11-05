@@ -332,27 +332,27 @@
     "serialId": "VID-010",
     "scheduledDate": "2026-11-04",
     "slot": 1,
-    "status": "PENDING",
+    "status": "DONE",
     "topic": "What if your ribs were replaced with titanium roll cages?",
-    "targetDurationSeconds": 28,
+    "targetDurationSeconds": 15.6,
     "clips": [
       {
         "clipIndex": 1,
-        "durationSeconds": 9,
+        "durationSeconds": 5,
         "visualAction": "Chest cavity opening to reveal natural ribs snapping off and replacing with interlocking tubular titanium bars.",
         "spokenLine": "Replace your ribcage with an FIA-certified tubular titanium racing roll cage.",
         "sfxCue": "Heavy metal wrench and bolt"
       },
       {
         "clipIndex": 2,
-        "durationSeconds": 10,
+        "durationSeconds": 5.4,
         "visualAction": "A massive boulder rolling over the character's chest; the titanium cage deflects the load completely.",
         "spokenLine": "Crushing weights and high-speed car impacts bounce off your torso without breaking a single bone.",
         "sfxCue": "Massive structural impact boom"
       },
       {
         "clipIndex": 3,
-        "durationSeconds": 9,
+        "durationSeconds": 5.2,
         "visualAction": "Character standing up smiling from the rubble, brushing dust off their undamaged shirt.",
         "spokenLine": "Internal organs stay completely safe inside an impenetrable steel fortress.",
         "sfxCue": "Metallic ring tone"

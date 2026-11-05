@@ -19,6 +19,9 @@ export function getMailTransporter() {
     port,
     secure,
     auth: user && pass ? { user, pass } : undefined,
+    connectionTimeout: 60000,
+    greetingTimeout: 30000,
+    socketTimeout: 300000, // 5 minutes for uploading large attachments
   });
 }
 
@@ -287,14 +290,22 @@ export async function sendReviewEmail(
     const errMsg = (error as Error).message || '';
     console.warn(`[SMTP] Combined asset dispatch error: ${errMsg}`);
 
-    // If size limit exceeded, split into 2 emails (Part 1: Master + Audio, Part 2: Raw Clips)
-    if (errMsg.includes('size') || errMsg.includes('552') || errMsg.includes('too large')) {
+    // If size limit exceeded or connection closed on large payload, split into 2 emails (Part 1: Master + Audio, Part 2: Raw Clips)
+    if (
+      errMsg.includes('size') ||
+      errMsg.includes('552') ||
+      errMsg.includes('too large') ||
+      errMsg.includes('Connection closed') ||
+      errMsg.includes('ECONNECTION') ||
+      (error as { code?: string }).code === 'ECONNECTION'
+    ) {
       console.log(`[SMTP] Attempting split dispatch due to attachment size...`);
       // Part 1: Render + Audio + Manifest
       const part1Attachments = [assets.finalRender, assets.voiceover, assets.manifest].filter(
         Boolean
       ) as AttachmentItem[];
-      const info1 = await transporter.sendMail({
+      const splitTransporter1 = getMailTransporter();
+      const info1 = await splitTransporter1.sendMail({
         ...mailOptions,
         subject: `🎬 [Part 1/2] Final Render & Audio: [${serialId}] - ${title}`,
         attachments: part1Attachments,
@@ -302,7 +313,8 @@ export async function sendReviewEmail(
 
       // Part 2: Raw Clips
       const part2Attachments = [...assets.rawClips, assets.manifest];
-      const info2 = await transporter.sendMail({
+      const splitTransporter2 = getMailTransporter();
+      const info2 = await splitTransporter2.sendMail({
         ...mailOptions,
         subject: `🎬 [Part 2/2] Raw 3D Clips Pack: [${serialId}] - ${title}`,
         attachments: part2Attachments,
