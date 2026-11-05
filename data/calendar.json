@@ -366,27 +366,27 @@
     "serialId": "VID-011",
     "scheduledDate": "2026-11-04",
     "slot": 2,
-    "status": "PENDING",
+    "status": "DONE",
     "topic": "What if your tongue had a built-in multi-tool?",
-    "targetDurationSeconds": 27,
+    "targetDurationSeconds": 16.7,
     "clips": [
       {
         "clipIndex": 1,
-        "durationSeconds": 9,
+        "durationSeconds": 4.8,
         "visualAction": "X-ray view of mouth showing a deployable titanium multi-tool blade and hex wrench hidden under the tongue.",
         "spokenLine": "Embed a deployable titanium multi-tool and laser cutter underneath your tongue tissue.",
         "sfxCue": "Surgical slide mechanism"
       },
       {
         "clipIndex": 2,
-        "durationSeconds": 9,
+        "durationSeconds": 6.1,
         "visualAction": "Character slicing open a heavy shipping box or cutting wire effortlessly using mouth motion.",
         "spokenLine": "Cut through zip ties, strip electrical wires, and tighten tiny screws using only your mouth.",
         "sfxCue": "Clean metal snip"
       },
       {
         "clipIndex": 3,
-        "durationSeconds": 9,
+        "durationSeconds": 5.8,
         "visualAction": "Retracting the blade smoothly back into the sublingual slot with a watertight seal locking.",
         "spokenLine": "It retracts safely behind a watertight biopolymer seal when you are ready to eat or speak.",
         "sfxCue": "Seal click"
