@@ -299,7 +299,9 @@ export async function sendReviewEmail(
       errMsg.includes('ECONNECTION') ||
       (error as { code?: string }).code === 'ECONNECTION'
     ) {
-      console.log(`[SMTP] Attempting split dispatch due to attachment size...`);
+      console.log(`[SMTP] Attempting split dispatch due to attachment size (waiting 4s for socket cleanup)...`);
+      await new Promise((resolve) => setTimeout(resolve, 4000));
+
       // Part 1: Render + Audio + Manifest
       const part1Attachments = [assets.finalRender, assets.voiceover, assets.manifest].filter(
         Boolean
@@ -310,6 +312,9 @@ export async function sendReviewEmail(
         subject: `🎬 [Part 1/2] Final Render & Audio: [${serialId}] - ${title}`,
         attachments: part1Attachments,
       });
+
+      console.log(`📧 Part 1 sent: ${info1.messageId}. Pausing 4s before Part 2...`);
+      await new Promise((resolve) => setTimeout(resolve, 4000));
 
       // Part 2: Raw Clips
       const part2Attachments = [...assets.rawClips, assets.manifest];

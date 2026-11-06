@@ -400,27 +400,27 @@
     "serialId": "VID-012",
     "scheduledDate": "2026-11-04",
     "slot": 3,
-    "status": "PENDING",
+    "status": "DONE",
     "topic": "What if your calves had jet-turbine micro-thrusters?",
-    "targetDurationSeconds": 28,
+    "targetDurationSeconds": 15.5,
     "clips": [
       {
         "clipIndex": 1,
-        "durationSeconds": 9,
+        "durationSeconds": 4.9,
         "visualAction": "Calf muscle opening up to reveal twin micro-turbine combustion chambers with glowing blue exhaust nozzles.",
         "spokenLine": "Mount twin hydrogen micro-turbine thrusters directly into the back of each calf muscle.",
         "sfxCue": "Turbine spool-up whine"
       },
       {
         "clipIndex": 2,
-        "durationSeconds": 10,
+        "durationSeconds": 5.5,
         "visualAction": "Character igniting thrusters while running, shooting forward across a track at one hundred miles per hour.",
         "spokenLine": "Ignite the afterburners to sprint at highway speeds and leave a trail of blue plasma fire.",
         "sfxCue": "Jet roar and sonic ripple"
       },
       {
         "clipIndex": 3,
-        "durationSeconds": 9,
+        "durationSeconds": 5.1,
         "visualAction": "Landing gracefully as thrust vectoring nozzles pivot downward to brake instantly.",
         "spokenLine": "Vector nozzles pivot downward on landing to bring you to an immediate dead stop.",
         "sfxCue": "Retro-thruster puff"
@@ -428,7 +428,8 @@
     ],
     "title": "What if your calves had jet-turbine micro-thrusters?",
     "scheduledTime": "18:00",
-    "slotName": "Evening"
+    "slotName": "Evening",
+    "audioVoiceoverPath": "audio/VID-012.mp3"
   },
   {
     "serialId": "VID-013",
