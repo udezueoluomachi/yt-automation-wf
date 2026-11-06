@@ -435,27 +435,27 @@
     "serialId": "VID-013",
     "scheduledDate": "2026-11-05",
     "slot": 1,
-    "status": "PENDING",
+    "status": "DONE",
     "topic": "What if your shoulders had gyroscopic stabilizer rings?",
-    "targetDurationSeconds": 28,
+    "targetDurationSeconds": 16.2,
     "clips": [
       {
         "clipIndex": 1,
-        "durationSeconds": 9,
+        "durationSeconds": 5.1,
         "visualAction": "Shoulder socket scanned with X-ray, revealing dual spinning brass gyroscope rings running on magnetic bearings.",
         "spokenLine": "Install high-speed gyroscopic stabilizer rings inside both shoulder sockets.",
         "sfxCue": "High-RPM gyro spin hum"
       },
       {
         "clipIndex": 2,
-        "durationSeconds": 10,
+        "durationSeconds": 5.8,
         "visualAction": "Character walking across a tightrope in a hurricane while their upper body remains perfectly level and stable.",
         "spokenLine": "No matter how much you slip or stumble, gyros instantly lock your upper body level to the horizon.",
         "sfxCue": "Servo adjustment click"
       },
       {
         "clipIndex": 3,
-        "durationSeconds": 9,
+        "durationSeconds": 5.3,
         "visualAction": "Carrying a tray stacked with full wine glasses across rough terrain without spilling a single drop.",
         "spokenLine": "Walk across earthquake rubble or tightropes without spilling a single drop of water.",
         "sfxCue": "Calm ambient chime"
@@ -463,7 +463,8 @@
     ],
     "title": "What if your shoulders had gyroscopic stabilizer rings?",
     "scheduledTime": "08:00",
-    "slotName": "Morning"
+    "slotName": "Morning",
+    "audioVoiceoverPath": "audio/VID-013.mp3"
   },
   {
     "serialId": "VID-014",
