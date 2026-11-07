@@ -470,27 +470,27 @@
     "serialId": "VID-014",
     "scheduledDate": "2026-11-05",
     "slot": 2,
-    "status": "PENDING",
+    "status": "DONE",
     "topic": "What if your ears had ultrasonic radar echolocation?",
-    "targetDurationSeconds": 27,
+    "targetDurationSeconds": 16.6,
     "clips": [
       {
         "clipIndex": 1,
-        "durationSeconds": 9,
+        "durationSeconds": 5.1,
         "visualAction": "Inner ear bones glowing as piezoelectric sonar transducers integrate with the cochlea.",
         "spokenLine": "Upgrade your inner ear cochlea with piezoelectric ultrasonic sonar transducers.",
         "sfxCue": "Subtle sonar pulse ping"
       },
       {
         "clipIndex": 2,
-        "durationSeconds": 9,
+        "durationSeconds": 6.1,
         "visualAction": "Character standing in total pitch blackness while a 3D wireframe map of the room renders in their mind.",
         "spokenLine": "Emit silent soundwaves to render a complete 3D wireframe map of rooms in total darkness.",
         "sfxCue": "Radar sweep sound"
       },
       {
         "clipIndex": 3,
-        "durationSeconds": 9,
+        "durationSeconds": 5.4,
         "visualAction": "Hearing a whisper from across a crowded football stadium clearly through directional audio filtering.",
         "spokenLine": "Isolate and amplify a single conversation from across a crowded football stadium.",
         "sfxCue": "Audio zoom frequency filter"
@@ -498,7 +498,9 @@
     ],
     "title": "What if your ears had ultrasonic radar echolocation?",
     "scheduledTime": "13:00",
-    "slotName": "Afternoon"
+    "slotName": "Afternoon",
+    "audioVoiceoverPath": "audio/VID-014.mp3",
+    "renderedAt": "2026-11-07T07:13:30.000Z"
   },
   {
     "serialId": "VID-015",
