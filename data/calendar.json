@@ -506,27 +506,27 @@
     "serialId": "VID-015",
     "scheduledDate": "2026-11-05",
     "slot": 3,
-    "status": "PENDING",
+    "status": "DONE",
     "topic": "What if your blood had nanobots to heal wounds instantly?",
-    "targetDurationSeconds": 28,
+    "targetDurationSeconds": 15.84,
     "clips": [
       {
         "clipIndex": 1,
-        "durationSeconds": 9,
+        "durationSeconds": 4.8,
         "visualAction": "Microscopic view of bloodstream swarming with millions of silver medical nanobots carrying fresh platelets.",
         "spokenLine": "Inject trillions of self-repairing medical nanobots into your circulatory bloodstream.",
         "sfxCue": "Microscopic mechanical whir"
       },
       {
         "clipIndex": 2,
-        "durationSeconds": 10,
+        "durationSeconds": 5.9,
         "visualAction": "A knife cuts deep into skin; nanobots swarm the wound site, knitting tissue and skin back together in three seconds.",
         "spokenLine": "When you get cut or bruised, nanobots swarm the injury and knit tissue back together in seconds.",
         "sfxCue": "Rapid tissue stitch zap"
       },
       {
         "clipIndex": 3,
-        "durationSeconds": 9,
+        "durationSeconds": 5.2,
         "visualAction": "Skin returning to pristine condition instantly with zero scarring or blood loss.",
         "spokenLine": "Bleeding is completely eliminated, and scars become a thing of ancient history.",
         "sfxCue": "Success chime"
@@ -534,7 +534,9 @@
     ],
     "title": "What if your blood had nanobots to heal wounds instantly?",
     "scheduledTime": "18:00",
-    "slotName": "Evening"
+    "slotName": "Evening",
+    "audioVoiceoverPath": "audio/VID-015.mp3",
+    "renderedAt": "2026-11-07T12:10:50.000Z"
   },
   {
     "serialId": "VID-016",
