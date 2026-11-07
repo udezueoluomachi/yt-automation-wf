@@ -542,27 +542,27 @@
     "serialId": "VID-016",
     "scheduledDate": "2026-11-06",
     "slot": 1,
-    "status": "PENDING",
+    "status": "DONE",
     "topic": "What if your teeth were made of industrial tungsten carbide?",
-    "targetDurationSeconds": 28,
+    "targetDurationSeconds": 16.46,
     "clips": [
       {
         "clipIndex": 1,
-        "durationSeconds": 9,
+        "durationSeconds": 4.8,
         "visualAction": "Dental scan showing enamel teeth dissolving and replacing with matte-grey tungsten carbide crowns.",
         "spokenLine": "Replace your tooth enamel with indestructible industrial tungsten carbide implants.",
         "sfxCue": "Grinding metal tool"
       },
       {
         "clipIndex": 2,
-        "durationSeconds": 10,
+        "durationSeconds": 5.7,
         "visualAction": "Character biting down and chewing solid granite rock into fine dust with sparks flying.",
         "spokenLine": "Crunch through solid granite rocks, iron nails, and steel bolts like they are potato chips.",
         "sfxCue": "Rock crush and metal grind"
       },
       {
         "clipIndex": 3,
-        "durationSeconds": 9,
+        "durationSeconds": 5.9,
         "visualAction": "Smiling into the mirror showing gleaming indestructible industrial teeth with zero wear.",
         "spokenLine": "Cavities, root canals, and chipped teeth are permanently engineered out of existence.",
         "sfxCue": "Polished ding sound"
@@ -570,7 +570,9 @@
     ],
     "title": "What if your teeth were made of industrial tungsten carbide?",
     "scheduledTime": "08:00",
-    "slotName": "Morning"
+    "slotName": "Morning",
+    "audioVoiceoverPath": "audio/VID-016.mp3",
+    "renderedAt": "2026-11-07T17:15:51.000Z"
   },
   {
     "serialId": "VID-017",
