@@ -56,8 +56,7 @@ fi
 # CLEANUP TRAP: Cleanly terminate automation Chrome and Kimi when done
 # -----------------------------------------------------------------------------
 cleanup() {
-  echo "[$(date '+%Y-%m-%d %H:%M:%S')] Cleaning up temporary automation processes..." >> "$LOG_FILE"
-  pkill -f "remote-debugging-port=9333" >/dev/null 2>&1 || true
+  echo "[$(date '+%Y-%m-%d %H:%M:%S')] Production job cycle finished." >> "$LOG_FILE"
 }
 trap cleanup EXIT
 
@@ -91,18 +90,17 @@ if ! curl -s http://127.0.0.1:10086/health >/dev/null 2>&1 && ! pgrep -f "kimi-w
 fi
 
 # -----------------------------------------------------------------------------
-# 4. Launch isolated headless Chrome ONLY for this production run
-# Uses strictly its own user-data-dir and NEVER touches the user's regular Chrome profile.
-# Completely unsets DISPLAY and WAYLAND so it NEVER opens a GUI window on the screen.
+# 4. Ensure Chrome is running on port 9333 within user desktop session
+# Uses the user's normal Chrome profile and active desktop environment.
+# Never unsets DISPLAY or WAYLAND so GNOME Keyring and Google sessions remain intact.
 # -----------------------------------------------------------------------------
 if ! curl -s http://127.0.0.1:9333/json/version >/dev/null 2>&1; then
-  echo "[$(date '+%Y-%m-%d %H:%M:%S')] Starting isolated headless Chrome on port 9333..." >> "$LOG_FILE"
-  mkdir -p "$HOME/.flow-mcp/chrome-profile" "$HOME/.flow-mcp/cache"
-  rm -f "$HOME/.flow-mcp/chrome-profile/Singleton"* 2>/dev/null || true
-  
-  CHROME_FLAGS="--remote-debugging-port=9333 --user-data-dir=$HOME/.flow-mcp/chrome-profile --disk-cache-dir=$HOME/.flow-mcp/cache --password-store=basic --headless=new --disable-gpu --no-first-run --no-default-browser-check"
-  nohup env -u DISPLAY -u WAYLAND_DISPLAY -u XAUTHORITY google-chrome $CHROME_FLAGS about:blank >> "$PROJECT_DIR/chrome.log" 2>&1 &
-  sleep 5
+  echo "[$(date '+%Y-%m-%d %H:%M:%S')] Chrome not listening on port 9333. Connecting to desktop session..." >> "$LOG_FILE"
+  export WAYLAND_DISPLAY="${WAYLAND_DISPLAY:-wayland-0}"
+  export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/run/user/1000}"
+  export DBUS_SESSION_BUS_ADDRESS="${DBUS_SESSION_BUS_ADDRESS:-unix:path=/run/user/1000/bus}"
+  nohup google-chrome --remote-debugging-port=9333 --ozone-platform=wayland --disable-vulkan >> "$PROJECT_DIR/chrome.log" 2>&1 &
+  sleep 4
 fi
 
 # -----------------------------------------------------------------------------
