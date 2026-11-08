@@ -97,9 +97,10 @@ fi
 # -----------------------------------------------------------------------------
 if ! curl -s http://127.0.0.1:9333/json/version >/dev/null 2>&1; then
   echo "[$(date '+%Y-%m-%d %H:%M:%S')] Starting isolated headless Chrome on port 9333..." >> "$LOG_FILE"
-  rm -f "$HOME/.config/google-chrome-remote/Singleton"* 2>/dev/null || true
+  mkdir -p "$HOME/.flow-mcp/chrome-profile"
+  rm -f "$HOME/.flow-mcp/chrome-profile/Singleton"* 2>/dev/null || true
   
-  CHROME_FLAGS="--remote-debugging-port=9333 --user-data-dir=$HOME/.config/google-chrome-remote --headless=new --disable-gpu --no-first-run --no-default-browser-check"
+  CHROME_FLAGS="--remote-debugging-port=9333 --user-data-dir=$HOME/.flow-mcp/chrome-profile --password-store=basic --headless=new --disable-gpu --no-first-run --no-default-browser-check"
   nohup env -u DISPLAY -u WAYLAND_DISPLAY -u XAUTHORITY google-chrome $CHROME_FLAGS https://flow.google.com/ >> "$PROJECT_DIR/chrome.log" 2>&1 &
   sleep 5
 fi
