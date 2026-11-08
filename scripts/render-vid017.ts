@@ -1,0 +1,50 @@
+import { renderShortVideo } from '../src/render.js';
+import { readFileSync, writeFileSync, copyFileSync, existsSync } from 'node:fs';
+import { execSync } from 'node:child_process';
+import { join } from 'node:path';
+
+async function main() {
+  const calPath = 'data/calendar.json';
+  const calendar = JSON.parse(readFileSync(calPath, 'utf8'));
+  const entry = calendar.find((e: any) => e.serialId === 'VID-017');
+  if (!entry) throw new Error('VID-017 not found in calendar.json');
+
+  // Update target duration and act durations to match voiceover (15.48s total)
+  entry.targetDurationSeconds = 15.48;
+  entry.audioVoiceoverPath = 'audio/VID-017.mp3';
+  entry.clips[0].durationSeconds = 4.5;
+  entry.clips[1].durationSeconds = 5.8;
+  entry.clips[2].durationSeconds = 5.2;
+  writeFileSync(calPath, JSON.stringify(calendar, null, 2), 'utf8');
+  console.log('[CALENDAR] Updated VID-017 timings to match voiceover (15.48s total)');
+
+  console.log('[REMOTION] Rendering video for entry:', entry.serialId, entry.title);
+  const outPath = await renderShortVideo(entry, (pct) => {
+    if (Math.round(pct) % 20 === 0) {
+      console.log(`[REMOTION] Render progress: ${Math.round(pct)}%`);
+    }
+  });
+
+  console.log(`[REMOTION] Successfully rendered video to: ${outPath}`);
+
+  // Optimize final video with ffmpeg to ~1400k bitrate for optimal email delivery
+  const optPath = join(process.cwd(), 'out', 'VID-017_opt.mp4');
+  console.log(`[FFMPEG] Compressing video to ${optPath}...`);
+  execSync(`ffmpeg -y -i "${outPath}" -c:v libx264 -b:v 1400k -maxrate 1600k -bufsize 2000k -preset slow -c:a aac -b:a 128k "${optPath}"`, { stdio: 'inherit' });
+  copyFileSync(optPath, outPath);
+  console.log(`[FFMPEG] Replaced original with optimized video at ${outPath}`);
+
+  // Extract keyframe artifacts for act 1, 2, 3
+  const brainDir = '/home/oluomachi-c-udezue/.gemini/antigravity-cli/brain/fcdb013c-7946-4c00-8518-a92ebcf45cdd';
+  console.log(`[ARTIFACTS] Extracting act keyframes to ${brainDir}...`);
+  // Act 1 at ~2.2s, Act 2 at ~7.0s, Act 3 at ~12.5s
+  execSync(`ffmpeg -y -ss 00:00:02.200 -i "${outPath}" -vframes 1 -q:v 2 "${join(brainDir, 'vid017_act1.jpg')}"`, { stdio: 'inherit' });
+  execSync(`ffmpeg -y -ss 00:00:07.000 -i "${outPath}" -vframes 1 -q:v 2 "${join(brainDir, 'vid017_act2.jpg')}"`, { stdio: 'inherit' });
+  execSync(`ffmpeg -y -ss 00:00:12.500 -i "${outPath}" -vframes 1 -q:v 2 "${join(brainDir, 'vid017_act3.jpg')}"`, { stdio: 'inherit' });
+  console.log(`[ARTIFACTS] Keyframes saved successfully.`);
+}
+
+main().catch(err => {
+  console.error('[REMOTION] Render error:', err);
+  process.exit(1);
+});

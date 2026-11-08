@@ -578,27 +578,27 @@
     "serialId": "VID-017",
     "scheduledDate": "2026-11-06",
     "slot": 2,
-    "status": "PENDING",
+    "status": "DONE",
     "topic": "What if your feet had magnetic clamp boots?",
-    "targetDurationSeconds": 27,
+    "targetDurationSeconds": 15.48,
     "clips": [
       {
         "clipIndex": 1,
-        "durationSeconds": 9,
+        "durationSeconds": 4.5,
         "visualAction": "Soles of feet splitting open to reveal powerful rare-earth electromagnet coils wired to nerve impulses.",
         "spokenLine": "Embed rare-earth electromagnet coils into the sole bones of both feet.",
         "sfxCue": "Electromagnet charge hum"
       },
       {
         "clipIndex": 2,
-        "durationSeconds": 9,
+        "durationSeconds": 5.8,
         "visualAction": "Character walking upside down on the metal ceiling of a tunnel, sticking firmly with each step.",
         "spokenLine": "Flip a mental switch to walk upside down along steel ceilings and vertical bridges at will.",
         "sfxCue": "Magnetic snap lock"
       },
       {
         "clipIndex": 3,
-        "durationSeconds": 9,
+        "durationSeconds": 5.2,
         "visualAction": "Releasing magnetic polarity instantly to drop safely back down to the floor.",
         "spokenLine": "Deactivate the field instantly with a thought whenever you want to return to the ground.",
         "sfxCue": "Magnetic field release"
@@ -606,7 +606,9 @@
     ],
     "title": "What if your feet had magnetic clamp boots?",
     "scheduledTime": "13:00",
-    "slotName": "Afternoon"
+    "slotName": "Afternoon",
+    "audioVoiceoverPath": "audio/VID-017.mp3",
+    "renderedAt": "2026-11-08T21:08:43.875Z"
   },
   {
     "serialId": "VID-018",
