@@ -614,27 +614,27 @@
     "serialId": "VID-018",
     "scheduledDate": "2026-11-06",
     "slot": 3,
-    "status": "PENDING",
+    "status": "DONE",
     "topic": "What if your neck had a 360-degree swivel joint?",
-    "targetDurationSeconds": 28,
+    "targetDurationSeconds": 15.16,
     "clips": [
       {
         "clipIndex": 1,
-        "durationSeconds": 9,
+        "durationSeconds": 5.5,
         "visualAction": "Neck vertebrae replaced by a smooth stainless steel ball-and-socket bearing joint with flexible wiring.",
         "spokenLine": "Replace your cervical vertebrae with a stainless steel 360-degree ball-bearing swivel joint.",
         "sfxCue": "Smooth ball bearing roll"
       },
       {
         "clipIndex": 2,
-        "durationSeconds": 10,
+        "durationSeconds": 4.6,
         "visualAction": "Character looking straight forward while their entire head rotates completely backward to see behind them.",
         "spokenLine": "Rotate your head all the way around to check your blind spots without turning your torso.",
         "sfxCue": "Mechanical pivot click"
       },
       {
         "clipIndex": 3,
-        "durationSeconds": 9,
+        "durationSeconds": 5.06,
         "visualAction": "Head snapping back to front instantly with fluid optical cable slack management.",
         "spokenLine": "Internal slip-rings keep your optical and neural cables from ever tangling or twisting.",
         "sfxCue": "Lock engage click"
@@ -642,7 +642,9 @@
     ],
     "title": "What if your neck had a 360-degree swivel joint?",
     "scheduledTime": "18:00",
-    "slotName": "Evening"
+    "slotName": "Evening",
+    "audioVoiceoverPath": "audio/VID-018.mp3",
+    "renderedAt": "2026-11-09T17:21:43.605Z"
   },
   {
     "serialId": "VID-019",
