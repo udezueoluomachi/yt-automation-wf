@@ -319,14 +319,30 @@ export async function sendReviewEmail(
       // Part 2: Raw Clips
       const part2Attachments = [...assets.rawClips, assets.manifest];
       const splitTransporter2 = getMailTransporter();
-      const info2 = await splitTransporter2.sendMail({
-        ...mailOptions,
-        subject: `🎬 [Part 2/2] Raw 3D Clips Pack: [${serialId}] - ${title}`,
-        attachments: part2Attachments,
-      });
-
-      console.log(`📧 Split emails sent successfully: Part 1=${info1.messageId}, Part 2=${info2.messageId}`);
-      return info1;
+      try {
+        const info2 = await splitTransporter2.sendMail({
+          ...mailOptions,
+          subject: `🎬 [Part 2/2] Raw 3D Clips Pack: [${serialId}] - ${title}`,
+          attachments: part2Attachments,
+        });
+        console.log(`📧 Split emails sent successfully: Part 1=${info1.messageId}, Part 2=${info2.messageId}`);
+        return info1;
+      } catch (part2Err) {
+        console.warn(`[SMTP] Part 2 bulk dispatch failed: ${(part2Err as Error).message}. Falling back to individual clip dispatches...`);
+        // Fallback: Dispatch each raw clip in its own separate email
+        for (let i = 0; i < assets.rawClips.length; i++) {
+          const clip = assets.rawClips[i];
+          await new Promise((resolve) => setTimeout(resolve, 3000));
+          const clipTransporter = getMailTransporter();
+          const clipInfo = await clipTransporter.sendMail({
+            ...mailOptions,
+            subject: `🎬 [Part ${i + 2}/${assets.rawClips.length + 1}] Raw Clip ${i + 1}: [${serialId}] - ${title}`,
+            attachments: [clip, assets.manifest],
+          });
+          console.log(`📧 Raw clip ${i + 1} dispatched successfully: ${clipInfo.messageId}`);
+        }
+        return info1;
+      }
     }
     throw error;
   }
