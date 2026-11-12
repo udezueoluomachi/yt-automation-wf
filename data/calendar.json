@@ -686,27 +686,27 @@
     "serialId": "VID-020",
     "scheduledDate": "2026-11-07",
     "slot": 2,
-    "status": "PENDING",
+    "status": "DONE",
     "topic": "What if your sweat glands produced cooling liquid nitrogen?",
-    "targetDurationSeconds": 27,
+    "targetDurationSeconds": 19.85,
     "clips": [
       {
         "clipIndex": 1,
-        "durationSeconds": 9,
+        "durationSeconds": 6.15,
         "visualAction": "Skin cross-section showing sweat glands re-routed to micro-cryogenic cooling tanks filled with liquid coolant.",
         "spokenLine": "Re-route your sweat glands into micro-cryogenic liquid coolant reservoirs.",
         "sfxCue": "Cryo tank valve click"
       },
       {
         "clipIndex": 2,
-        "durationSeconds": 9,
+        "durationSeconds": 7.45,
         "visualAction": "Character standing in a blazing desert fire while frost forms instantly on their skin, keeping them at room temp.",
         "spokenLine": "When body temperature spikes, release a fine mist of frost that instantly neutralizes extreme heat.",
         "sfxCue": "Frost evaporation hiss"
       },
       {
         "clipIndex": 3,
-        "durationSeconds": 9,
+        "durationSeconds": 6.25,
         "visualAction": "Steaming cool vapor rising from the skin as the character smiles comfortably in volcanic heat.",
         "spokenLine": "You will never overheat, sweat uncomfortably, or suffer from heatstroke again.",
         "sfxCue": "Cooling fan whir"
@@ -714,7 +714,9 @@
     ],
     "title": "What if your sweat glands produced cooling liquid nitrogen?",
     "scheduledTime": "13:00",
-    "slotName": "Afternoon"
+    "slotName": "Afternoon",
+    "audioVoiceoverPath": "audio/VID-020.mp3",
+    "renderedAt": "2026-11-12T19:39:50.231Z"
   },
   {
     "serialId": "VID-021",
