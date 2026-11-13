@@ -722,27 +722,27 @@
     "serialId": "VID-021",
     "scheduledDate": "2026-11-07",
     "slot": 3,
-    "status": "PENDING",
+    "status": "DONE",
     "topic": "What if your nose had a built-in chemical gas analyzer?",
-    "targetDurationSeconds": 28,
+    "targetDurationSeconds": 18.76,
     "clips": [
       {
         "clipIndex": 1,
-        "durationSeconds": 9,
+        "durationSeconds": 5.8,
         "visualAction": "Nasal cavity scanned to reveal miniature mass spectrometer gas sensors wired directly to the olfactory nerve.",
         "spokenLine": "Integrate a miniature mass spectrometer gas analyzer directly into your nasal cavity.",
         "sfxCue": "Sensor scan beep"
       },
       {
         "clipIndex": 2,
-        "durationSeconds": 10,
+        "durationSeconds": 7.05,
         "visualAction": "Character sniffing a suspicious room; a glowing HUD appears in their vision identifying toxic carbon monoxide gas.",
         "spokenLine": "Instantly detect poisonous gases, explosives, and toxins in the air with digital ppm readouts.",
         "sfxCue": "Warning alarm pulse"
       },
       {
         "clipIndex": 3,
-        "durationSeconds": 9,
+        "durationSeconds": 5.91,
         "visualAction": "Internal air filter vents sealing shut automatically to block the toxic fumes.",
         "spokenLine": "Automatic micro-filters seal your airway the second dangerous airborne chemicals are detected.",
         "sfxCue": "Airtight valve snap"
@@ -750,7 +750,9 @@
     ],
     "title": "What if your nose had a built-in chemical gas analyzer?",
     "scheduledTime": "18:00",
-    "slotName": "Evening"
+    "slotName": "Evening",
+    "audioVoiceoverPath": "audio/VID-021.mp3",
+    "renderedAt": "2026-11-13T11:15:12.517Z"
   },
   {
     "serialId": "VID-022",
