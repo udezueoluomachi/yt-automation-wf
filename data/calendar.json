@@ -794,27 +794,27 @@
     "serialId": "VID-023",
     "scheduledDate": "2026-11-08",
     "slot": 2,
-    "status": "PENDING",
+    "status": "DONE",
     "topic": "What if your knuckles had tungsten spikes?",
-    "targetDurationSeconds": 27,
+    "targetDurationSeconds": 19.38,
     "clips": [
       {
         "clipIndex": 1,
-        "durationSeconds": 9,
+        "durationSeconds": 6,
         "visualAction": "Fist clenched as knuckle skin slides back to deploy half-inch hardened tungsten steel spikes.",
         "spokenLine": "Hide retractable hardened tungsten steel spikes beneath the skin of each knuckle.",
         "sfxCue": "Spring-loaded spike snap"
       },
       {
         "clipIndex": 2,
-        "durationSeconds": 9,
+        "durationSeconds": 7.2,
         "visualAction": "Punching directly through a thick steel vault door, piercing the metal cleanly with zero hand damage.",
         "spokenLine": "Punch straight through solid steel doors and concrete walls with absolute ease.",
         "sfxCue": "Steel puncture crash"
       },
       {
         "clipIndex": 3,
-        "durationSeconds": 9,
+        "durationSeconds": 6.18,
         "visualAction": "Spikes retracting smoothly beneath the skin as the hand relaxes back to normal form.",
         "spokenLine": "Retract them flush beneath your skin when you are done breaking things.",
         "sfxCue": "Smooth lock click"
@@ -822,7 +822,9 @@
     ],
     "title": "What if your knuckles had tungsten spikes?",
     "scheduledTime": "13:00",
-    "slotName": "Afternoon"
+    "slotName": "Afternoon",
+    "audioVoiceoverPath": "audio/VID-023.mp3",
+    "renderedAt": "2026-11-13T17:36:57.705Z"
   },
   {
     "serialId": "VID-024",
