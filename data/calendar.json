@@ -758,27 +758,27 @@
     "serialId": "VID-022",
     "scheduledDate": "2026-11-08",
     "slot": 1,
-    "status": "PENDING",
+    "status": "DONE",
     "topic": "What if your hips had motorized ball bearings for infinite walking?",
-    "targetDurationSeconds": 28,
+    "targetDurationSeconds": 19.38,
     "clips": [
       {
         "clipIndex": 1,
-        "durationSeconds": 9,
+        "durationSeconds": 6,
         "visualAction": "Hip joints replaced with motorized titanium ball bearings connected to kinetic energy generators.",
         "spokenLine": "Replace your hip sockets with motorized titanium ball-bearing assemblies.",
         "sfxCue": "Electric motor hum"
       },
       {
         "clipIndex": 2,
-        "durationSeconds": 10,
+        "durationSeconds": 7.25,
         "visualAction": "Character walking across continents for days straight without stopping, hips glowing with kinetic charge.",
         "spokenLine": "Walk across entire countries for days at a time without feeling an ounce of leg fatigue.",
         "sfxCue": "Rhythmic stride click"
       },
       {
         "clipIndex": 3,
-        "durationSeconds": 9,
+        "durationSeconds": 6.13,
         "visualAction": "Energy recovered from walking being channeled directly into powering internal bionic batteries.",
         "spokenLine": "Your stride generates enough electrical power to keep all your cybernetic implants fully charged.",
         "sfxCue": "Battery fill chime"
@@ -786,7 +786,9 @@
     ],
     "title": "What if your hips had motorized ball bearings for infinite walking?",
     "scheduledTime": "08:00",
-    "slotName": "Morning"
+    "slotName": "Morning",
+    "audioVoiceoverPath": "audio/VID-022.mp3",
+    "renderedAt": "2026-11-13T13:42:23.072Z"
   },
   {
     "serialId": "VID-023",
