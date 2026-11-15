@@ -43,13 +43,6 @@ async function main() {
 
   await new Promise(r => setTimeout(r, 1500));
 
-  console.log('[DL] Inspecting menu items...');
-  const menuItems = await evalInPage(`(() => {
-    const items = [...document.querySelectorAll('[role="menuitem"], .mat-mdc-menu-item')];
-    return items.map(i => i.innerText.trim());
-  })()`);
-  console.log('[DL] Available menu items:', menuItems);
-
   console.log('[DL] Clicking Download menu item...');
   const clickDl = await evalInPage(`(() => {
     const items = [...document.querySelectorAll('[role="menuitem"], .mat-mdc-menu-item')];
@@ -63,13 +56,6 @@ async function main() {
   console.log('[DL] Click download result:', clickDl);
 
   await new Promise(r => setTimeout(r, 2000));
-
-  console.log('[DL] Inspecting submenu items...');
-  const subItems = await evalInPage(`(() => {
-    const items = [...document.querySelectorAll('[role="menuitem"], .mat-mdc-menu-item')];
-    return items.map(i => i.innerText.trim());
-  })()`);
-  console.log('[DL] Available submenu items:', subItems);
 
   console.log('[DL] Clicking 720p / Original size option...');
   const clickSub = await evalInPage(`(() => {
@@ -92,7 +78,7 @@ async function main() {
         const fullPath = join(DOWNLOADS_DIR, f);
         console.log(`[DL] Found newly downloaded clip: ${fullPath} (${statSync(fullPath).size} bytes)`);
         
-        const finalClipPath = join(CLIPS_DIR, 'VID-023-clip3.mp4');
+        const finalClipPath = join(CLIPS_DIR, 'VID-024-clip3.mp4');
         copyFileSync(fullPath, finalClipPath);
         copyFileSync(fullPath, join(CLIPS_DIR, 'clip3.mp4'));
         console.log(`[DL] Staged to ${finalClipPath} and clip3.mp4`);

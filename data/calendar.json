@@ -830,27 +830,27 @@
     "serialId": "VID-024",
     "scheduledDate": "2026-11-08",
     "slot": 3,
-    "status": "PENDING",
+    "status": "DONE",
     "topic": "What if your voice box had an acoustic loudspeaker booster?",
-    "targetDurationSeconds": 28,
+    "targetDurationSeconds": 17.24,
     "clips": [
       {
         "clipIndex": 1,
-        "durationSeconds": 9,
+        "durationSeconds": 6.4,
         "visualAction": "Throat cross-section showing vocal cords wrapped in a piezoelectric ceramic acoustic amplifier and speaker cone.",
         "spokenLine": "Wrap your vocal cords in a piezoelectric ceramic acoustic amplifier and directional speaker.",
         "sfxCue": "Microphone feedback whine"
       },
       {
         "clipIndex": 2,
-        "durationSeconds": 10,
+        "durationSeconds": 5,
         "visualAction": "Character whispering normally while soundwaves shatter glass windows across the street.",
         "spokenLine": "Whisper softly while projecting your voice loud enough to shatter glass windows a block away.",
         "sfxCue": "Glass shattering explosion"
       },
       {
         "clipIndex": 3,
-        "durationSeconds": 9,
+        "durationSeconds": 5.84,
         "visualAction": "Adjusting acoustic frequency dial on throat to produce deep ultrasonic frequencies that scatter crowds.",
         "spokenLine": "Modulate your frequency to project sonic shockwaves or broadcast crystal-clear audio anywhere.",
         "sfxCue": "Deep bass wave pulse"
@@ -858,7 +858,9 @@
     ],
     "title": "What if your voice box had an acoustic loudspeaker booster?",
     "scheduledTime": "18:00",
-    "slotName": "Evening"
+    "slotName": "Evening",
+    "audioVoiceoverPath": "audio/VID-024.mp3",
+    "renderedAt": "2026-11-15T14:41:29.493Z"
   },
   {
     "serialId": "VID-025",
