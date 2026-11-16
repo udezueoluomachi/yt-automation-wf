@@ -866,27 +866,27 @@
     "serialId": "VID-025",
     "scheduledDate": "2026-11-09",
     "slot": 1,
-    "status": "PENDING",
+    "status": "DONE",
     "topic": "What if your stomach had an industrial acid neutralization valve?",
-    "targetDurationSeconds": 28,
+    "targetDurationSeconds": 17.26,
     "clips": [
       {
         "clipIndex": 1,
-        "durationSeconds": 9,
+        "durationSeconds": 5.8,
         "visualAction": "Stomach lining fitted with a titanium valve and alkaline buffer injection ports.",
         "spokenLine": "Install a titanium neutralization valve and alkaline buffer injector inside your stomach lining.",
         "sfxCue": "Valve turn click"
       },
       {
         "clipIndex": 2,
-        "durationSeconds": 10,
+        "durationSeconds": 5.6,
         "visualAction": "Character swallowing a rusty iron bolt or spoiled food; stomach acid neutralizes toxins instantly.",
         "spokenLine": "Eat anything from rusty scrap metal to spoiled food without getting food poisoning or indigestion.",
         "sfxCue": "Chemical fizz neutralize"
       },
       {
         "clipIndex": 3,
-        "durationSeconds": 9,
+        "durationSeconds": 5.86,
         "visualAction": "Digestive system glowing green as nutrients are extracted at 100 percent efficiency with zero waste.",
         "spokenLine": "Extract one hundred percent nutritional value from every meal with zero toxic waste leftover.",
         "sfxCue": "Completion chime"
@@ -894,7 +894,9 @@
     ],
     "title": "What if your stomach had an industrial acid neutralization valve?",
     "scheduledTime": "08:00",
-    "slotName": "Morning"
+    "slotName": "Morning",
+    "audioVoiceoverPath": "audio/VID-025.mp3",
+    "renderedAt": "2026-11-16T19:43:05.326Z"
   },
   {
     "serialId": "VID-026",
