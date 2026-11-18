@@ -938,27 +938,27 @@
     "serialId": "VID-027",
     "scheduledDate": "2026-11-09",
     "slot": 3,
-    "status": "PENDING",
+    "status": "DONE",
     "topic": "What if your fingers had built-in lockpick tools?",
-    "targetDurationSeconds": 28,
+    "targetDurationSeconds": 15.92,
     "clips": [
       {
         "clipIndex": 1,
-        "durationSeconds": 9,
+        "durationSeconds": 5.8,
         "visualAction": "Fingertip skin sliding open to reveal ultra-thin titanium tension wrenches and lockpick picks.",
         "spokenLine": "Concealed micro-titanium lockpick pins slide out from the tip of each index finger.",
         "sfxCue": "Precision metal slide"
       },
       {
         "clipIndex": 2,
-        "durationSeconds": 10,
+        "durationSeconds": 5.8,
         "visualAction": "Inserting fingers into a mechanical padlock keyhole; internal sensors feel tumbler clicks precisely.",
         "spokenLine": "Feel tumbler pins and spring tension at a microscopic level to pick any lock in seconds.",
         "sfxCue": "Tumbler click series"
       },
       {
         "clipIndex": 3,
-        "durationSeconds": 9,
+        "durationSeconds": 4.32,
         "visualAction": "Padlock spring opens with a satisfying snap as picks retract neatly back into the fingers.",
         "spokenLine": "The ultimate covert tool is always attached right to your fingertips.",
         "sfxCue": "Lock open latch snap"
@@ -966,7 +966,9 @@
     ],
     "title": "What if your fingers had built-in lockpick tools?",
     "scheduledTime": "18:00",
-    "slotName": "Evening"
+    "slotName": "Evening",
+    "audioVoiceoverPath": "audio/VID-027.mp3",
+    "renderedAt": "2026-11-18T13:14:52.003Z"
   },
   {
     "serialId": "VID-028",
