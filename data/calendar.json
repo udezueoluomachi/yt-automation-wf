@@ -974,27 +974,27 @@
     "serialId": "VID-028",
     "scheduledDate": "2026-11-10",
     "slot": 1,
-    "status": "PENDING",
+    "status": "DONE",
     "topic": "What if your forehead had a high-intensity LED searchlight?",
-    "targetDurationSeconds": 28,
+    "targetDurationSeconds": 15.48,
     "clips": [
       {
         "clipIndex": 1,
-        "durationSeconds": 9,
+        "durationSeconds": 5.65,
         "visualAction": "Forehead skin parting to reveal a waterproof high-power Cree LED emitter connected to skull bone.",
         "spokenLine": "Embed a five-thousand lumen LED searchlight directly into the center of your forehead.",
         "sfxCue": "Power click and warm hum"
       },
       {
         "clipIndex": 2,
-        "durationSeconds": 10,
+        "durationSeconds": 5.35,
         "visualAction": "Character standing in a pitch black cave, turning on the forehead beam to illuminate a cavern a mile ahead.",
         "spokenLine": "Project a blinding beam of white light that illuminates entire dark caves and tunnels ahead.",
         "sfxCue": "High-power beam ignition"
       },
       {
         "clipIndex": 3,
-        "durationSeconds": 9,
+        "durationSeconds": 4.48,
         "visualAction": "Switching beam mode to infrared night vision glow with a smooth iris shutter closing.",
         "spokenLine": "Switch seamlessly between visible floodlights and invisible infrared night vision.",
         "sfxCue": "Iris shutter click"
@@ -1002,7 +1002,9 @@
     ],
     "title": "What if your forehead had a high-intensity LED searchlight?",
     "scheduledTime": "08:00",
-    "slotName": "Morning"
+    "slotName": "Morning",
+    "audioVoiceoverPath": "audio/VID-028.mp3",
+    "renderedAt": "2026-11-20T12:49:09.624Z"
   },
   {
     "serialId": "VID-029",
