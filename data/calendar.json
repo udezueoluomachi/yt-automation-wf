@@ -1010,27 +1010,27 @@
     "serialId": "VID-029",
     "scheduledDate": "2026-11-10",
     "slot": 2,
-    "status": "PENDING",
+    "status": "DONE",
     "topic": "What if your spine had a built-in Wi-Fi router?",
-    "targetDurationSeconds": 27,
+    "targetDurationSeconds": 16.72,
     "clips": [
       {
         "clipIndex": 1,
-        "durationSeconds": 9,
+        "durationSeconds": 5.69,
         "visualAction": "Spinal column glowing with fiber optic data lines connected to a quantum Wi-Fi 7 transmitter chip.",
         "spokenLine": "Integrate a quantum Wi-Fi 7 transceiver chip directly into your upper spine vertebrae.",
         "sfxCue": "Digital data stream hum"
       },
       {
         "clipIndex": 2,
-        "durationSeconds": 9,
+        "durationSeconds": 5.82,
         "visualAction": "Files transferring from a computer straight into brain memory at 10 gigabytes per second wirelessly.",
         "spokenLine": "Download movies, maps, and gigabytes of data directly into your neural memory instantly.",
         "sfxCue": "Fast data transfer beep"
       },
       {
         "clipIndex": 3,
-        "durationSeconds": 9,
+        "durationSeconds": 5.21,
         "visualAction": "Character sharing high-speed internet hotspot with friends just by standing near them.",
         "spokenLine": "Act as a walking high-speed internet hotspot for everyone around you with zero lag.",
         "sfxCue": "Connection established chime"
@@ -1038,7 +1038,9 @@
     ],
     "title": "What if your spine had a built-in Wi-Fi router?",
     "scheduledTime": "13:00",
-    "slotName": "Afternoon"
+    "slotName": "Afternoon",
+    "audioVoiceoverPath": "audio/VID-029.mp3",
+    "renderedAt": "2026-11-20T17:30:01.896Z"
   },
   {
     "serialId": "VID-030",
