@@ -1046,27 +1046,27 @@
     "serialId": "VID-030",
     "scheduledDate": "2026-11-10",
     "slot": 3,
-    "status": "PENDING",
+    "status": "DONE",
     "topic": "What if your ankles had omnidirectional roller bearings?",
-    "targetDurationSeconds": 28,
+    "targetDurationSeconds": 17.95,
     "clips": [
       {
         "clipIndex": 1,
-        "durationSeconds": 9,
+        "durationSeconds": 7,
         "visualAction": "Ankle joints replaced with motorized omnidirectional roller ball bearings in titanium housings.",
         "spokenLine": "Replace your ankle joints with motorized omnidirectional roller ball bearings.",
         "sfxCue": "Roller bearing spin"
       },
       {
         "clipIndex": 2,
-        "durationSeconds": 10,
+        "durationSeconds": 5.63,
         "visualAction": "Character gliding sideways and diagonally across the floor smoothly like an ice skater on wheels.",
         "spokenLine": "Glide sideways, diagonally, and backward at high speeds without moving your feet steps.",
         "sfxCue": "Smooth glide whoosh"
       },
       {
         "clipIndex": 3,
-        "durationSeconds": 9,
+        "durationSeconds": 5.32,
         "visualAction": "Locking rollers instantly with magnetic brakes to stand firmly in place on a steep slope.",
         "spokenLine": "Lock the rollers instantly with magnetic brakes whenever you want to plant your footing.",
         "sfxCue": "Brake lock snap"
@@ -1074,7 +1074,9 @@
     ],
     "title": "What if your ankles had omnidirectional roller bearings?",
     "scheduledTime": "18:00",
-    "slotName": "Evening"
+    "slotName": "Evening",
+    "audioVoiceoverPath": "audio/VID-030.mp3",
+    "renderedAt": "2026-11-21T07:18:57.908Z"
   },
   {
     "serialId": "VID-031",
