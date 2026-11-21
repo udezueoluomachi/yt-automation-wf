@@ -1082,27 +1082,27 @@
     "serialId": "VID-031",
     "scheduledDate": "2026-11-11",
     "slot": 1,
-    "status": "PENDING",
+    "status": "DONE",
     "topic": "What if your wrists had built-in laser pointers and cutters?",
-    "targetDurationSeconds": 28,
+    "targetDurationSeconds": 18.11,
     "clips": [
       {
         "clipIndex": 1,
-        "durationSeconds": 9,
+        "durationSeconds": 5.71,
         "visualAction": "Wrist skin retracting to expose a medical-grade blue laser diode emitter powered by wrist kinetic motion.",
         "spokenLine": "Embed a high-power industrial blue laser diode inside each wrist housing.",
         "sfxCue": "Laser diode charge whine"
       },
       {
         "clipIndex": 2,
-        "durationSeconds": 10,
+        "durationSeconds": 6.85,
         "visualAction": "Firing a concentrated blue laser beam that melts through a steel padlock shackle in two seconds.",
         "spokenLine": "Slice through padlocks, sheet metal, and thick ropes with a pinpoint beam of concentrated light.",
         "sfxCue": "Laser cutting sizzle"
       },
       {
         "clipIndex": 3,
-        "durationSeconds": 9,
+        "durationSeconds": 5.55,
         "visualAction": "Retracting laser emitter safely beneath skin shutter with a watertight seal locking.",
         "spokenLine": "Shielded behind a sapphire crystal window when not in use for absolute safety.",
         "sfxCue": "Crystal shutter click"
@@ -1110,7 +1110,9 @@
     ],
     "title": "What if your wrists had built-in laser pointers and cutters?",
     "scheduledTime": "08:00",
-    "slotName": "Morning"
+    "slotName": "Morning",
+    "audioVoiceoverPath": "audio/VID-031.mp3",
+    "renderedAt": "2026-11-21T15:49:50.311Z"
   },
   {
     "serialId": "VID-032",
