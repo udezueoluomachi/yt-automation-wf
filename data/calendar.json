@@ -1190,27 +1190,27 @@
     "serialId": "VID-034",
     "scheduledDate": "2026-11-12",
     "slot": 1,
-    "status": "PENDING",
+    "status": "DONE",
     "topic": "What if your fingers had built-in USB flash drives?",
-    "targetDurationSeconds": 28,
+    "targetDurationSeconds": 18.08,
     "clips": [
       {
         "clipIndex": 1,
-        "durationSeconds": 9,
+        "durationSeconds": 5.98,
         "visualAction": "Pinky finger tip sliding open to reveal a gold-plated USB-C male connector plug wired to brain memory.",
         "spokenLine": "Integrate a gold-plated USB-C data connector into the tip of your pinky finger.",
         "sfxCue": "Data port slide click"
       },
       {
         "clipIndex": 2,
-        "durationSeconds": 10,
+        "durationSeconds": 5.77,
         "visualAction": "Plugging finger directly into a laptop port; files stream instantly from mind to screen.",
         "spokenLine": "Plug your finger directly into computers to transfer terabytes of data straight from your mind.",
         "sfxCue": "USB connect chime"
       },
       {
         "clipIndex": 3,
-        "durationSeconds": 9,
+        "durationSeconds": 6.33,
         "visualAction": "Unplugging finger and watching connector slide back flush into waterproof skin seal.",
         "spokenLine": "Unplug and watch the connector seal shut inside a waterproof bio-membrane.",
         "sfxCue": "Seal lock click"
@@ -1218,7 +1218,9 @@
     ],
     "title": "What if your fingers had built-in USB flash drives?",
     "scheduledTime": "08:00",
-    "slotName": "Morning"
+    "slotName": "Morning",
+    "audioVoiceoverPath": "audio/VID-034.mp3",
+    "renderedAt": "2026-11-22T14:09:40.112Z"
   },
   {
     "serialId": "VID-035",
