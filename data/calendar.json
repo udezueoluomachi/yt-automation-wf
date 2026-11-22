@@ -1226,27 +1226,27 @@
     "serialId": "VID-035",
     "scheduledDate": "2026-11-12",
     "slot": 2,
-    "status": "PENDING",
+    "status": "DONE",
     "topic": "What if your knees had shock-absorbing magnetic dampeners?",
-    "targetDurationSeconds": 27,
+    "targetDurationSeconds": 19.51,
     "clips": [
       {
         "clipIndex": 1,
-        "durationSeconds": 9,
+        "durationSeconds": 6.04,
         "visualAction": "Knee joint scanned to show magneto-rheological fluid dampers replacing cartilage meniscus.",
         "spokenLine": "Install magneto-rheological fluid dampers inside both knee joint capsules.",
         "sfxCue": "Fluid viscosity shift hum"
       },
       {
         "clipIndex": 2,
-        "durationSeconds": 9,
+        "durationSeconds": 7.52,
         "visualAction": "Jumping off a rooftop onto concrete; knees absorb impact with zero shock traveling up the spine.",
         "spokenLine": "Magnetic fluid stiffens instantly on impact to absorb one hundred percent of landing shocks.",
         "sfxCue": "Magnetic dampening thud"
       },
       {
         "clipIndex": 3,
-        "durationSeconds": 9,
+        "durationSeconds": 5.95,
         "visualAction": "Knees returning to liquid fluidity for smooth, effortless running stride.",
         "spokenLine": "Fluid thins out immediately after landing so you can sprint with absolute joint freedom.",
         "sfxCue": "Smooth fluid flow"
@@ -1254,7 +1254,9 @@
     ],
     "title": "What if your knees had shock-absorbing magnetic dampeners?",
     "scheduledTime": "13:00",
-    "slotName": "Afternoon"
+    "slotName": "Afternoon",
+    "audioVoiceoverPath": "audio/VID-035.mp3",
+    "renderedAt": "2026-11-22T18:14:58.534Z"
   },
   {
     "serialId": "VID-036",
