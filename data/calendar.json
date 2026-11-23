@@ -1262,35 +1262,37 @@
     "serialId": "VID-036",
     "scheduledDate": "2026-11-12",
     "slot": 3,
-    "status": "PENDING",
+    "status": "DONE",
     "topic": "What if your skull had a built-in compass radar?",
-    "targetDurationSeconds": 28,
+    "targetDurationSeconds": 18.56,
     "clips": [
       {
         "clipIndex": 1,
-        "durationSeconds": 9,
+        "durationSeconds": 5.29,
         "visualAction": "Brain cortex glowing with a microscopic superconducting quantum interference magnetometer chip.",
-        "spokenLine": "Embed a quantum magnetic compass chip into your frontal lobe cortex.",
+        "spokenLine": "Embed a quantum magnetometer chip directly into the frontal bone of your skull.",
         "sfxCue": "Quantum sensor hum"
       },
       {
         "clipIndex": 2,
-        "durationSeconds": 10,
+        "durationSeconds": 6.67,
         "visualAction": "Character closing eyes in a dense desert; a glowing directional arrow floats in their vision pointing north.",
-        "spokenLine": "Always know your exact global coordinates and heading without needing a map or GPS.",
+        "spokenLine": "Sense Earth's magnetic field instantly to lock onto true north in total darkness without GPS.",
         "sfxCue": "Compass lock chime"
       },
       {
         "clipIndex": 3,
-        "durationSeconds": 9,
+        "durationSeconds": 6.6,
         "visualAction": "Detecting underground magnetic iron ore deposits glowing red through rock layers.",
-        "spokenLine": "Detect underground metal pipes, mineral veins, and magnetic fields through solid earth.",
+        "spokenLine": "Detect buried steel pipelines, iron ore veins, and live power cables hidden beneath solid ground.",
         "sfxCue": "Radar pulse beep"
       }
     ],
     "title": "What if your skull had a built-in compass radar?",
     "scheduledTime": "18:00",
-    "slotName": "Evening"
+    "slotName": "Evening",
+    "audioVoiceoverPath": "audio/VID-036.mp3",
+    "renderedAt": "2026-11-23T19:37:57.016Z"
   },
   {
     "serialId": "VID-037",
