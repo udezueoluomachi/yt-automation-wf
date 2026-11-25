@@ -1298,35 +1298,37 @@
     "serialId": "VID-037",
     "scheduledDate": "2026-11-13",
     "slot": 1,
-    "status": "PENDING",
+    "status": "DONE",
     "topic": "What if your lungs could store compressed oxygen tanks?",
-    "targetDurationSeconds": 28,
+    "targetDurationSeconds": 19.5,
     "clips": [
       {
         "clipIndex": 1,
-        "durationSeconds": 9,
+        "durationSeconds": 7.14,
         "visualAction": "Chest cavity opening to reveal miniature carbon-fiber high-pressure oxygen tanks flanking the lungs.",
-        "spokenLine": "Stow carbon-fiber compressed oxygen tanks alongside your lung chambers.",
+        "spokenLine": "Mount twin carbon-fiber high-pressure oxygen tanks directly inside your ribcage beside both lungs.",
         "sfxCue": "Tank valve hiss"
       },
       {
         "clipIndex": 2,
-        "durationSeconds": 10,
+        "durationSeconds": 6.24,
         "visualAction": "Character diving deep underwater for three hours straight without taking a single breath.",
-        "spokenLine": "Store enough breathable oxygen under high pressure to stay submerged for up to four hours.",
+        "spokenLine": "Store enough compressed breathable air to dive deep underwater for four straight hours without surfacing.",
         "sfxCue": "Underwater bubble stream"
       },
       {
         "clipIndex": 3,
-        "durationSeconds": 9,
+        "durationSeconds": 6.12,
         "visualAction": "Automatic pressure regulator valves refilling tanks from ambient air when surfacing.",
-        "spokenLine": "Internal miniature compressors automatically refill your tanks the moment you surface.",
+        "spokenLine": "Step back onto land as silent micro-compressors automatically refill both tanks from ambient air.",
         "sfxCue": "Compressor pump whir"
       }
     ],
     "title": "What if your lungs could store compressed oxygen tanks?",
     "scheduledTime": "08:00",
-    "slotName": "Morning"
+    "slotName": "Morning",
+    "audioVoiceoverPath": "audio/VID-037.mp3",
+    "renderedAt": "2026-11-25T12:22:17.736Z"
   },
   {
     "serialId": "VID-038",
