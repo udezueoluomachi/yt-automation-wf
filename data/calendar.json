@@ -1334,35 +1334,37 @@
     "serialId": "VID-038",
     "scheduledDate": "2026-11-13",
     "slot": 2,
-    "status": "PENDING",
+    "status": "DONE",
     "topic": "What if your fingers had built-in blowtorches?",
-    "targetDurationSeconds": 27,
+    "targetDurationSeconds": 18.36,
     "clips": [
       {
         "clipIndex": 1,
-        "durationSeconds": 9,
+        "durationSeconds": 6.18,
         "visualAction": "Thumb tip sliding open to reveal a micro-propane jet nozzle and piezoelectric igniter spark.",
-        "spokenLine": "Integrate a micro-propane gas jet nozzle into the tip of your thumb.",
+        "spokenLine": "Embed a pressurized micro-propane jet nozzle and piezoelectric igniter inside the tip of your thumb.",
         "sfxCue": "Gas valve hiss and spark"
       },
       {
         "clipIndex": 2,
-        "durationSeconds": 9,
+        "durationSeconds": 6.53,
         "visualAction": "Igniting a fierce blue flame shooting two feet from the thumb to weld steel pipes together.",
-        "spokenLine": "Generate a three-thousand degree blue flame to weld metal pipes and start campfires instantly.",
+        "spokenLine": "Fire a three-thousand-degree blue plasma flame to weld steel pipes or ignite campfires in seconds.",
         "sfxCue": "Blowtorch roar"
       },
       {
         "clipIndex": 3,
-        "durationSeconds": 9,
+        "durationSeconds": 5.65,
         "visualAction": "Extinguishing flame instantly and sealing nozzle shut with a heat-resistant ceramic cap.",
-        "spokenLine": "Shut off fuel supply instantly with a mental trigger for complete fire safety.",
+        "spokenLine": "Snap the fuel valve shut mentally as a heat-resistant ceramic cap seals flush over your thumb.",
         "sfxCue": "Flame snuff out click"
       }
     ],
     "title": "What if your fingers had built-in blowtorches?",
     "scheduledTime": "13:00",
-    "slotName": "Afternoon"
+    "slotName": "Afternoon",
+    "audioVoiceoverPath": "audio/VID-038.mp3",
+    "renderedAt": "2026-11-27T13:59:34.584Z"
   },
   {
     "serialId": "VID-039",
